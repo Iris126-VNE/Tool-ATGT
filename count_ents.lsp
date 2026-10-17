@@ -1,0 +1,18 @@
+(defun c:CountEnts ( / ss i ent typ counts fn f)
+  (setq fn "G:/My Drive/1.Work/ATGT/Tool ATGT/ent_types.txt")
+  (setq f (open fn "w"))
+  (setq ss (ssget "X"))
+  (if ss
+    (progn
+      (setq i 0)
+      (while (< i (sslength ss))
+        (setq typ (cdr (assoc 0 (entget (ssname ss i)))))
+        (write-line typ f)
+        (setq i (1+ i))
+      )
+    )
+  )
+  (close f)
+  (command "_.QUIT" "_Y")
+)
+(c:CountEnts)

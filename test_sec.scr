@@ -1,0 +1,5 @@
+SECURELOAD 0
+(setq f (open "g:/My Drive/1.Work/ATGT/Tool ATGT/test_out.txt" "w"))
+(write-line "HELLO AUTOCAD" f)
+(close f)
+QUIT Y

@@ -1,0 +1,567 @@
+{
+  "Uuid": "aed7b134-4c8a-4416-b217-4a5a22b0f1f2",
+  "IsCustomNode": false,
+  "Description": "Công cụ gán Level of Information (LOI) & Thông tin BIM tự động theo form chuẩn TCVN / QĐ 1056/QĐ-BXD cho mô hình An toàn giao thông Revit.",
+  "Name": "[LENH ATGT] GAN LOI - THONG TIN BIM",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "CoreNodeModels.Input.StringInput, CoreNodeModels",
+      "Id": "b8c8e80bb33d51fbb69bf3ebafa5863e",
+      "NodeType": "StringInputNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "a550d1a802bd5983b49ef62034b0f312",
+          "Name": "",
+          "Description": "String value",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Creates a string",
+      "InputValue": ""
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.StringInput, CoreNodeModels",
+      "Id": "530de102d8395299b7c9da0d611f86f8",
+      "NodeType": "StringInputNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "28ba7392c23d56d1b6b61f515b6a03c3",
+          "Name": "",
+          "Description": "String value",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Creates a string",
+      "InputValue": "TS-HTS-"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.StringInput, CoreNodeModels",
+      "Id": "fdc969cc2e585bd1b93d5a211401f03b",
+      "NodeType": "StringInputNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "2baff9d4a73656ea8f5b071d8e099b13",
+          "Name": "",
+          "Description": "String value",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Creates a string",
+      "InputValue": "An toàn giao thông"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.StringInput, CoreNodeModels",
+      "Id": "459bf83b74ab56e4942f805af6138c7d",
+      "NodeType": "StringInputNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "9a5063f7ceb75405b08144013c9a3c7d",
+          "Name": "",
+          "Description": "String value",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Creates a string",
+      "InputValue": "Tôn hộ lan"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.StringInput, CoreNodeModels",
+      "Id": "b4a53a545bb954a4934ec73d5f3ae71b",
+      "NodeType": "StringInputNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "7c04dd6ae99254b9a5773b603ecbdcce",
+          "Name": "",
+          "Description": "String value",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Creates a string",
+      "InputValue": "Km16+000-Km25+000"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.StringInput, CoreNodeModels",
+      "Id": "30ef7d9307fa53f4a74419338d2c6cf5",
+      "NodeType": "StringInputNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "27bf44ec1bc8563790f4348af92c4644",
+          "Name": "",
+          "Description": "String value",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Creates a string",
+      "InputValue": "Tỉnh Tây Ninh"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.StringInput, CoreNodeModels",
+      "Id": "d2f3283ee3055db09b44d95120d42571",
+      "NodeType": "StringInputNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "516288c8acac54e5818aa6b01d8f4453",
+          "Name": "",
+          "Description": "String value",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Creates a string",
+      "InputValue": "Thép mạ kẽm nhúng nóng"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.StringInput, CoreNodeModels",
+      "Id": "218913c0e87c5c229f0c0011107053c7",
+      "NodeType": "StringInputNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "8db2d9c2baa65ac498715aeeb6f63430",
+          "Name": "",
+          "Description": "String value",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Creates a string",
+      "InputValue": "SS400"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.StringInput, CoreNodeModels",
+      "Id": "9a467c38f537599ba49757843db239bc",
+      "NodeType": "StringInputNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "9fda791eaf6157d48259f7b598b22c9d",
+          "Name": "",
+          "Description": "String value",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Creates a string",
+      "InputValue": "2.1x10^5 MPa"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.StringInput, CoreNodeModels",
+      "Id": "bb6bae6b41ef5728afed4619610d80b7",
+      "NodeType": "StringInputNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "d67c0d82bb20510197a5ec5c23db1b72",
+          "Name": "",
+          "Description": "String value",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Creates a string",
+      "InputValue": "Bạc mạ kẽm"
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "VariableInputPorts": true,
+      "Id": "073570037e0c5d1bb6cc6b28fb958cfa",
+      "NodeType": "PythonScriptNode",
+      "Inputs": [
+        {
+          "Id": "16e5061c319f566cadb68bf25ec25864",
+          "Name": "IN[0]",
+          "Description": "0. CHỌN / LỌC ĐỐI TƯỢNG (Để trống = Tự động gán toàn bộ cấu kiện ATGT)",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "4b011321620b529c99ae8b43c2249899",
+          "Name": "IN[1]",
+          "Description": "1. [101] TIỀN TỐ MÃ CẤU KIỆN (Số thứ tự tự động 001, 002, 003...)",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "41287fcb8fb15f23ad67141df35e8635",
+          "Name": "IN[2]",
+          "Description": "2. [102] PHÂN LOẠI CẤU KIỆN",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "47d278cd8229579285cec59aaa7aabb8",
+          "Name": "IN[3]",
+          "Description": "3. [105] MÔ TẢ CẤU KIỆN [Tôn hộ lan / Dải phân cách / Hàng rào]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "7ba3cc3b8625585589ba9d7cf8d0d873",
+          "Name": "IN[4]",
+          "Description": "4. [201] VỊ TRÍ THEO KHU VỰC / LÝ TRÌNH [VD: Km16+000-Km25+000]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "8ba67a07101155249c5219c9ced6de9f",
+          "Name": "IN[5]",
+          "Description": "5. [202] VỊ TRÍ THEO DỰ ÁN [VD: Tỉnh Tây Ninh]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "f965708f47eb5900b6513f19ed067f76",
+          "Name": "IN[6]",
+          "Description": "6. [401] VẬT LIỆU THIẾT KẾ [VD: Thép mạ kẽm nhúng nóng / BTXM M300]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "1918778779bb5322bfa98d1fe99f7154",
+          "Name": "IN[7]",
+          "Description": "7. [402] CƯỜNG ĐỘ THIẾT KẾ [VD: SS400 / C25/30 / CT3]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "b64d7028b00d5631bd9860d77bba7f2d",
+          "Name": "IN[8]",
+          "Description": "8. [403] MÔ ĐUN ĐÀN HỒI [VD: 2.1x10^5 MPa / 3.0x10^4 MPa]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "82d619514b0b59cf8071013c5c3273ef",
+          "Name": "IN[9]",
+          "Description": "9. [406] MÀU SẮC THIẾT KẾ [VD: Bạc mạ kẽm / Trắng - Đỏ / Xám bê tông]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "d0f477876dee5813aa19bcacf4e2c770",
+          "Name": "OUT",
+          "Description": "Ket qua thuc thi",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded Python script.",
+      "Code": "# -*- coding: utf-8 -*-\n# ==============================================================================\n# TOOL GAN LEVEL OF INFORMATION (LOI) & THONG TIN BIM CHO MO HINH ATGT TRONG REVIT\n# He thong thong so chuan theo Form BIM Giao Thong / TCVN / Quyet dinh 1056/QD-BXD:\n#   100-THAM SO DINH DANH: 101-Ma cau kien, 102-Phan loai, 105-Mo ta cau kien...\n#   200-THAM SO DINH VI:   201-Vi tri khu vuc, 202-Vi tri du an, 203-X, 204-Y, 205-Cao do\n#   300-THAM SO HINH HOC:  301-Rong, 302-Dai, 303-Cao, 304-Hinh dang thiet ke\n#   400-THAM SO VAT LIEU:  401-Vat lieu, 402-Cuong do, 403-Mo dun dan hoi, 406-Mau sac\n# ==============================================================================\n\nimport sys\nimport math\nimport re\nimport traceback\n\n# ------------------------------------------------------------------------------\n# KHOI TAO REVIT API & DYNAMO ENVIRONMENT\n# ------------------------------------------------------------------------------\nIS_DYNAMO = False\ntry:\n    import clr\n    clr.AddReference('RevitAPI')\n    clr.AddReference('RevitAPIUI')\n    clr.AddReference('RevitServices')\n\n    from Autodesk.Revit.DB import *\n    from Autodesk.Revit.UI import *\n    from RevitServices.Persistence import DocumentManager\n    from RevitServices.Transactions import TransactionManager\n\n    doc = DocumentManager.Instance.CurrentDBDocument\n    uidoc = DocumentManager.Instance.CurrentUIApplication.ActiveUIDocument\n    IS_DYNAMO = True\nexcept Exception:\n    pass\n\n\n# ------------------------------------------------------------------------------\n# CAC HAM HO TRO UNWRAP VA DỌC THONG TIN REVIT\n# ------------------------------------------------------------------------------\ndef unwrap_elements(input_data):\n    \"\"\"Giai phong UnwrapElement cho danh sach doi tuong tu Dynamo\"\"\"\n    if input_data is None:\n        return []\n\n    raw_list = []\n    if isinstance(input_data, (list, tuple)):\n        raw_list = list(input_data)\n    else:\n        raw_list = [input_data]\n\n    unwrapped = []\n    for item in raw_list:\n        if item is None:\n            continue\n        if hasattr(item, \"InternalElement\"):\n            unwrapped.append(item.InternalElement)\n        elif hasattr(item, \"Id\"):\n            unwrapped.append(item)\n        elif isinstance(item, (list, tuple)):\n            unwrapped.extend(unwrap_elements(item))\n\n    return unwrapped\n\n\ndef get_element_location_and_coords(elem):\n    \"\"\"\n    Lay toa do tam thiet ke (X, Y, Z) tinh bang METERS tu doi tuong Revit.\n    Ho tro LocationPoint, LocationCurve va BoundingBox.\n    \"\"\"\n    loc = getattr(elem, \"Location\", None)\n    \n    # 1. LocationPoint (Point-based family)\n    if isinstance(loc, LocationPoint):\n        pt = loc.Point\n        return pt, pt.X * 0.3048, pt.Y * 0.3048, pt.Z * 0.3048\n\n    # 2. LocationCurve (Line-based family, Beam, StructuralFraming)\n    if isinstance(loc, LocationCurve):\n        c = loc.Curve\n        if c:\n            p0 = c.GetEndPoint(0)\n            p1 = c.GetEndPoint(1)\n            mid = (p0 + p1) * 0.5\n            return mid, mid.X * 0.3048, mid.Y * 0.3048, mid.Z * 0.3048\n\n    # 3. Fallback: BoundingBox center\n    try:\n        bbox = elem.get_BoundingBox(None)\n        if bbox:\n            mid = (bbox.Min + bbox.Max) * 0.5\n            return mid, mid.X * 0.3048, mid.Y * 0.3048, mid.Z * 0.3048\n    except Exception:\n        pass\n\n    return None, 0.0, 0.0, 0.0\n\n\ndef sort_elements_along_corridor(elements):\n    \"\"\"\n    Sap xep cac doi tuong doc theo truc chinh cua tuyen (Corridor Principal Axis).\n    Dam bao so thu tu (001, 002, 003...) tang dan deu dan theo huong tuyen.\n    \"\"\"\n    if not elements or len(elements) <= 1:\n        return elements\n\n    pts_with_elem = []\n    without_loc = []\n\n    for el in elements:\n        pt, x_m, y_m, z_m = get_element_location_and_coords(el)\n        if pt is not None:\n            pts_with_elem.append((pt, x_m, y_m, z_m, el))\n        else:\n            without_loc.append(el)\n\n    if len(pts_with_elem) <= 1:\n        return elements\n\n    # Tim 2 diem xa nhat de xac dinh truc tuyen\n    min_x_pt = min(pts_with_elem, key=lambda it: it[1])\n    max_x_pt = max(pts_with_elem, key=lambda it: it[1])\n    min_y_pt = min(pts_with_elem, key=lambda it: it[2])\n    max_y_pt = max(pts_with_elem, key=lambda it: it[2])\n\n    span_x = abs(max_x_pt[1] - min_x_pt[1])\n    span_y = abs(max_y_pt[2] - min_y_pt[2])\n\n    if span_x >= span_y:\n        p_start = min_x_pt[0]\n        p_end = max_x_pt[0]\n    else:\n        p_start = min_y_pt[0]\n        p_end = max_y_pt[0]\n\n    vx = p_end.X - p_start.X\n    vy = p_end.Y - p_start.Y\n    v_len = math.sqrt(vx * vx + vy * vy)\n    if v_len > 1e-4:\n        vx /= v_len\n        vy /= v_len\n    else:\n        vx, vy = 1.0, 0.0\n\n    # Chieu toa do len truc tuyen de sap xep\n    pts_with_elem.sort(key=lambda it: (it[0].X - p_start.X) * vx + (it[0].Y - p_start.Y) * vy)\n\n    sorted_elems = [it[4] for it in pts_with_elem]\n    sorted_elems.extend(without_loc)\n    return sorted_elems\n\n\n# ------------------------------------------------------------------------------\n# HAM GAN THAM SO SMART (PREFIX & EXACT MATCHING, HO TRO STRING/DOUBLE/INT)\n# ------------------------------------------------------------------------------\ndef apply_param_value(param, value, is_metric_length=False):\n    \"\"\"Gan gia tri vao tham so Revit theo dung kieu du lieu StorageType\"\"\"\n    if param is None or param.IsReadOnly or value is None:\n        return False\n\n    st = getattr(param, \"StorageType\", None)\n    st_name = str(st)\n\n    try:\n        if \"String\" in st_name:\n            if isinstance(value, float):\n                param.Set(\"{0:.3f}\".format(value))\n            else:\n                param.Set(str(value))\n            return True\n        elif \"Double\" in st_name:\n            val_f = float(value)\n            if is_metric_length:\n                # Revit luu tru chieu dai noi bo la FEET: 1 foot = 0.3048 m\n                param.Set(val_f / 0.3048)\n            else:\n                param.Set(val_f)\n            return True\n        elif \"Integer\" in st_name:\n            param.Set(int(value))\n            return True\n    except Exception:\n        pass\n\n    return False\n\n\ndef set_element_param_smart(inst, prefix_tag, candidate_names, value, is_metric_length=False):\n    \"\"\"\n    Tim kiem va gan gia tri cho tham so trong Revit.\n    Uu tien:\n    1. Tim dung ten tham so theo LookupParameter (nhanh nhat)\n    2. Tim tham so bat dau bang prefix_tag (VD: '101-', '201-', '301-', '401-')\n    3. Quet tat ca tham so theo ten chuan hoa (bo dau cach, gach duoi, hoa thuong)\n    \"\"\"\n    if inst is None or value is None:\n        return False\n\n    # 1. Lookup theo danh sach ten tham so\n    for name in candidate_names:\n        try:\n            p = inst.LookupParameter(name)\n            if p and not p.IsReadOnly:\n                if apply_param_value(p, value, is_metric_length):\n                    return True\n        except Exception:\n            pass\n\n    # 2. Quet theo Prefix Tag (VD: '101-', '201-', '301-')\n    if prefix_tag:\n        clean_prefix = prefix_tag.lower().strip()\n        try:\n            for p in inst.Parameters:\n                if p and not p.IsReadOnly and p.Definition:\n                    p_name_lower = p.Definition.Name.lower().strip()\n                    if p_name_lower.startswith(clean_prefix):\n                        if apply_param_value(p, value, is_metric_length):\n                            return True\n        except Exception:\n            pass\n\n    # 3. Quet Parameters theo dang normalized\n    try:\n        norm_cands = [c.lower().replace(\"_\", \"\").replace(\" \", \"\").replace(\"-\", \"\") for c in candidate_names]\n        for p in inst.Parameters:\n            if p and not p.IsReadOnly and p.Definition:\n                p_norm = p.Definition.Name.lower().replace(\"_\", \"\").replace(\" \", \"\").replace(\"-\", \"\")\n                if p_norm in norm_cands:\n                    if apply_param_value(p, value, is_metric_length):\n                        return True\n    except Exception:\n        pass\n\n    return False\n\n\n# ------------------------------------------------------------------------------\n# TRICH XUAT KICH THUOC HINH HOC (WIDTH, LENGTH, HEIGHT, SHAPE)\n# ------------------------------------------------------------------------------\ndef extract_element_dimensions(inst):\n    \"\"\"\n    Lay kich thuoc hinh hoc (m) tu Family Instance, Symbol hoac BoundingBox.\n    Tra ve: width_m, length_m, height_m, shape_desc\n    \"\"\"\n    width_m = None\n    length_m = None\n    height_m = None\n\n    # Danh sach ten tham so chieu dai/rong/cao\n    w_cands = [\"Width\", \"Rộng\", \"Chiều rộng\", \"B\", \"W\", \"Bề rộng\", \"Chiều rộng thiết kế\", \"301-Chiều rộng thiết kế\"]\n    l_cands = [\"Length\", \"Dài\", \"Chiều dài\", \"L\", \"Span\", \"Chiều dài thiết kế\", \"302-Chiều dài thiết kế\"]\n    h_cands = [\"Height\", \"Cao\", \"Chiều cao\", \"H\", \"Chiều cao thiết kế\", \"303-Chiều cao thiết kế\"]\n\n    def _lookup_geom_param(host, candidates):\n        if not host:\n            return None\n        for name in candidates:\n            try:\n                p = host.LookupParameter(name)\n                if p and p.HasValue:\n                    st_name = str(p.StorageType)\n                    if \"Double\" in st_name:\n                        return p.AsDouble() * 0.3048\n                    elif \"String\" in st_name:\n                        return float(p.AsString())\n            except Exception:\n                pass\n        return None\n\n    # 1. Kiem tra Instance parameters\n    width_m = _lookup_geom_param(inst, w_cands)\n    length_m = _lookup_geom_param(inst, l_cands)\n    height_m = _lookup_geom_param(inst, h_cands)\n\n    # 2. Kiem tra Symbol (Type) parameters neu instance chua co\n    symbol = getattr(inst, \"Symbol\", None)\n    if symbol:\n        if width_m is None:\n            width_m = _lookup_geom_param(symbol, w_cands)\n        if length_m is None:\n            length_m = _lookup_geom_param(symbol, l_cands)\n        if height_m is None:\n            height_m = _lookup_geom_param(symbol, h_cands)\n\n    # 3. Tinh toan tu BoundingBox neu chua tim thay\n    try:\n        bbox = inst.get_BoundingBox(None)\n        if bbox:\n            dx = abs(bbox.Max.X - bbox.Min.X) * 0.3048\n            dy = abs(bbox.Max.Y - bbox.Min.Y) * 0.3048\n            dz = abs(bbox.Max.Z - bbox.Min.Z) * 0.3048\n\n            if length_m is None:\n                length_m = max(dx, dy)\n            if width_m is None:\n                width_m = min(dx, dy)\n            if height_m is None:\n                height_m = dz\n    except Exception:\n        pass\n\n    # Gia tri mac dinh chuan ATGT neu khong tinh duoc\n    if width_m is None or width_m <= 0:\n        width_m = 0.310\n    if length_m is None or length_m <= 0:\n        length_m = 4.000\n    if height_m is None or height_m <= 0:\n        height_m = 0.750\n\n    # Xac dinh mo ta hinh dang dua tren loai cau kien\n    fam_name = getattr(symbol, \"FamilyName\", \"\") if symbol else \"\"\n    inst_name = getattr(inst, \"Name\", \"\")\n    full_name = (fam_name + \" \" + inst_name).lower()\n\n    if any(k in full_name for k in [\"ton\", \"song\", \"sóng\", \"guard\", \"ho lan\", \"hộ lan\", \"w-beam\"]):\n        shape_desc = \"Tấm tôn lượn sóng chữ W 2 bước sóng (TCVN 12681:2019)\"\n    elif any(k in full_name for k in [\"dpc\", \"phan cach\", \"phân cách\", \"barrier\", \"new jersey\"]):\n        shape_desc = \"Dải phân cách bê tông định hình New Jersey (TCVN 12681:2019)\"\n    elif any(k in full_name for k in [\"rao\", \"hang rao\", \"hàng rào\", \"fence\", \"b40\"]):\n        shape_desc = \"Hàng rào lưới thép mạ kẽm B40 định hình\"\n    elif any(k in full_name for k in [\"bien\", \"biển\", \"sign\"]):\n        shape_desc = \"Biển báo hiệu đường bộ định hình (QCVN 41:2019/BGTVT)\"\n    else:\n        shape_desc = \"Cấu kiện an toàn giao thông định hình\"\n\n    return width_m, length_m, height_m, shape_desc\n\n\n# ------------------------------------------------------------------------------\n# HAM CHINH: GAN FORM LOI BIM CHO TAT CA CAC DOI TUONG\n# ------------------------------------------------------------------------------\ndef assign_bim_loi_form(document, elements, prefix=\"TS-HTS-\", cat_class=\"An toàn giao thông\",\n                        elem_desc=\"Tôn hộ lan\", station_loc=\"Km16+000-Km25+000\",\n                        project_loc=\"Tỉnh Tây Ninh\", material=\"Thép mạ kẽm nhúng nóng\",\n                        strength=\"SS400\", elastic_mod=\"2.1x10^5 MPa\", color=\"Bạc mạ kẽm\"):\n    \"\"\"\n    Gan dong loat form thong tin LOI BIM theo dung giao dien Data:\n      101-Ma cau kien: TS-HTS-001 (So thu tu 3 chu so)\n      102-Phan loai cau kien: An toan giao thong\n      105-Mo ta cau kien: Ton ho lan\n      201-Vi tri theo khu vuc: Km16+000-Km25+000\n      202-Vi tri theo du an: Tinh Tay Ninh\n      203-Toa do X thiet ke: X (m)\n      204-Toa do Y thiet ke: Y (m)\n      205-Cao do thiet ke: Z (m)\n      301-Chieu rong thiet ke: W (m)\n      302-Chieu dai thiet ke: L (m)\n      303-Chieu cao thiet ke: H (m)\n      304-Hinh dang thiet ke: Mo ta kieu dang\n      401-Vat lieu thiet ke: Thep ma kem nhung nong\n      402-Cuong do thiet ke: SS400\n      403-Mo dun dan hoi: 2.1x10^5 MPa\n      406-Mau sac: Bac ma kem\n    \"\"\"\n    if not elements or len(elements) == 0:\n        return 0, \"\", []\n\n    # Xu ly tien to ma va so thu tu khoi dau\n    base_prefix = prefix\n    start_seq = 1\n    m = re.match(r'^(.*?)(\\d+)$', prefix.strip())\n    if m:\n        base_prefix = m.group(1)\n        start_seq = int(m.group(2))\n    elif not base_prefix.endswith('-') and not base_prefix.endswith('_'):\n        base_prefix += '-'\n\n    # Sap xep tang dan deu dan doc theo tuyen\n    sorted_elems = sort_elements_along_corridor(elements)\n    count = 0\n    errors = []\n\n    first_code = \"{0}{1:03d}\".format(base_prefix, start_seq)\n    last_code = first_code\n\n    for i, inst in enumerate(sorted_elems):\n        try:\n            curr_seq = start_seq + i\n            mark_code = \"{0}{1:03d}\".format(base_prefix, curr_seq)\n            last_code = mark_code\n\n            # 1. Lay toa do thiet ke (X, Y, Z) tinh bang met\n            pt, x_m, y_m, z_m = get_element_location_and_coords(inst)\n\n            # 2. Trich xuat kich thuoc va hinh dang hinh hoc\n            width_m, length_m, height_m, shape_desc = extract_element_dimensions(inst)\n\n            # 3. Xac dinh mo ta cau kien neu de trong hoac tu dong\n            curr_elem_desc = elem_desc\n            if not curr_elem_desc or curr_elem_desc.strip().lower() in [\"\", \"auto\", \"tu dong\"]:\n                sym = getattr(inst, \"Symbol\", None)\n                fn = (getattr(sym, \"FamilyName\", \"\") + \" \" + getattr(inst, \"Name\", \"\")).lower()\n                if any(k in fn for k in [\"ton\", \"song\", \"guard\", \"ho lan\"]):\n                    curr_elem_desc = \"Tôn hộ lan\"\n                elif any(k in fn for k in [\"dpc\", \"phan cach\", \"barrier\"]):\n                    curr_elem_desc = \"Dải phân cách\"\n                elif any(k in fn for k in [\"rao\", \"fence\"]):\n                    curr_elem_desc = \"Hàng rào\"\n                elif any(k in fn for k in [\"bien\", \"sign\"]):\n                    curr_elem_desc = \"Biển báo\"\n                else:\n                    curr_elem_desc = \"Cấu kiện an toàn giao thông\"\n\n            # 4. Gan BuiltInParameter chuan cua Revit\n            # 4.1. BuiltInParameter.ALL_MODEL_MARK: Ma cau kien\n            try:\n                p_mark = inst.get_Parameter(BuiltInParameter.ALL_MODEL_MARK)\n                if p_mark and not p_mark.IsReadOnly:\n                    p_mark.Set(mark_code)\n            except Exception:\n                pass\n\n            # 4.2. BuiltInParameter.ALL_MODEL_INSTANCE_COMMENTS: Tong hop thong tin LOI\n            loi_summary = (\n                \"[BIM LOI] Mã: {0} | Phân loại: {1} | Mô tả: {2} | \"\n                \"Khu vực: {3} | Dự án: {4} | Tọa độ: ({5:.2f}, {6:.2f}, {7:.2f}) | \"\n                \"Vật liệu: {8} | Cường độ: {9} | Màu: {10}\"\n            ).format(\n                mark_code, cat_class, curr_elem_desc,\n                station_loc, project_loc, x_m, y_m, z_m,\n                material, strength, color\n            )\n            try:\n                p_comm = inst.get_Parameter(BuiltInParameter.ALL_MODEL_INSTANCE_COMMENTS)\n                if p_comm and not p_comm.IsReadOnly:\n                    p_comm.Set(loi_summary)\n            except Exception:\n                pass\n\n            # 5. Gan CAC THAM SO THEO FORM BIM (Group Data 100, 200, 300, 400)\n            # --- 100-THAM SO DINH DANH ---\n            set_element_param_smart(inst, \"101-\", [\"101-Mã cấu kiện\", \"101-Ma cau kien\", \"Mã cấu kiện\", \"Ma_Cau_Kien\", \"BIM_Code\"], mark_code)\n            set_element_param_smart(inst, \"102-\", [\"102-Phân loại cấu kiện\", \"102-Phan loai cau kien\", \"Phân loại cấu kiện\", \"Phan_Loai_Cau_Kien\"], cat_class)\n            set_element_param_smart(inst, \"105-\", [\"105-Mô tả cấu kiện\", \"105-Mo ta cau kien\", \"Mô tả cấu kiện\", \"Mo_Ta_Cau_Kien\", \"Description\"], curr_elem_desc)\n\n            # --- 200-THAM SO DINH VI ---\n            set_element_param_smart(inst, \"201-\", [\"201-Vị trí theo khu vực\", \"201-Vi tri theo khu vuc\", \"Vị trí theo khu vực\", \"Lý trình\", \"Ly_Trinh\"], station_loc)\n            set_element_param_smart(inst, \"202-\", [\"202-Vị trí theo dự án\", \"202-Vi tri theo du an\", \"Vị trí theo dự án\", \"Gói thầu\", \"Goi_Thau\", \"Dự án\"], project_loc)\n            set_element_param_smart(inst, \"203-\", [\"203-Tọa độ X thiết kế\", \"203-Toa do X thiet ke\", \"Tọa độ X thiết kế\", \"Coordinate_X\"], x_m, is_metric_length=True)\n            set_element_param_smart(inst, \"204-\", [\"204-Tọa độ Y thiết kế\", \"204-Toa do Y thiet ke\", \"Tọa độ Y thiết kế\", \"Coordinate_Y\"], y_m, is_metric_length=True)\n            set_element_param_smart(inst, \"205-\", [\"205-Cao độ thiết kế\", \"205-Cao do thiet ke\", \"Cao độ thiết kế\", \"Elevation\"], z_m, is_metric_length=True)\n\n            # --- 300-THAM SO HINH HOC ---\n            set_element_param_smart(inst, \"301-\", [\"301-Chiều rộng thiết kế\", \"301-Chieu rong thiet ke\", \"Chiều rộng thiết kế\", \"Width\"], width_m, is_metric_length=True)\n            set_element_param_smart(inst, \"302-\", [\"302-Chiều dài thiết kế\", \"302-Chieu dai thiet ke\", \"Chiều dài thiết kế\", \"Length\"], length_m, is_metric_length=True)\n            set_element_param_smart(inst, \"303-\", [\"303-Chiều cao thiết kế\", \"303-Chieu cao thiet ke\", \"Chiều cao thiết kế\", \"Height\"], height_m, is_metric_length=True)\n            set_element_param_smart(inst, \"304-\", [\"304-Hình dạng thiết kế\", \"304-Hinh dang thiet ke\", \"Hình dạng thiết kế\"], shape_desc)\n\n            # --- 400-THAM SO VAT LIEU ---\n            set_element_param_smart(inst, \"401-\", [\"401-Vật liệu thiết kế\", \"401-Vat lieu thiet ke\", \"Vật liệu thiết kế\", \"Vật liệu\", \"Material\"], material)\n            set_element_param_smart(inst, \"402-\", [\"402-Cường độ thiết kế\", \"402-Cuong do thiet ke\", \"Cường độ thiết kế\", \"Strength\"], strength)\n            set_element_param_smart(inst, \"403-\", [\"403-Mô đun đàn hồi\", \"403-Mo dun dan hoi\", \"Mô đun đàn hồi\", \"Elastic_Modulus\"], elastic_mod)\n            set_element_param_smart(inst, \"406-\", [\"406-Màu sắc\", \"406-Mau sac\", \"Màu sắc\", \"Color\"], color)\n\n            count += 1\n        except Exception as ex:\n            if len(errors) < 5:\n                errors.append(str(ex))\n\n    summary_code = \"{0} -> {1}\".format(first_code, last_code)\n    return count, summary_code, errors\n\n\n# ------------------------------------------------------------------------------\n# ENTRY POINT DYNAMO\n# ------------------------------------------------------------------------------\nif IS_DYNAMO:\n    # IN[0]: Loc/Doi tuong (Select Elements, FamilyInstance list, filter string, hoac de trong de lay tat ca)\n    input_0 = IN[0] if len(IN) > 0 else None\n\n    # IN[1] -> IN[9]: Cac thong tin Form LOI do nguoi dung nhap tren Dynamo Player\n    prefix_val      = str(IN[1]).strip() if len(IN) > 1 and IN[1] is not None and str(IN[1]).strip() != \"\" else \"TS-HTS-\"\n    category_val    = str(IN[2]).strip() if len(IN) > 2 and IN[2] is not None and str(IN[2]).strip() != \"\" else \"An toàn giao thông\"\n    elem_desc_val   = str(IN[3]).strip() if len(IN) > 3 and IN[3] is not None and str(IN[3]).strip() != \"\" else \"Tôn hộ lan\"\n    station_val     = str(IN[4]).strip() if len(IN) > 4 and IN[4] is not None and str(IN[4]).strip() != \"\" else \"Km16+000-Km25+000\"\n    project_loc_val = str(IN[5]).strip() if len(IN) > 5 and IN[5] is not None and str(IN[5]).strip() != \"\" else \"Tỉnh Tây Ninh\"\n    material_val    = str(IN[6]).strip() if len(IN) > 6 and IN[6] is not None and str(IN[6]).strip() != \"\" else \"Thép mạ kẽm nhúng nóng\"\n    strength_val    = str(IN[7]).strip() if len(IN) > 7 and IN[7] is not None and str(IN[7]).strip() != \"\" else \"SS400\"\n    modulus_val     = str(IN[8]).strip() if len(IN) > 8 and IN[8] is not None and str(IN[8]).strip() != \"\" else \"2.1x10^5 MPa\"\n    color_val       = str(IN[9]).strip() if len(IN) > 9 and IN[9] is not None and str(IN[9]).strip() != \"\" else \"Bạc mạ kẽm\"\n\n    \n# ------------------------------------------------------------------------------\n# TU DONG KHOI TAO & LIEN KET THAM SO LOI (DATA) VAO DU AN REVIT\n# ------------------------------------------------------------------------------\ndef ensure_shared_parameters_bound(document):\n    \"\"\"\n    Tu dong kiem tra va khoi tao toan bo 29 tham so LOI BIM (Data)\n    vao du an Revit hien tai neu file chua duoc tao/gan tham so.\n    \"\"\"\n    sp_path = r\"G:\\My Drive\\1.Work\\ATGT\\Tool ATGT\\Data\\4_LUOI CHONG CHOI\\SharedParameters_ATGT_LOI.txt\"\n    if not os.path.exists(sp_path):\n        return\n\n    revit_app = getattr(document, \"Application\", None)\n    if not revit_app:\n        return\n\n    orig_sp = revit_app.SharedParametersFilename\n    try:\n        revit_app.SharedParametersFilename = sp_path\n        sp_file = revit_app.OpenSharedParameterFile()\n        if not sp_file:\n            return\n\n        # Tap hop cac Category can gan tham so\n        cats = revit_app.Create.NewCategorySet()\n        cat_enums = [\n            BuiltInCategory.OST_StructuralFraming,\n            BuiltInCategory.OST_GenericModel,\n            BuiltInCategory.OST_Columns\n        ]\n        for c_enum in cat_enums:\n            try:\n                c = document.Settings.Categories.get_Item(c_enum)\n                if c:\n                    cats.Insert(c)\n            except Exception:\n                pass\n\n        binding = revit_app.Create.NewInstanceBinding(cats)\n\n        # Quet cac tham so da ton tai trong document\n        existing_names = set()\n        iterator = document.ParameterBindings.ForwardIterator()\n        while iterator.MoveNext():\n            try:\n                existing_names.add(iterator.Key.Name)\n            except Exception:\n                pass\n\n        # Nhom tham so: thu GroupTypeId.Data (Revit 2024+) hoac BuiltInParameterGroup.PG_DATA\n        group_id = None\n        try:\n            group_id = GroupTypeId.Data\n        except Exception:\n            try:\n                group_id = BuiltInParameterGroup.PG_DATA\n            except Exception:\n                pass\n\n        for grp in sp_file.Groups:\n            for p_def in grp.Definitions:\n                if p_def.Name not in existing_names:\n                    try:\n                        if group_id is not None:\n                            document.ParameterBindings.Insert(p_def, binding, group_id)\n                        else:\n                            document.ParameterBindings.Insert(p_def, binding)\n                    except Exception:\n                        pass\n    except Exception:\n        pass\n    finally:\n        try:\n            if orig_sp:\n                revit_app.SharedParametersFilename = orig_sp\n        except Exception:\n            pass\n\n    TransactionManager.Instance.EnsureInTransaction(doc)\n    ensure_shared_parameters_bound(doc)\n\n    elements = []\n\n    # 1. Kiem tra xem nguoi dung co dang quet chon doi tuong truc tiep trong Revit khong\n    if uidoc and uidoc.Selection:\n        try:\n            sel_ids = uidoc.Selection.GetElementIds()\n            if sel_ids and sel_ids.Count > 0:\n                for s_id in sel_ids:\n                    el = doc.GetElement(s_id)\n                    if el and not el.ViewSpecific:\n                        elements.append(el)\n        except Exception:\n            pass\n\n    # 2. Neu Revit Selection rong, kiem tra dau vao IN[0]\n    if len(elements) == 0 and input_0 is not None:\n        if isinstance(input_0, (list, tuple)) and len(input_0) > 0:\n            elements = unwrap_elements(input_0)\n        elif hasattr(input_0, \"InternalElement\") and isinstance(input_0.InternalElement, FamilySymbol):\n            sym_id = input_0.InternalElement.Id\n            filter_inst = FilteredElementCollector(doc).OfClass(FamilyInstance).WhereElementIsNotElementType().ToElements()\n            elements = [inst for inst in filter_inst if inst.Symbol.Id == sym_id]\n        elif isinstance(input_0, FamilySymbol):\n            filter_inst = FilteredElementCollector(doc).OfClass(FamilyInstance).WhereElementIsNotElementType().ToElements()\n            elements = [inst for inst in filter_inst if inst.Symbol.Id == input_0.Id]\n        elif hasattr(input_0, \"Id\") or hasattr(input_0, \"InternalElement\"):\n            elements = unwrap_elements(input_0)\n\n    # 3. Neu van rong (hoac IN[0] la chuoi filter hoac de trong), tu dong quet toan bo cau kien ATGT\n    if len(elements) == 0:\n        filter_str = str(input_0).strip().lower() if input_0 is not None and isinstance(input_0, (str, bytes)) else \"\"\n        \n        # Quet qua 3 Category chinh chua cau kien ATGT\n        cat_list = [\n            BuiltInCategory.OST_GenericModel,\n            BuiltInCategory.OST_StructuralFraming,\n            BuiltInCategory.OST_Columns\n        ]\n        \n        all_candidates = []\n        for cat in cat_list:\n            try:\n                col = FilteredElementCollector(doc).OfCategory(cat).WhereElementIsNotElementType().ToElements()\n                all_candidates.extend(col)\n            except Exception:\n                pass\n\n        keywords = [\"ton\", \"song\", \"sóng\", \"guard\", \"ho lan\", \"hộ lan\", \"dpc\", \"phan cach\", \"phân cách\", \"barrier\", \"rao\", \"hang rao\", \"hàng rào\", \"fence\", \"bien\", \"biển\", \"sign\", \"atgt\", \"q2p\", \"luoi\", \"lưới\", \"chong choi\", \"chống chói\", \"ts-zz\"]\n\n        for e in all_candidates:\n            e_name = (getattr(e, \"Name\", \"\") or \"\").lower()\n            sym = getattr(e, \"Symbol\", None)\n            f_name = (getattr(sym, \"FamilyName\", \"\") or \"\").lower() if sym else \"\"\n            comb = e_name + \" \" + f_name\n\n            if filter_str and filter_str not in [\"\", \"all\", \"tat ca\"]:\n                if filter_str in comb:\n                    elements.append(e)\n            else:\n                if any(kw in comb for kw in keywords):\n                    elements.append(e)\n\n    # Thuc thi gan thong tin\n    if len(elements) > 0:\n        assigned_count, code_range, errs = assign_bim_loi_form(\n            doc, elements,\n            prefix=prefix_val,\n            cat_class=category_val,\n            elem_desc=elem_desc_val,\n            station_loc=station_val,\n            project_loc=project_loc_val,\n            material=material_val,\n            strength=strength_val,\n            elastic_mod=modulus_val,\n            color=color_val\n        )\n        TransactionManager.Instance.TransactionTaskDone()\n\n        report_lines = [\n            \"=\" * 60,\n            \"THANH CONG: DA GAN FORM THONG TIN BIM LOI CHO {0} CAU KIEN!\".format(assigned_count),\n            \"=\" * 60,\n            \"- Khoang ma cau kien (101): [{0}]\".format(code_range),\n            \"- Phan loai cau kien (102): {0}\".format(category_val),\n            \"- Mo ta cau kien      (105): {0}\".format(elem_desc_val),\n            \"- Vi tri khu vuc     (201): {0}\".format(station_val),\n            \"- Vi tri du an       (202): {0}\".format(project_loc_val),\n            \"- Toa do & Cao do (203-205): Tu dong tinh toan chinh xac (m)\",\n            \"- Hinh hoc        (301-304): Tu dong trich xuat Rong x Dai x Cao & Hinh dang\",\n            \"- Vat lieu thiet ke  (401): {0}\".format(material_val),\n            \"- Cuong do thiet ke  (402): {0}\".format(strength_val),\n            \"- Mo dun dan hoi     (403): {0}\".format(modulus_val),\n            \"- Mau sac thiet ke   (406): {0}\".format(color_val),\n            \"- Revit Parameters       : Dong bo ALL_MODEL_MARK & COMMENTS\",\n            \"=\" * 60\n        ]\n        if errs:\n            report_lines.append(\"Luu y mot so thong bao ngoai le: \" + \" | \".join(errs[:3]))\n\n        OUT = \"\\n\".join(report_lines)\n    else:\n        TransactionManager.Instance.TransactionTaskDone()\n        OUT = (\n            \"THONG BAO: Khong tim thay doi tuong ATGT phu hop de gan LOI.\\n\"\n            \"Huong dan su dung:\\n\"\n            \"1. Ban co the quet chon cac doi tuong ATGT trong Revit truoc khi bam Run.\\n\"\n            \"2. Hoac nhap ten loai Family can loc vao o input dau tien [0].\\n\"\n            \"3. Hoac de trong o [0] de cong cu tu dong tim kiem toan bo cau kien ATGT trong du an!\"\n        )\n",
+      "Engine": "CPython3"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "WatchWidth": 520.0,
+      "WatchHeight": 260.0,
+      "Id": "ef8d4396ec4c522eb7d6629afcc1f191",
+      "NodeType": "ExtensionNode",
+      "Inputs": [
+        {
+          "Id": "9f11715a901e529da6b2d469cdcd5098",
+          "Name": "",
+          "Description": "Node to evaluate.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "749fef443df55846be6fcef649849bff",
+          "Name": "",
+          "Description": "Result",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualizes a node's output"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "a550d1a802bd5983b49ef62034b0f312",
+      "End": "16e5061c319f566cadb68bf25ec25864",
+      "Id": "6115de6bcc445883a7135f48ba0cc79a"
+    },
+    {
+      "Start": "28ba7392c23d56d1b6b61f515b6a03c3",
+      "End": "4b011321620b529c99ae8b43c2249899",
+      "Id": "ecec27a36df55017a378ea6b14dcc327"
+    },
+    {
+      "Start": "2baff9d4a73656ea8f5b071d8e099b13",
+      "End": "41287fcb8fb15f23ad67141df35e8635",
+      "Id": "1757ac87e96659ee8ca82ee5eeabd027"
+    },
+    {
+      "Start": "9a5063f7ceb75405b08144013c9a3c7d",
+      "End": "47d278cd8229579285cec59aaa7aabb8",
+      "Id": "b7c49da370ae5b189ca40ac1a4983674"
+    },
+    {
+      "Start": "7c04dd6ae99254b9a5773b603ecbdcce",
+      "End": "7ba3cc3b8625585589ba9d7cf8d0d873",
+      "Id": "b84ec389bb04514d8a6f6b5d4a35da78"
+    },
+    {
+      "Start": "27bf44ec1bc8563790f4348af92c4644",
+      "End": "8ba67a07101155249c5219c9ced6de9f",
+      "Id": "67375a23ee355d67a4f45613806cf2c5"
+    },
+    {
+      "Start": "516288c8acac54e5818aa6b01d8f4453",
+      "End": "f965708f47eb5900b6513f19ed067f76",
+      "Id": "d21b31dd80065e5cabeadf101bdacde3"
+    },
+    {
+      "Start": "8db2d9c2baa65ac498715aeeb6f63430",
+      "End": "1918778779bb5322bfa98d1fe99f7154",
+      "Id": "be7c7ddf99a4575a9f005d74d9477c8f"
+    },
+    {
+      "Start": "9fda791eaf6157d48259f7b598b22c9d",
+      "End": "b64d7028b00d5631bd9860d77bba7f2d",
+      "Id": "f255493459c4561d8156d5289567f9f1"
+    },
+    {
+      "Start": "d67c0d82bb20510197a5ec5c23db1b72",
+      "End": "82d619514b0b59cf8071013c5c3273ef",
+      "Id": "753a178a974257af877ba810b7690590"
+    },
+    {
+      "Start": "d0f477876dee5813aa19bcacf4e2c770",
+      "End": "9f11715a901e529da6b2d469cdcd5098",
+      "Id": "90e3dfaf22415ad99a6c47287a95ea3f"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [],
+  "Author": "ATGT BIM Automation",
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.19.3.6394",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "_Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "ConnectorPins": [],
+    "NodeViews": [
+      {
+        "Id": "b8c8e80bb33d51fbb69bf3ebafa5863e",
+        "Name": "0. CHỌN / LỌC ĐỐI TƯỢNG (Để trống = Tự động gán toàn bộ cấu kiện ATGT)",
+        "IsSetAsInput": true,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": false,
+        "X": 80.0,
+        "Y": 100.0
+      },
+      {
+        "Id": "530de102d8395299b7c9da0d611f86f8",
+        "Name": "1. [101] TIỀN TỐ MÃ CẤU KIỆN (Số thứ tự tự động 001, 002, 003...)",
+        "IsSetAsInput": true,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": false,
+        "X": 80.0,
+        "Y": 215.0
+      },
+      {
+        "Id": "fdc969cc2e585bd1b93d5a211401f03b",
+        "Name": "2. [102] PHÂN LOẠI CẤU KIỆN",
+        "IsSetAsInput": true,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": false,
+        "X": 80.0,
+        "Y": 330.0
+      },
+      {
+        "Id": "459bf83b74ab56e4942f805af6138c7d",
+        "Name": "3. [105] MÔ TẢ CẤU KIỆN [Tôn hộ lan / Dải phân cách / Hàng rào]",
+        "IsSetAsInput": true,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": false,
+        "X": 80.0,
+        "Y": 445.0
+      },
+      {
+        "Id": "b4a53a545bb954a4934ec73d5f3ae71b",
+        "Name": "4. [201] VỊ TRÍ THEO KHU VỰC / LÝ TRÌNH [VD: Km16+000-Km25+000]",
+        "IsSetAsInput": true,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": false,
+        "X": 80.0,
+        "Y": 560.0
+      },
+      {
+        "Id": "30ef7d9307fa53f4a74419338d2c6cf5",
+        "Name": "5. [202] VỊ TRÍ THEO DỰ ÁN [VD: Tỉnh Tây Ninh]",
+        "IsSetAsInput": true,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": false,
+        "X": 80.0,
+        "Y": 675.0
+      },
+      {
+        "Id": "d2f3283ee3055db09b44d95120d42571",
+        "Name": "6. [401] VẬT LIỆU THIẾT KẾ [VD: Thép mạ kẽm nhúng nóng / BTXM M300]",
+        "IsSetAsInput": true,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": false,
+        "X": 80.0,
+        "Y": 790.0
+      },
+      {
+        "Id": "218913c0e87c5c229f0c0011107053c7",
+        "Name": "7. [402] CƯỜNG ĐỘ THIẾT KẾ [VD: SS400 / C25/30 / CT3]",
+        "IsSetAsInput": true,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": false,
+        "X": 80.0,
+        "Y": 905.0
+      },
+      {
+        "Id": "9a467c38f537599ba49757843db239bc",
+        "Name": "8. [403] MÔ ĐUN ĐÀN HỒI [VD: 2.1x10^5 MPa / 3.0x10^4 MPa]",
+        "IsSetAsInput": true,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": false,
+        "X": 80.0,
+        "Y": 1020.0
+      },
+      {
+        "Id": "bb6bae6b41ef5728afed4619610d80b7",
+        "Name": "9. [406] MÀU SẮC THIẾT KẾ [VD: Bạc mạ kẽm / Trắng - Đỏ / Xám bê tông]",
+        "IsSetAsInput": true,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": false,
+        "X": 80.0,
+        "Y": 1135.0
+      },
+      {
+        "Id": "073570037e0c5d1bb6cc6b28fb958cfa",
+        "Name": "[XỬ LÝ DYNAMO] TỰ ĐỘNG GÁN FORM LOI BIM THEO CHUẨN TCVN",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 950.0,
+        "Y": 350.0
+      },
+      {
+        "Id": "ef8d4396ec4c522eb7d6629afcc1f191",
+        "Name": "[KẾT QUẢ THỰC THI] BÁO CÁO GÁN LOI BIM CHI TIẾT",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": true,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 1400.0,
+        "Y": 350.0
+      }
+    ],
+    "Annotations": [],
+    "X": 150.0,
+    "Y": 50.0,
+    "Zoom": 0.85
+  }
+}

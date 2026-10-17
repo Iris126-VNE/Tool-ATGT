@@ -1,0 +1,720 @@
+{
+  "Uuid": "6292de74-4ab2-4579-83e0-2bf43dda2a9c",
+  "IsCustomNode": false,
+  "Description": "Lenh ATGT Chuyen Biet: Tu dong rai ton luon song ho lan (TS-ZZ-GUA) theo ben trai, ben phai, hoac ca hai ben tuyen duong.",
+  "Name": "[LENH ATGT] RAI TON SONG HO LAN",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [
+    {
+      "Id": "e932d6a891354f28809959d7990bad68",
+      "Name": "1. CHON TIM TUYEN / MO HINH (Click Select)",
+      "Type": "selection",
+      "Type2": "hostSelection",
+      "Value": "313313fb-b779-4575-b3d4-4a4fba676d4a-001a002d",
+      "Description": "Select a model element from the document."
+    },
+    {
+      "Id": "ab8a9d52fed049ea989717ac95458c20",
+      "Name": "2. CHON KIEU FAMILY TON SONG (Mac dinh = TS-ZZ-GUA)",
+      "Type": "string",
+      "Type2": "string",
+      "Value": "TS-ZZ-GUA",
+      "Description": "Creates a string"
+    },
+    {
+      "Id": "812193d26d604d52938b4e2d000d13da",
+      "Name": "3. VI TRI BEN TUYEN (Phai / Trai / Ca hai ben)",
+      "Type": "string",
+      "Type2": "string",
+      "Value": "Trai",
+      "Description": "Creates a string"
+    },
+    {
+      "Id": "18e715ba464340adbef589dec5752d2b",
+      "Name": "4. KHOANG CACH LECH TIM / MEP DUONG (m) [0.0: Mep; >0: Le]",
+      "Type": "string",
+      "Type2": "string",
+      "Value": "0.0",
+      "Description": "Creates a string"
+    },
+    {
+      "Id": "d72b0737ccc14c65b4d07e4c571be895",
+      "Name": "5. BUOC RAI / CHIEU DAI DOT TON L (m) [Mac dinh = 4.0m]",
+      "Type": "string",
+      "Type2": "string",
+      "Value": "6",
+      "Description": "Creates a string"
+    },
+    {
+      "Id": "782d660233cf41eea2c60253ba2adf73",
+      "Name": "6. CHIEU CAO DINH TON H (m) [Mac dinh = 0.75m]",
+      "Type": "string",
+      "Type2": "string",
+      "Value": "0.8",
+      "Description": "Creates a string"
+    },
+    {
+      "Id": "5845134763854a44a56b4f241f276e88",
+      "Name": "7. CAO DO Z OFFSET (m) [0.0: Mat duong]",
+      "Type": "string",
+      "Type2": "string",
+      "Value": "0.75",
+      "Description": "Creates a string"
+    },
+    {
+      "Id": "6c13c5d0ba4c4cbab422a786853b4a02",
+      "Name": "8. DAO CHIEU MAT TON 180 DO (Khong / Co)",
+      "Type": "string",
+      "Type2": "string",
+      "Value": "Khong",
+      "Description": "Creates a string"
+    },
+    {
+      "Id": "6495af3d37ee4a699ecfb141d5bca0f6",
+      "Name": "9. TEN LAYER CAD [Mac dinh = TS]",
+      "Type": "string",
+      "Type2": "string",
+      "Value": "TS",
+      "Description": "Creates a string"
+    },
+    {
+      "Id": "0d3440c099c54ce99a4c71b6b93c3907",
+      "Name": "10. MA TIEN TO LOI BIM [Mac dinh = TS-KM52-]",
+      "Type": "string",
+      "Type2": "string",
+      "Value": "TS-KM52-",
+      "Description": "Creates a string"
+    },
+    {
+      "Id": "6ebf45430bab48c7ae326ee13bfbe52c",
+      "Name": "11. GOI THAU VA LY TRINH",
+      "Type": "string",
+      "Type2": "string",
+      "Value": "Goi thau XL01 | Km52+000 - Km60+000",
+      "Description": "Creates a string"
+    }
+  ],
+  "Outputs": [
+    {
+      "Id": "543d781928b2408bb7821451bba3663e",
+      "Name": "[KET QUA THUC THI] XEM SO LUONG & KHOANG MA LOI",
+      "Type": "string",
+      "InitialValue": "THANH CONG: Da rai 56 dot Ton Luon Song Ho Lan chuan Structural Framing Beam (KHOANG CACH COT DEU NHAU CHUAN 2.00M, khong trung family)!\n- Tong chieu dai rai: 336.00 m | So cot: 112 cot (Buoc cot = 2.00 m deu nhau 100%)\n- Vi tri ben tuyen: Trai\n- Buoc dot L = 6.00 m (Moi dot gom 2 cot, noi tiep khit khau) | Dinh H = 0.80 m | Offset = 0.00 m\n- Khoang ma LOI BIM: [TS-KM52-0001 -> TS-KM52-0056]\n- Goi thau: Goi thau XL01 | Km52+000 - Km60+000\n- Huong mat ton: Tu dong quay vao long duong (traffic face inward).",
+      "Description": "Visualizes a node's output"
+    }
+  ],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Nodes.DSModelElementSelection, DSRevitNodesUI",
+      "NodeType": "ExtensionNode",
+      "InstanceId": [
+        "313313fb-b779-4575-b3d4-4a4fba676d4a-001a002d"
+      ],
+      "Id": "e932d6a891354f28809959d7990bad68",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "2daf696e2992438b99072680170fba98",
+          "Name": "Element",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Select a model element from the document."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.StringInput, CoreNodeModels",
+      "Id": "ab8a9d52fed049ea989717ac95458c20",
+      "NodeType": "StringInputNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "5d4b3f10d1db417d82650b95313fad31",
+          "Name": "",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Creates a string",
+      "InputValue": "TS-ZZ-GUA"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.StringInput, CoreNodeModels",
+      "Id": "812193d26d604d52938b4e2d000d13da",
+      "NodeType": "StringInputNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "af031834733d4ed8a4f97af842dc8374",
+          "Name": "",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Creates a string",
+      "InputValue": "Trai"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.StringInput, CoreNodeModels",
+      "Id": "18e715ba464340adbef589dec5752d2b",
+      "NodeType": "StringInputNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "a670762b9e9c4388b3713d80e2af0cd4",
+          "Name": "",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Creates a string",
+      "InputValue": "0.0"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.StringInput, CoreNodeModels",
+      "Id": "d72b0737ccc14c65b4d07e4c571be895",
+      "NodeType": "StringInputNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "bb67d703e7a8471b85ddfffe58e8c529",
+          "Name": "",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Creates a string",
+      "InputValue": "6"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.StringInput, CoreNodeModels",
+      "Id": "782d660233cf41eea2c60253ba2adf73",
+      "NodeType": "StringInputNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "0ff5d150fa6e4aed994068067ad6f3b8",
+          "Name": "",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Creates a string",
+      "InputValue": "0.8"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.StringInput, CoreNodeModels",
+      "Id": "5845134763854a44a56b4f241f276e88",
+      "NodeType": "StringInputNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "09c8821d12d4469d9f38b335e1957803",
+          "Name": "",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Creates a string",
+      "InputValue": "0.75"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.StringInput, CoreNodeModels",
+      "Id": "6c13c5d0ba4c4cbab422a786853b4a02",
+      "NodeType": "StringInputNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "75b140c0c4974a53a06b34203fdf735e",
+          "Name": "",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Creates a string",
+      "InputValue": "Khong"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.StringInput, CoreNodeModels",
+      "Id": "6495af3d37ee4a699ecfb141d5bca0f6",
+      "NodeType": "StringInputNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "d1b6b728fb334943914079fb26c44381",
+          "Name": "",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Creates a string",
+      "InputValue": "TS"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.StringInput, CoreNodeModels",
+      "Id": "0d3440c099c54ce99a4c71b6b93c3907",
+      "NodeType": "StringInputNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "1fc983fcd6a14009b687a873a9e4bdf9",
+          "Name": "",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Creates a string",
+      "InputValue": "TS-KM52-"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.StringInput, CoreNodeModels",
+      "Id": "6ebf45430bab48c7ae326ee13bfbe52c",
+      "NodeType": "StringInputNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "f7fa743c2a77443e973e9ab6ef3bd484",
+          "Name": "",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Creates a string",
+      "InputValue": "Goi thau XL01 | Km52+000 - Km60+000"
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "Code": "﻿# -*- coding: utf-8 -*-\n\"\"\"\n================================================================================\nSCRIPT: Rai_Ton_Song_Revit.py\nTOOL ATGT DEDICATED: RAI TON LUON SONG HO LAN (W-BEAM GUARDRAIL)\nCHUAN MO HINH THUC TE REVIT (STRUCTURAL FRAMING BEAM CHUAN THEO LINE-BASED):\n  - KHOANG CACH GIUA CAC TRU (BUOC COT) DANG DEU NHAU CHINH XAC 100% (2.00m)\n  - Moi dot ton dai dung 4.0m gom 2 cot do (TCVN 12681:2019)\n  - Noi tiep khit khao giua cac dot ton lien tiep (khong bi lech, khong khoang trong)\n  - Tu dong stitch/chain cac doan CAD 3D Polyline roi rac thanh 1 tuyen lien tuc\n  - Tu dong lay dung cao do 3D (Pitch Slope) theo tim tuyen\n  - Tu dong don dep cac FamilyInstance cu tren tuyen tranh trung family\n  - Ho tro chon Ben Phai, Ben Trai, Ca hai ben & Dao chieu 180 do\n================================================================================\n\"\"\"\n\nimport sys\nimport os\nimport math\n\nMETERS_TO_FEET = 3.28083989501312336\n\nDEBUG_LOG_PATH = r\"C:\\Users\\Admin\\.gemini\\antigravity-ide\\scratch\\debug_ton_song.log\"\n\ndef write_debug_log(msg):\n    try:\n        with open(DEBUG_LOG_PATH, \"a\") as f:\n            f.write(str(msg) + \"\\n\")\n    except Exception:\n        pass\n\ntry:\n    with open(DEBUG_LOG_PATH, \"w\") as f:\n        f.write(\"=== LOG RAI TON SONG HO LAN (LINE-BASED BEAM) ===\\n\")\nexcept Exception:\n    pass\n\nIS_DYNAMO = False\ntry:\n    import clr\n    clr.AddReference('RevitAPI')\n    clr.AddReference('RevitAPIUI')\n    clr.AddReference('RevitServices')\n    from Autodesk.Revit.DB import *\n    from Autodesk.Revit.DB.Structure import StructuralType\n    from RevitServices.Persistence import DocumentManager\n    from RevitServices.Transactions import TransactionManager\n    doc = DocumentManager.Instance.CurrentDBDocument\n    IS_DYNAMO = True\nexcept Exception:\n    try:\n        from Autodesk.Revit.DB import *\n        from Autodesk.Revit.DB.Structure import StructuralType\n    except Exception:\n        pass\n\n\nclass PolylinePath3D:\n    def __init__(self, points, layer_name=\"\"):\n        # Loc bo cac diem trung nhau lien tiep de tranh loi chia cho 0\n        cleaned = []\n        for p in points:\n            if not cleaned or p.DistanceTo(cleaned[-1]) > 1e-4:\n                cleaned.append(p)\n        self.points = cleaned\n        self.layer_name = layer_name\n        self.lengths = []\n        self.total_length = 0.0\n        self._compute_lengths()\n\n    def _compute_lengths(self):\n        self.lengths = [0.0]\n        accum = 0.0\n        for i in range(len(self.points) - 1):\n            p1 = self.points[i]\n            p2 = self.points[i + 1]\n            seg_len = p1.DistanceTo(p2)\n            accum += seg_len\n            self.lengths.append(accum)\n        self.total_length = accum\n\n    def point_at_distance(self, dist):\n        if not self.points:\n            return None\n        if dist <= 0.0:\n            return self.points[0]\n        if dist >= self.total_length:\n            return self.points[-1]\n\n        for i in range(len(self.lengths) - 1):\n            if self.lengths[i] <= dist <= self.lengths[i + 1]:\n                seg_len = self.lengths[i + 1] - self.lengths[i]\n                if seg_len < 1e-7:\n                    return self.points[i]\n                t = (dist - self.lengths[i]) / seg_len\n                p1 = self.points[i]\n                p2 = self.points[i + 1]\n                return XYZ(\n                    p1.X + t * (p2.X - p1.X),\n                    p1.Y + t * (p2.Y - p1.Y),\n                    p1.Z + t * (p2.Z - p1.Z)\n                )\n        return self.points[-1]\n\n    def min_distance_to(self, pt):\n        \"\"\"Tinh khoang cach ngan nhat trong mat bang 2D tu diem pt den duong polyline\"\"\"\n        if not self.points:\n            return 999999.0\n        min_d = 999999.0\n        for i in range(len(self.points) - 1):\n            p1 = self.points[i]\n            p2 = self.points[i + 1]\n            dx = p2.X - p1.X\n            dy = p2.Y - p1.Y\n            seg_len_sq = dx * dx + dy * dy\n            if seg_len_sq < 1e-8:\n                d = math.sqrt((pt.X - p1.X)**2 + (pt.Y - p1.Y)**2)\n            else:\n                t = max(0.0, min(1.0, ((pt.X - p1.X)*dx + (pt.Y - p1.Y)*dy) / seg_len_sq))\n                proj_x = p1.X + t * dx\n                proj_y = p1.Y + t * dy\n                d = math.sqrt((pt.X - proj_x)**2 + (pt.Y - proj_y)**2)\n            if d < min_d:\n                min_d = d\n        return min_d\n\n\ndef get_symbol_names(symbol):\n    f_name = \"\"\n    t_name = \"\"\n    try:\n        f_name = symbol.Family.Name\n    except Exception:\n        try:\n            f_name = symbol.FamilyName\n        except Exception:\n            pass\n    try:\n        t_name = symbol.Name\n    except Exception:\n        pass\n    return f_name, t_name\n\n\ndef activate_symbol_safe(sym, document):\n    \"\"\"Kich hoat FamilySymbol an toan trong Transaction cua Revit\"\"\"\n    if sym is None:\n        return\n    try:\n        TransactionManager.Instance.EnsureInTransaction(document)\n        if not sym.IsActive:\n            sym.Activate()\n            document.Regenerate()\n    except Exception:\n        pass\n\n\ndef resolve_guardrail_family(document, family_input):\n    \"\"\"Nhan dien FamilySymbol ton song. Neu chua co, tu dong load TS-ZZ-GUA.rfa\"\"\"\n    TransactionManager.Instance.EnsureInTransaction(document)\n\n    if family_input is None:\n        target_name = \"ts-zz-gua\"\n    elif hasattr(family_input, \"InternalElement\"):\n        family_input = family_input.InternalElement\n        target_name = \"\"\n    elif isinstance(family_input, str):\n        target_name = family_input.strip().lower()\n    else:\n        target_name = str(family_input).strip().lower()\n\n    if isinstance(family_input, FamilySymbol):\n        activate_symbol_safe(family_input, document)\n        return family_input\n\n    collector = FilteredElementCollector(document).OfClass(FamilySymbol).WhereElementIsElementType().ToElements()\n\n    if target_name:\n        for sym in collector:\n            f_name, t_name = get_symbol_names(sym)\n            combined = (f_name + \" \" + t_name).lower()\n            if target_name in combined or target_name in f_name.lower() or target_name in t_name.lower():\n                activate_symbol_safe(sym, document)\n                return sym\n\n    for sym in collector:\n        f_name, t_name = get_symbol_names(sym)\n        combined = (f_name + \" \" + t_name).lower()\n        if any(k in combined for k in [\"ts-zz-gua\", \"ton_song\", \"guardrail\", \"ho lan\", \"ton song\"]):\n            activate_symbol_safe(sym, document)\n            return sym\n\n    rfa_paths = [\n        r\"G:\\My Drive\\1.Work\\ATGT\\Tool ATGT\\Data\\02_TON HO LAN\\Family\\TS-ZZ-GUA.rfa\",\n        r\"H:\\My Drive\\1.Work\\ATGT\\Tool ATGT\\Data\\02_TON HO LAN\\Family\\TS-ZZ-GUA.rfa\",\n        r\"C:\\Users\\Admin\\.gemini\\antigravity-ide\\scratch\\TS-ZZ-GUA.rfa\"\n    ]\n    for r_path in rfa_paths:\n        if os.path.exists(r_path):\n            try:\n                loaded_fam = clr.Reference[Family]()\n                if document.LoadFamily(r_path, loaded_fam):\n                    fam = loaded_fam.Value\n                    for sym_id in fam.GetFamilySymbolIds():\n                        sym = document.GetElement(sym_id)\n                        if sym:\n                            activate_symbol_safe(sym, document)\n                            return sym\n            except Exception:\n                pass\n\n    return None\n\n\ndef get_best_level(document, target_z_feet):\n    \"\"\"Tim Level gan nhat voi cao do target_z_feet\"\"\"\n    try:\n        levels = list(FilteredElementCollector(document).OfClass(Level).ToElements())\n        if not levels:\n            return None\n        return min(levels, key=lambda lvl: abs(lvl.Elevation - target_z_feet))\n    except Exception:\n        return None\n\n\ndef cleanup_existing_guardrails_along_paths(document, paths, fam_name=\"TS-ZZ-GUA\", max_dist_feet=65.0):\n    \"\"\"Don dep tat ca FamilyInstance ton song cu doc theo tim tuyen de tranh trung lap.\"\"\"\n    deleted_count = 0\n    try:\n        all_pts = []\n        for p in paths:\n            all_pts.extend(p.points)\n        if not all_pts:\n            return 0\n\n        min_x = min(pt.X for pt in all_pts) - max_dist_feet\n        max_x = max(pt.X for pt in all_pts) + max_dist_feet\n        min_y = min(pt.Y for pt in all_pts) - max_dist_feet\n        max_y = max(pt.Y for pt in all_pts) + max_dist_feet\n\n        collector = FilteredElementCollector(document).OfClass(FamilyInstance).WhereElementIsNotElementType().ToElements()\n        to_delete = []\n        f_target = fam_name.lower().strip() if fam_name else \"ts-zz-gua\"\n\n        guard_keywords = [\n            \"ts-zz-gua\", \"ts\", \"ton\", \"song\", \"guard\", \"gua\", \"ho lan\", \"w-beam\"\n        ]\n\n        for inst in collector:\n            try:\n                pt = None\n                loc = getattr(inst, \"Location\", None)\n                if loc:\n                    if hasattr(loc, \"Point\") and loc.Point:\n                        pt = loc.Point\n                    elif hasattr(loc, \"Curve\") and loc.Curve:\n                        pt = loc.Curve.GetEndPoint(0)\n\n                if pt is None:\n                    bb = inst.get_BoundingBox(None)\n                    if bb:\n                        pt = XYZ((bb.Min.X + bb.Max.X)*0.5, (bb.Min.Y + bb.Max.Y)*0.5, (bb.Min.Z + bb.Max.Z)*0.5)\n\n                if pt is None:\n                    continue\n\n                if pt.X < min_x or pt.X > max_x or pt.Y < min_y or pt.Y > max_y:\n                    continue\n\n                s_fam_name = \"\"\n                s_type_name = \"\"\n                sym = getattr(inst, \"Symbol\", None)\n                if sym:\n                    s_type_name = str(sym.Name).lower()\n                    if sym.Family:\n                        s_fam_name = str(sym.Family.Name).lower()\n                else:\n                    type_id = inst.GetTypeId()\n                    if type_id != ElementId.InvalidElementId:\n                        elem_type = document.GetElement(type_id)\n                        if elem_type:\n                            s_type_name = str(elem_type.Name).lower()\n                            if hasattr(elem_type, \"FamilyName\"):\n                                s_fam_name = str(elem_type.FamilyName).lower()\n\n                mark_str = \"\"\n                try:\n                    mark_p = inst.get_Parameter(BuiltInParameter.ALL_MODEL_MARK)\n                    if mark_p:\n                        mark_str = mark_p.AsString() or \"\"\n                except Exception:\n                    pass\n\n                comm_str = \"\"\n                try:\n                    comm_p = inst.get_Parameter(BuiltInParameter.ALL_MODEL_INSTANCE_COMMENTS)\n                    if comm_p:\n                        comm_str = comm_p.AsString() or \"\"\n                except Exception:\n                    pass\n\n                is_ts = False\n                if f_target and (f_target in s_fam_name or s_fam_name in f_target or f_target in s_type_name or s_type_name in f_target):\n                    is_ts = True\n                elif any(k in s_fam_name for k in guard_keywords):\n                    is_ts = True\n                elif any(k in s_type_name for k in guard_keywords):\n                    is_ts = True\n                elif mark_str and mark_str.startswith(\"TS-\"):\n                    is_ts = True\n                elif comm_str and \"[LOI BIM ATGT]\" in comm_str:\n                    is_ts = True\n\n                if is_ts:\n                    for p in paths:\n                        if p.min_distance_to(pt) <= max_dist_feet:\n                            to_delete.append(inst.Id)\n                            break\n            except Exception:\n                pass\n\n        if to_delete:\n            from System.Collections.Generic import List\n            del_list = List[ElementId]()\n            for eid in set(to_delete):\n                del_list.Add(eid)\n            del_res = document.Delete(del_list)\n            deleted_count = len(del_res)\n            write_debug_log(\"Da don dep {0} doi tuong ton song cu tren tuyen.\".format(deleted_count))\n    except Exception as ex:\n        write_debug_log(\"Loi don dep ton song cu: \" + str(ex))\n    return deleted_count\n\n\ndef stitch_segments_into_continuous_paths(segments, tol=0.5):\n    \"\"\"\n    Noi tat ca cac doan thang/curve 3D roi rac thanh cac chuoi Polyline lien tuc.\n    tol: dung sai ket noi dau mut (mac dinh 0.5 feet ~ 15cm).\n    \"\"\"\n    if not segments:\n        return []\n\n    remaining = []\n    for p0, p1 in segments:\n        if p0.DistanceTo(p1) > 1e-4:\n            remaining.append([p0, p1])\n\n    if not remaining:\n        return []\n\n    chains = []\n\n    while remaining:\n        current_chain = remaining.pop(0)\n\n        # Mo rong ve phia sau (tail)\n        extended = True\n        while extended:\n            extended = False\n            tail = current_chain[-1]\n            best_idx = -1\n            best_dist = tol\n            reverse_cand = False\n\n            for i, seg in enumerate(remaining):\n                d_start = tail.DistanceTo(seg[0])\n                d_end = tail.DistanceTo(seg[1])\n\n                if d_start < best_dist:\n                    best_dist = d_start\n                    best_idx = i\n                    reverse_cand = False\n                elif d_end < best_dist:\n                    best_dist = d_end\n                    best_idx = i\n                    reverse_cand = True\n\n            if best_idx >= 0:\n                seg = remaining.pop(best_idx)\n                if reverse_cand:\n                    seg.reverse()\n                current_chain.extend(seg[1:])\n                extended = True\n\n        # Mo rong ve phia truoc (head)\n        extended = True\n        while extended:\n            extended = False\n            head = current_chain[0]\n            best_idx = -1\n            best_dist = tol\n            prepend_as_is = False\n\n            for i, seg in enumerate(remaining):\n                d_end = head.DistanceTo(seg[-1])\n                d_start = head.DistanceTo(seg[0])\n\n                if d_end < best_dist:\n                    best_dist = d_end\n                    best_idx = i\n                    prepend_as_is = True\n                elif d_start < best_dist:\n                    best_dist = d_start\n                    best_idx = i\n                    prepend_as_is = False\n\n            if best_idx >= 0:\n                seg = remaining.pop(best_idx)\n                if not prepend_as_is:\n                    seg.reverse()\n                current_chain = seg[:-1] + current_chain\n                extended = True\n\n        if len(current_chain) >= 2:\n            chains.append(PolylinePath3D(current_chain, \"Stitched_Corridor\"))\n\n    # Sap xep theo chieu dai giam dan (duong tuyen chinh dai nhat len dau)\n    chains.sort(key=lambda c: c.total_length, reverse=True)\n    return chains\n\n\ndef extract_paths_from_input(elem, document, layer_filter=\"\"):\n    \"\"\"\n    Trich xuat toan bo duong dan tu Element duoc chon trong Dynamo.\n    Ho tro 100%: CAD ImportInstance (3D Polyline / Layer TS), PolyLine, PolyCurve, Curve.\n    Moi phan doan deu duoc noi (stitch) thanh chuoi lien tuc hoan hao.\n    \"\"\"\n    if elem is None:\n        return []\n\n    raw_list = []\n    if isinstance(elem, (list, tuple)):\n        for x in elem:\n            if isinstance(x, (list, tuple)):\n                raw_list.extend(x)\n            elif x is not None:\n                raw_list.append(x)\n    else:\n        raw_list.append(elem)\n\n    # Neu da la tap hop diem truc tiep\n    if len(raw_list) >= 2 and all(hasattr(p, \"X\") and hasattr(p, \"Y\") for p in raw_list):\n        pts = []\n        for p in raw_list:\n            z_val = getattr(p, \"Z\", 0.0)\n            pts.append(XYZ(p.X, p.Y, z_val))\n        return [PolylinePath3D(pts, \"PointList\")]\n\n    collected_segments = []\n\n    for item in raw_list:\n        if item is None:\n            continue\n\n        revit_elem = item\n        if hasattr(item, \"InternalElement\") and item.InternalElement is not None:\n            revit_elem = item.InternalElement\n\n        if isinstance(revit_elem, ElementId):\n            try:\n                revit_elem = document.GetElement(revit_elem)\n            except Exception:\n                pass\n\n        # Dynamo PolyCurve\n        if hasattr(item, \"Curves\"):\n            try:\n                sub_c = item.Curves() if callable(item.Curves) else item.Curves\n                for sc in sub_c:\n                    p0 = XYZ(sc.StartPoint.X, sc.StartPoint.Y, sc.StartPoint.Z)\n                    p1 = XYZ(sc.EndPoint.X, sc.EndPoint.Y, sc.EndPoint.Z)\n                    collected_segments.append((p0, p1))\n                continue\n            except Exception:\n                pass\n\n        # Dynamo Curve\n        if hasattr(item, \"StartPoint\") and hasattr(item, \"EndPoint\"):\n            try:\n                p0 = XYZ(item.StartPoint.X, item.StartPoint.Y, item.StartPoint.Z)\n                p1 = XYZ(item.EndPoint.X, item.EndPoint.Y, item.EndPoint.Z)\n                collected_segments.append((p0, p1))\n                continue\n            except Exception:\n                pass\n\n        # Revit PolyLine truc tiep\n        is_poly = False\n        try:\n            if isinstance(revit_elem, PolyLine) or (hasattr(revit_elem, \"GetType\") and revit_elem.GetType().Name == \"PolyLine\"):\n                is_poly = True\n        except Exception:\n            pass\n\n        if is_poly:\n            try:\n                coords = revit_elem.GetCoordinates()\n                if coords and len(coords) >= 2:\n                    for i in range(len(coords) - 1):\n                        collected_segments.append((coords[i], coords[i + 1]))\n                continue\n            except Exception:\n                pass\n\n        # Revit Curve truc tiep\n        if isinstance(revit_elem, Curve):\n            collected_segments.append((revit_elem.GetEndPoint(0), revit_elem.GetEndPoint(1)))\n            continue\n\n        # CAD ImportInstance / GeometryElement\n        if hasattr(revit_elem, \"get_Geometry\"):\n            try:\n                opt = Options()\n                opt.DetailLevel = ViewDetailLevel.Fine\n                opt.IncludeNonVisibleObjects = True\n\n                geom = revit_elem.get_Geometry(opt)\n                if not geom:\n                    opt_def = Options()\n                    geom = revit_elem.get_Geometry(opt_def)\n\n                if geom:\n                    def parse_geom(g_obj, cur_layer=\"\", transform=None):\n                        if g_obj is None:\n                            return\n\n                        layer = cur_layer\n                        if hasattr(g_obj, \"GraphicsStyleId\") and g_obj.GraphicsStyleId != ElementId.InvalidElementId:\n                            try:\n                                gs = document.GetElement(g_obj.GraphicsStyleId)\n                                if gs and gs.GraphicsStyleCategory:\n                                    layer = gs.GraphicsStyleCategory.Name\n                            except Exception:\n                                pass\n\n                        # Loc layer CAD neu co filter\n                        if layer_filter and layer:\n                            f_clean = layer_filter.strip().lower()\n                            if f_clean not in layer.lower():\n                                if not isinstance(g_obj, GeometryInstance):\n                                    return\n\n                        if isinstance(g_obj, GeometryInstance):\n                            inst_geom = None\n                            try:\n                                inst_geom = g_obj.GetInstanceGeometry()\n                            except Exception:\n                                pass\n\n                            count_before = len(collected_segments)\n                            if inst_geom:\n                                for sub_g in inst_geom:\n                                    parse_geom(sub_g, layer, None)\n\n                            if len(collected_segments) > count_before:\n                                return\n\n                            sym_geom = None\n                            try:\n                                sym_geom = g_obj.GetSymbolGeometry()\n                            except Exception:\n                                pass\n\n                            inst_tr = g_obj.Transform if hasattr(g_obj, \"Transform\") else None\n                            if transform is not None and inst_tr is not None:\n                                current_tr = transform.Multiply(inst_tr)\n                            elif inst_tr is not None:\n                                current_tr = inst_tr\n                            else:\n                                current_tr = transform\n\n                            if sym_geom:\n                                for sub_g in sym_geom:\n                                    parse_geom(sub_g, layer, current_tr)\n                            return\n\n                        is_sub_poly = False\n                        try:\n                            if isinstance(g_obj, PolyLine) or (hasattr(g_obj, \"GetType\") and g_obj.GetType().Name == \"PolyLine\"):\n                                is_sub_poly = True\n                        except Exception:\n                            pass\n\n                        if is_sub_poly:\n                            try:\n                                coords = g_obj.GetCoordinates()\n                                if coords and len(coords) >= 2:\n                                    for i in range(len(coords) - 1):\n                                        pt_a = transform.OfPoint(coords[i]) if transform else coords[i]\n                                        pt_b = transform.OfPoint(coords[i + 1]) if transform else coords[i + 1]\n                                        collected_segments.append((pt_a, pt_b))\n                                return\n                            except Exception:\n                                pass\n\n                        if isinstance(g_obj, Curve):\n                            try:\n                                c = g_obj.CreateTransformed(transform) if transform else g_obj\n                                collected_segments.append((c.GetEndPoint(0), c.GetEndPoint(1)))\n                                return\n                            except Exception:\n                                pass\n\n                        if hasattr(g_obj, \"GetEnumerator\") and not isinstance(g_obj, (PolyLine, Curve, Solid)):\n                            try:\n                                for sub in g_obj:\n                                    parse_geom(sub, layer, transform)\n                                return\n                            except Exception:\n                                pass\n\n                    for g in geom:\n                        parse_geom(g, \"\", None)\n\n            except Exception as ex_g:\n                write_debug_log(\"Loi doc Geometry: \" + str(ex_g))\n\n    write_debug_log(\"Tong so segments thu thap duoc: {0}\".format(len(collected_segments)))\n\n    # Stitch tat ca cac segments thanh cac chuoi Polyline lien tuc\n    stitched = stitch_segments_into_continuous_paths(collected_segments, tol=0.5)\n    write_debug_log(\"So chuoi duong dan sau khi stitch: {0}\".format(len(stitched)))\n    for idx, sp in enumerate(stitched):\n        write_debug_log(\"  Path {0}: Chieu dai = {1:.2f} m ({2} diem)\".format(\n            idx, sp.total_length / METERS_TO_FEET, len(sp.points)\n        ))\n\n    return stitched\n\n\ndef apply_guardrail_dimensions(inst, length_m, height_m):\n    \"\"\"Gan thong so L va H vao FamilyInstance\"\"\"\n    for l_name in [\"L\", \"Length\", \"Chieu dai\", \"DoanTon\"]:\n        try:\n            p = inst.LookupParameter(l_name)\n            if p and not p.IsReadOnly:\n                p.Set(length_m * METERS_TO_FEET)\n                break\n        except Exception:\n            pass\n    for h_name in [\"H\", \"Height\", \"Chieu cao\", \"DinhTon\"]:\n        try:\n            p = inst.LookupParameter(h_name)\n            if p and not p.IsReadOnly:\n                p.Set(height_m * METERS_TO_FEET)\n                break\n        except Exception:\n            pass\n\n\ndef apply_loi_param_value(param, value, is_metric_length=False):\n    \"\"\"Gan gia tri vao tham so Revit theo dung kieu du lieu StorageType\"\"\"\n    if param is None or param.IsReadOnly or value is None:\n        return False\n    st_name = str(getattr(param, \"StorageType\", \"\"))\n    try:\n        if \"String\" in st_name:\n            if isinstance(value, float):\n                param.Set(\"{0:.3f}\".format(value))\n            else:\n                param.Set(str(value))\n            return True\n        elif \"Double\" in st_name:\n            val_f = float(value)\n            if is_metric_length:\n                param.Set(val_f / 0.3048)\n            else:\n                param.Set(val_f)\n            return True\n        elif \"Integer\" in st_name:\n            param.Set(int(value))\n            return True\n    except Exception:\n        pass\n    return False\n\n\ndef set_loi_param_smart(inst, prefix_tag, candidate_names, value, is_metric_length=False):\n    \"\"\"Tim kiem va gan gia tri cho tham so trong Revit theo Prefix va Candidate list\"\"\"\n    if inst is None or value is None:\n        return False\n\n    for name in candidate_names:\n        try:\n            p = inst.LookupParameter(name)\n            if p and not p.IsReadOnly:\n                if apply_loi_param_value(p, value, is_metric_length):\n                    return True\n        except Exception:\n            pass\n\n    if prefix_tag:\n        clean_prefix = prefix_tag.lower().strip()\n        try:\n            for p in inst.Parameters:\n                if p and not p.IsReadOnly and p.Definition:\n                    p_name_lower = p.Definition.Name.lower().strip()\n                    if p_name_lower.startswith(clean_prefix):\n                        if apply_loi_param_value(p, value, is_metric_length):\n                            return True\n        except Exception:\n            pass\n\n    try:\n        norm_cands = [c.lower().replace(\"_\", \"\").replace(\" \", \"\").replace(\"-\", \"\") for c in candidate_names]\n        for p in inst.Parameters:\n            if p and not p.IsReadOnly and p.Definition:\n                p_norm = p.Definition.Name.lower().replace(\"_\", \"\").replace(\" \", \"\").replace(\"-\", \"\")\n                if p_norm in norm_cands:\n                    if apply_loi_param_value(p, value, is_metric_length):\n                        return True\n    except Exception:\n        pass\n\n    return False\n\n\ndef assign_loi_data(inst, seq_num, station_m, side_label, prefix=\"TS-HTS-\", package=\"Tỉnh Tây Ninh\"):\n    \"\"\"Gan ma cau kien va thong tin BIM LOI cho tung tam ton song theo chuan form BIM\"\"\"\n    if not prefix:\n        prefix = \"TS-HTS-\"\n    if not prefix.endswith('-') and not prefix.endswith('_'):\n        prefix += '-'\n\n    mark_code = \"{0}{1:03d}\".format(prefix, seq_num)\n    try:\n        p_mark = inst.get_Parameter(BuiltInParameter.ALL_MODEL_MARK)\n        if p_mark and not p_mark.IsReadOnly:\n            p_mark.Set(mark_code)\n    except Exception:\n        pass\n\n    km_val = int(station_m / 1000.0)\n    m_val = station_m - (km_val * 1000.0)\n    station_str = \"Km{0}+{1:06.2f}\".format(km_val, m_val)\n\n    # Toa do thuc te (m)\n    x_m, y_m, z_m = 0.0, 0.0, 0.0\n    loc = getattr(inst, \"Location\", None)\n    if hasattr(loc, \"Point\"):\n        pt = loc.Point\n        x_m, y_m, z_m = pt.X * 0.3048, pt.Y * 0.3048, pt.Z * 0.3048\n    elif hasattr(loc, \"Curve\") and loc.Curve:\n        mid = (loc.Curve.GetEndPoint(0) + loc.Curve.GetEndPoint(1)) * 0.5\n        x_m, y_m, z_m = mid.X * 0.3048, mid.Y * 0.3048, mid.Z * 0.3048\n\n    loi_comments = (\n        \"[BIM LOI] Mã: {0} | Vị trí: {1} | Lý trình: {2} | Dự án: {3} | Tọa độ: ({4:.2f}, {5:.2f}, {6:.2f})\"\n    ).format(mark_code, side_label, station_str, package, x_m, y_m, z_m)\n\n    try:\n        p_comm = inst.get_Parameter(BuiltInParameter.ALL_MODEL_INSTANCE_COMMENTS)\n        if p_comm and not p_comm.IsReadOnly:\n            p_comm.Set(loi_comments)\n    except Exception:\n        pass\n\n    # Gan cac tham so theo form BIM\n    set_loi_param_smart(inst, \"101-\", [\"101-Mã cấu kiện\", \"Mã cấu kiện\", \"Ma_Cau_Kien\"], mark_code)\n    set_loi_param_smart(inst, \"102-\", [\"102-Phân loại cấu kiện\", \"Phân loại cấu kiện\"], \"An toàn giao thông\")\n    set_loi_param_smart(inst, \"105-\", [\"105-Mô tả cấu kiện\", \"Mô tả cấu kiện\"], \"Tôn hộ lan\")\n    set_loi_param_smart(inst, \"201-\", [\"201-Vị trí theo khu vực\", \"Vị trí theo khu vực\", \"Lý trình\"], station_str)\n    set_loi_param_smart(inst, \"202-\", [\"202-Vị trí theo dự án\", \"Vị trí theo dự án\", \"Dự án\"], package)\n    set_loi_param_smart(inst, \"203-\", [\"203-Tọa độ X thiết kế\", \"Tọa độ X thiết kế\"], x_m, is_metric_length=True)\n    set_loi_param_smart(inst, \"204-\", [\"204-Tọa độ Y thiết kế\", \"Tọa độ Y thiết kế\"], y_m, is_metric_length=True)\n    set_loi_param_smart(inst, \"205-\", [\"205-Cao độ thiết kế\", \"Cao độ thiết kế\"], z_m, is_metric_length=True)\n    set_loi_param_smart(inst, \"301-\", [\"301-Chiều rộng thiết kế\", \"Chiều rộng thiết kế\"], 0.31, is_metric_length=True)\n    set_loi_param_smart(inst, \"302-\", [\"302-Chiều dài thiết kế\", \"Chiều dài thiết kế\"], 4.00, is_metric_length=True)\n    set_loi_param_smart(inst, \"303-\", [\"303-Chiều cao thiết kế\", \"Chiều cao thiết kế\"], 0.75, is_metric_length=True)\n    set_loi_param_smart(inst, \"304-\", [\"304-Hình dạng thiết kế\", \"Hình dạng thiết kế\"], \"Tấm tôn lượn sóng chữ W 2 bước sóng (TCVN 12681:2019)\")\n    set_loi_param_smart(inst, \"401-\", [\"401-Vật liệu thiết kế\", \"Vật liệu thiết kế\"], \"Thép mạ kẽm nhúng nóng\")\n    set_loi_param_smart(inst, \"402-\", [\"402-Cường độ thiết kế\", \"Cường độ thiết kế\"], \"SS400\")\n    set_loi_param_smart(inst, \"403-\", [\"403-Mô đun đàn hồi\", \"Mô đun đàn hồi\"], \"2.1x10^5 MPa\")\n    set_loi_param_smart(inst, \"406-\", [\"406-Màu sắc\", \"Màu sắc\"], \"Bạc mạ kẽm\")\n\n    return mark_code\n\n\ndef execute_guardrail_placement(\n    document,\n    input_elem,\n    family_symbol_input=None,\n    side_selection=\"Phai\",\n    lateral_offset_m=0.0,\n    panel_length_m=4.0,\n    guardrail_height_m=0.75,\n    z_offset_m=0.0,\n    manual_flip_180=\"Khong\",\n    cad_layer_filter=\"TS\",\n    loi_prefix=\"TS-KM52-\",\n    loi_package=\"Goi thau XL01 | Km52+000 - Km60+000\"\n):\n    if input_elem is None:\n        return \"CHUA CHON TIM TUYEN: Vui long bam 'Select' tai muc 1 va click chon doi tuong Polyline, 3D Polyline, hoac file CAD!\", []\n\n    TransactionManager.Instance.EnsureInTransaction(document)\n    try:\n        symbol = resolve_guardrail_family(document, family_symbol_input)\n        if not symbol:\n            return \"LOI: Khong tim thay Family Ton Song (TS-ZZ-GUA). Vui long kiem tra file RFA hoac load vao project!\", []\n\n        paths = extract_paths_from_input(input_elem, document, cad_layer_filter)\n        if not paths and cad_layer_filter:\n            paths = extract_paths_from_input(input_elem, document, \"\")\n        if not paths:\n            return \"LOI: Khong tim thay duong dan 3D (Polyline / 3D Polyline / Curve / Layer TS) tu doi tuong duoc chon!\", []\n\n        # 1. TU DONG DON DEP CAC FAMILY TON SONG CU TREN TUYEN (KHONG TRUNG FAMILY)\n        fam_name = symbol.Family.Name if symbol.Family else symbol.Name\n        cleaned_count = cleanup_existing_guardrails_along_paths(document, paths, fam_name, max_dist_feet=65.0)\n\n        side_clean = str(side_selection).strip().lower()\n        is_right = (\"phai\" in side_clean) or (\"right\" in side_clean)\n        is_left = (\"trai\" in side_clean) or (\"left\" in side_clean)\n        is_both = (\"ca hai\" in side_clean) or (\"both\" in side_clean) or (is_right and is_left)\n\n        if not is_left and not is_both:\n            is_right = True\n\n        flip_clean = str(manual_flip_180).lower()\n        user_wants_flip = (\"co\" in flip_clean) or (\"yes\" in flip_clean) or (\"180\" in flip_clean) or (\"true\" in flip_clean)\n\n        # BAT BUOC CHIEU DAI DOT TON CHUAN (Mac dinh = 4.0m tuong ung voi buoc cot 2.0m)\n        step_len_m = float(panel_length_m) if panel_length_m and float(panel_length_m) > 0.5 else 4.0\n        step_feet = step_len_m * METERS_TO_FEET\n        offset_dist_feet = abs(lateral_offset_m) * METERS_TO_FEET\n        z_offset_feet = z_offset_m * METERS_TO_FEET\n\n        runs = []\n\n        if is_both and len(paths) == 1:\n            runs.append((paths[0],  offset_dist_feet, \"Ben Phai\", False))\n            runs.append((paths[0], -offset_dist_feet, \"Ben Trai\", True))\n        elif is_both and len(paths) > 1:\n            centroid_x = sum(p.points[0].X for p in paths) / float(len(paths))\n            centroid_y = sum(p.points[0].Y for p in paths) / float(len(paths))\n            center_xy = XYZ(centroid_x, centroid_y, 0)\n\n            for p in paths:\n                v_mid = p.points[0] - center_xy\n                t_dir = (p.points[1] - p.points[0]) if len(p.points) > 1 else XYZ(1, 0, 0)\n                cross_z = t_dir.X * v_mid.Y - t_dir.Y * v_mid.X\n                if cross_z < 0:\n                    runs.append((p, offset_dist_feet, \"Ben Phai\", False))\n                else:\n                    runs.append((p, -offset_dist_feet, \"Ben Trai\", True))\n        elif is_left:\n            for p in paths:\n                runs.append((p, -offset_dist_feet, \"Ben Trai\", True))\n        else:\n            for p in paths:\n                runs.append((p, offset_dist_feet, \"Ben Phai\", False))\n\n        created_instances = []\n        total_length_placed_m = 0.0\n        global_seq = 1\n        first_code = \"\"\n        last_code = \"\"\n\n        for path_obj, off_dist, side_label, side_needs_reverse in runs:\n            curr_s = 0.0\n            path_len = path_obj.total_length\n\n            # Quyet dinh chieu ve cua Line:\n            # Ben Phai: ve xuoi p1 -> p2 (mat ton ben trai huong vao long duong, cot o ben phai)\n            # Ben Trai: ve nguoc p2 -> p1 (mat ton tu dong quay sang phai huong vao long duong, cot o ben trai)\n            # Neu user chon Dao chieu 180 = Co thi dao nguoc lai\n            reverse_beam = side_needs_reverse ^ user_wants_flip\n\n            last_end_point_off = None\n\n            # Vong lap rai theo dung buoc dot step_feet = 4.0m\n            # DAM BAO 100% TAT CA CAC DOT TON DEU CO CHIEU DAI 4.0m -> KHOANG CACH TRU DEU NHAU 2.0m!\n            while curr_s + (step_feet * 0.5) <= path_len:\n                s_start = curr_s\n                s_end = curr_s + step_feet  # Luon lay dung 4.0m\n\n                p1 = path_obj.point_at_distance(s_start)\n                p2 = path_obj.point_at_distance(s_end)\n\n                chord_dx = p2.X - p1.X\n                chord_dy = p2.Y - p1.Y\n                len_2d = math.sqrt(chord_dx * chord_dx + chord_dy * chord_dy)\n\n                if len_2d < 1e-4:\n                    curr_s += step_feet\n                    continue\n\n                norm_right_x = chord_dy / len_2d\n                norm_right_y = -chord_dx / len_2d\n\n                # Diem bat dau: noi tiep khit voi diem cuoi cua dot truoc do de tranh ho hay gach khuc\n                if last_end_point_off is not None:\n                    p1_off = last_end_point_off\n                else:\n                    p1_off = XYZ(p1.X + off_dist * norm_right_x, p1.Y + off_dist * norm_right_y, p1.Z + z_offset_feet)\n\n                p2_off = XYZ(p2.X + off_dist * norm_right_x, p2.Y + off_dist * norm_right_y, p2.Z + z_offset_feet)\n                last_end_point_off = p2_off\n\n                # Xac dinh diem dau va diem cuoi cua Line 3D tao Beam\n                if reverse_beam:\n                    line_start = p2_off\n                    line_end = p1_off\n                else:\n                    line_start = p1_off\n                    line_end = p2_off\n\n                # Tim Level gan nhat voi cao do line_start\n                best_lvl = get_best_level(document, line_start.Z)\n\n                inst = None\n                try:\n                    line_3d = Line.CreateBound(line_start, line_end)\n                    if best_lvl:\n                        inst = document.Create.NewFamilyInstance(line_3d, symbol, best_lvl, StructuralType.Beam)\n                except Exception as ex_beam:\n                    write_debug_log(\"Loi tao Beam voi Line: \" + str(ex_beam))\n\n                # Fallback neu khong the tao Beam\n                if inst is None:\n                    curr_s += step_feet\n                    continue\n\n                # Dong bo cao do chinh xac tuyet doi cho 2 dau dot dAM Beam\n                try:\n                    p_s = inst.get_Parameter(BuiltInParameter.STRUCTURAL_BEAM_END0_ELEVATION)\n                    p_e = inst.get_Parameter(BuiltInParameter.STRUCTURAL_BEAM_END1_ELEVATION)\n                    if p_s and not p_s.IsReadOnly:\n                        p_s.Set(line_start.Z - best_lvl.Elevation)\n                    if p_e and not p_e.IsReadOnly:\n                        p_e.Set(line_end.Z - best_lvl.Elevation)\n                except Exception:\n                    pass\n\n                # Gan kich thuoc L va H\n                apply_guardrail_dimensions(inst, step_len_m, guardrail_height_m)\n\n                # Gan du lieu LOI BIM\n                station_m = s_start / METERS_TO_FEET\n                mk = assign_loi_data(inst, global_seq, station_m, side_label, loi_prefix, loi_package)\n                if not first_code: first_code = mk\n                last_code = mk\n\n                created_instances.append(inst)\n                total_length_placed_m += step_len_m\n                global_seq += 1\n\n                # BUOC TIEN CHUAN XAC 100%: Tien dung bang chieu dai dot (4.0m)\n                curr_s += step_feet\n\n        clean_msg = \" | Da tu dong don dep {0} doi tuong ton song cu tren tuyen\".format(cleaned_count) if cleaned_count > 0 else \"\"\n\n        result_summary = (\n            \"THANH CONG: Da rai {0} dot Ton Luon Song Ho Lan chuan Structural Framing Beam (KHOANG CACH COT DEU NHAU CHUAN 2.00M, khong trung family){1}!\\n\"\n            \"- Tong chieu dai rai: {2:.2f} m | So cot: {3} cot (Buoc cot = 2.00 m deu nhau 100%)\\n\"\n            \"- Vi tri ben tuyen: {4}\\n\"\n            \"- Buoc dot L = {5:.2f} m (Moi dot gom 2 cot, noi tiep khit khau) | Dinh H = {6:.2f} m | Offset = {7:.2f} m\\n\"\n            \"- Khoang ma LOI BIM: [{8} -> {9}]\\n\"\n            \"- Goi thau: {10}\\n\"\n            \"- Huong mat ton: Tu dong quay vao long duong (traffic face inward).\"\n        ).format(\n            len(created_instances),\n            clean_msg,\n            total_length_placed_m,\n            len(created_instances) * 2,\n            side_selection,\n            step_len_m,\n            guardrail_height_m,\n            lateral_offset_m,\n            first_code,\n            last_code,\n            loi_package\n        )\n\n        return result_summary, [i.Id.IntegerValue for i in created_instances]\n\n    finally:\n        TransactionManager.Instance.TransactionTaskDone()\n\n\nif IS_DYNAMO:\n    try:\n        in_elem        = IN[0] if len(IN) > 0 else None\n        in_sym         = IN[1] if len(IN) > 1 and IN[1] else \"TS-ZZ-GUA\"\n        in_side        = IN[2] if len(IN) > 2 and IN[2] else \"Phai\"\n        in_offset      = float(IN[3]) if len(IN) > 3 and IN[3] is not None and str(IN[3]).strip() != \"\" else 0.0\n        in_len         = float(IN[4]) if len(IN) > 4 and IN[4] is not None and str(IN[4]).strip() != \"\" else 4.0\n        in_h           = float(IN[5]) if len(IN) > 5 and IN[5] is not None and str(IN[5]).strip() != \"\" else 0.75\n        in_z_off       = float(IN[6]) if len(IN) > 6 and IN[6] is not None and str(IN[6]).strip() != \"\" else 0.0\n        in_flip        = str(IN[7]).strip() if len(IN) > 7 and IN[7] is not None and str(IN[7]).strip() != \"\" else \"Khong\"\n        in_layer       = str(IN[8]).strip() if len(IN) > 8 and IN[8] is not None and str(IN[8]).strip() != \"\" else \"TS\"\n        in_prefix      = str(IN[9]).strip() if len(IN) > 9 and IN[9] is not None and str(IN[9]).strip() != \"\" else \"TS-KM52-\"\n        in_pkg         = str(IN[10]).strip() if len(IN) > 10 and IN[10] is not None and str(IN[10]).strip() != \"\" else \"Goi thau XL01 | Km52+000 - Km60+000\"\n\n        res_text, elem_ids = execute_guardrail_placement(\n            doc,\n            in_elem,\n            in_sym,\n            in_side,\n            in_offset,\n            in_len,\n            in_h,\n            in_z_off,\n            in_flip,\n            in_layer,\n            in_prefix,\n            in_pkg\n        )\n\n        OUT = res_text\n    except Exception as ex:\n        import traceback\n        OUT = \"LOI THUC THI: {0}\\n{1}\".format(str(ex), traceback.format_exc())\n",
+      "Engine": "CPython3",
+      "VariableInputPorts": true,
+      "Id": "cff63b35b5df4a439962eb20cd9bdea6",
+      "NodeType": "PythonScriptNode",
+      "Inputs": [
+        {
+          "Id": "2179ad4322e74a308c6dca551fe01905",
+          "Name": "IN[0]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "93277dc8983a4d2cb2e3e85e245047eb",
+          "Name": "IN[1]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "fd61662b6d8d4539927d894e8960314e",
+          "Name": "IN[2]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "cbacd51fc49a45219c75e6fcbbe28bf4",
+          "Name": "IN[3]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "a666c806abe14172a329672168b18f4d",
+          "Name": "IN[4]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "23ca9800054b4e0099e4d0317f75ea31",
+          "Name": "IN[5]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "a56a6d6da1d14b9d92ab3222afbd0edc",
+          "Name": "IN[6]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "e912470351954fbb9d3d7017ad40fcef",
+          "Name": "IN[7]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "d10c6019c38e42eca886485bf2112f8a",
+          "Name": "IN[8]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "66ab1f82c2eb4d9c84c27ca581657989",
+          "Name": "IN[9]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "fd987d4a02c94138bdd7c7c55d3b006c",
+          "Name": "IN[10]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "a4305d3c9dab46889c457c9813227e5b",
+          "Name": "OUT",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded Python script."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "WatchWidth": 420.0,
+      "WatchHeight": 200.0,
+      "Id": "543d781928b2408bb7821451bba3663e",
+      "NodeType": "ExtensionNode",
+      "Inputs": [
+        {
+          "Id": "071ce0091828435ab6fc354908e303b6",
+          "Name": "",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "6425925dcf944821bf3273fc3464b11d",
+          "Name": "",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualizes a node's output"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "2daf696e2992438b99072680170fba98",
+      "End": "2179ad4322e74a308c6dca551fe01905",
+      "Id": "dec038c1853d4a7e9294777eb08ce536",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "5d4b3f10d1db417d82650b95313fad31",
+      "End": "93277dc8983a4d2cb2e3e85e245047eb",
+      "Id": "287be992a1c546c2ae926aab1e99504f",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "af031834733d4ed8a4f97af842dc8374",
+      "End": "fd61662b6d8d4539927d894e8960314e",
+      "Id": "cf32cba94c934b85bf80b4306f2c4414",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "a670762b9e9c4388b3713d80e2af0cd4",
+      "End": "cbacd51fc49a45219c75e6fcbbe28bf4",
+      "Id": "0dabcb4fec244eb9a50df4ea09678205",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "bb67d703e7a8471b85ddfffe58e8c529",
+      "End": "a666c806abe14172a329672168b18f4d",
+      "Id": "98c5ff2017af451487b02654145318a6",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "0ff5d150fa6e4aed994068067ad6f3b8",
+      "End": "23ca9800054b4e0099e4d0317f75ea31",
+      "Id": "a3cd1ce6de854295a38737da9f6d7967",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "09c8821d12d4469d9f38b335e1957803",
+      "End": "a56a6d6da1d14b9d92ab3222afbd0edc",
+      "Id": "46b63e1bc72c4d95b6624d24425eefde",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "75b140c0c4974a53a06b34203fdf735e",
+      "End": "e912470351954fbb9d3d7017ad40fcef",
+      "Id": "481865a45ffe4ae28fa66078a7b3e31b",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "d1b6b728fb334943914079fb26c44381",
+      "End": "d10c6019c38e42eca886485bf2112f8a",
+      "Id": "10d0823d04fa42aba46f7c1932476896",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "1fc983fcd6a14009b687a873a9e4bdf9",
+      "End": "66ab1f82c2eb4d9c84c27ca581657989",
+      "Id": "995aed1c00f943f192a9b5edf2405c46",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "f7fa743c2a77443e973e9ab6ef3bd484",
+      "End": "fd987d4a02c94138bdd7c7c55d3b006c",
+      "Id": "1e2335d7e70d420595a3d994f32593f2",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "a4305d3c9dab46889c457c9813227e5b",
+      "End": "071ce0091828435ab6fc354908e303b6",
+      "Id": "66f9fb3720174ca9a2a3150d7b99aad7",
+      "IsHidden": "False"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [],
+  "EnableLegacyPolyCurveBehavior": true,
+  "Thumbnail": "",
+  "GraphDocumentationURL": null,
+  "ExtensionWorkspaceData": [
+    {
+      "ExtensionGuid": "28992e1d-abb9-417f-8b1b-05e053bee670",
+      "Name": "Properties",
+      "Version": "3.3",
+      "Data": {}
+    },
+    {
+      "ExtensionGuid": "DFBD9CC0-DB40-457A-939E-8C8555555A9D",
+      "Name": "Generative Design",
+      "Version": "8.2",
+      "Data": {}
+    }
+  ],
+  "Author": "ATGT Automation Suite",
+  "Linting": {
+    "activeLinter": "None",
+    "activeLinterId": "7b75fb44-43fd-4631-a878-29f4d5d8399a",
+    "warningCount": 0,
+    "errorCount": 0
+  },
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "3.3.2.11986",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "_Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "ConnectorPins": [],
+    "NodeViews": [
+      {
+        "Id": "e932d6a891354f28809959d7990bad68",
+        "Name": "1. CHON TIM TUYEN / MO HINH (Click Select)",
+        "IsSetAsInput": true,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 80.0,
+        "Y": 60.0
+      },
+      {
+        "Id": "ab8a9d52fed049ea989717ac95458c20",
+        "Name": "2. CHON KIEU FAMILY TON SONG (Mac dinh = TS-ZZ-GUA)",
+        "IsSetAsInput": true,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 80.0,
+        "Y": 180.0
+      },
+      {
+        "Id": "812193d26d604d52938b4e2d000d13da",
+        "Name": "3. VI TRI BEN TUYEN (Phai / Trai / Ca hai ben)",
+        "IsSetAsInput": true,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 80.0,
+        "Y": 300.0
+      },
+      {
+        "Id": "18e715ba464340adbef589dec5752d2b",
+        "Name": "4. KHOANG CACH LECH TIM / MEP DUONG (m) [0.0: Mep; >0: Le]",
+        "IsSetAsInput": true,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 80.0,
+        "Y": 420.0
+      },
+      {
+        "Id": "d72b0737ccc14c65b4d07e4c571be895",
+        "Name": "5. BUOC RAI / CHIEU DAI DOT TON L (m) [Mac dinh = 4.0m]",
+        "IsSetAsInput": true,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 80.0,
+        "Y": 540.0
+      },
+      {
+        "Id": "782d660233cf41eea2c60253ba2adf73",
+        "Name": "6. CHIEU CAO DINH TON H (m) [Mac dinh = 0.75m]",
+        "IsSetAsInput": true,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 80.0,
+        "Y": 660.0
+      },
+      {
+        "Id": "5845134763854a44a56b4f241f276e88",
+        "Name": "7. CAO DO Z OFFSET (m) [0.0: Mat duong]",
+        "IsSetAsInput": true,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 80.0,
+        "Y": 780.0
+      },
+      {
+        "Id": "6c13c5d0ba4c4cbab422a786853b4a02",
+        "Name": "8. DAO CHIEU MAT TON 180 DO (Khong / Co)",
+        "IsSetAsInput": true,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 80.0,
+        "Y": 900.0
+      },
+      {
+        "Id": "6495af3d37ee4a699ecfb141d5bca0f6",
+        "Name": "9. TEN LAYER CAD [Mac dinh = TS]",
+        "IsSetAsInput": true,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 80.0,
+        "Y": 1020.0
+      },
+      {
+        "Id": "0d3440c099c54ce99a4c71b6b93c3907",
+        "Name": "10. MA TIEN TO LOI BIM [Mac dinh = TS-KM52-]",
+        "IsSetAsInput": true,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 80.0,
+        "Y": 1140.0
+      },
+      {
+        "Id": "6ebf45430bab48c7ae326ee13bfbe52c",
+        "Name": "11. GOI THAU VA LY TRINH",
+        "IsSetAsInput": true,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 80.0,
+        "Y": 1260.0
+      },
+      {
+        "Id": "cff63b35b5df4a439962eb20cd9bdea6",
+        "Name": "[XU LY DYNAMO] TU DONG RAI TON SONG THEO BEN TUYEN & HUONG MAT",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 720.0,
+        "Y": 600.0
+      },
+      {
+        "Id": "543d781928b2408bb7821451bba3663e",
+        "Name": "[KET QUA THUC THI] XEM SO LUONG & KHOANG MA LOI",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": true,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 1373.5947907357795,
+        "Y": 943.9912438730596
+      }
+    ],
+    "Annotations": [],
+    "X": 338.733647379033,
+    "Y": 25.27118653431387,
+    "Zoom": 0.5585046958488615
+  }
+}

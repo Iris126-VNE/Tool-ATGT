@@ -1,0 +1,2 @@
+(load "g:/My Drive/1.Work/ATGT/Tool ATGT/dump.lsp")
+(c:DumpData)

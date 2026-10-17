@@ -1,0 +1,50 @@
+# Data, Working & Output directories
+Data/
+Working/
+output_3d/
+ErrorReports/
+
+# Backups
+backup_*/
+*.bak
+*~
+
+# Autodesk Revit files & backups
+*.rvt
+*.rfa
+*.rte
+*.rft
+*.00*.rvt
+*.00*.rfa
+*.00*.rte
+
+# AutoCAD / Civil 3D files & temporary dumps
+*.dwg
+*.dxf
+*.dwt
+*.sv$
+*.ac$
+*.err
+*.log
+*.tsv
+*_ents.txt
+*_coords.txt
+*_extents.txt
+*_bbox.txt
+*_units.txt
+*_dump.txt
+test_out.txt
+ent_types.txt
+
+# Python cache & virtual environments
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+
+# OS & Editor files
+.DS_Store
+Thumbs.db
+desktop.ini

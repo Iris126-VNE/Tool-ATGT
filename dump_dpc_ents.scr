@@ -1,0 +1,3 @@
+SECURELOAD 0
+(vl-load-com)
+(load "G:/My Drive/1.Work/ATGT/Tool ATGT/dump_dpc_ents.lsp")

@@ -1,0 +1,761 @@
+﻿{
+  "Uuid": "2b8906f9-b63d-4755-867e-b2b0636597b6",
+  "IsCustomNode": false,
+  "Description": "[LENH ATGT] Tu dong rai Dai Phan Cach (DPC), Ton Song (TS), Luoi Chong Choi, Hang Rao theo duong tim tuyen 3D Polyline hoac toa do 3D trong Autodesk Revit 2025. Ho tro lenh chon Select va lenh ve Model Line (LI).",
+  "Name": "[LENH ATGT] RAI DAI PHAN CACH - TON SONG",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [
+    {
+      "Id": "d63459c41df3546da4fef5fe7d0ca50e",
+      "Name": "1. CHON TIM TUYEN / MO HINH (Click Select)",
+      "Type": "selection",
+      "Type2": "hostSelection",
+      "Value": "ed9b89d9-2e50-42bb-8648-f1dcfc86224e-0019689f",
+      "Description": "Select a model element from the document."
+    },
+    {
+      "Id": "31633794d70553e297cb8f6d5c389387",
+      "Name": "2. CHON KIEU FAMILY (DPC / Ton Song / Luoi / Rao)",
+      "Type": "selection",
+      "Type2": "dropdownSelection",
+      "Value": "DPC_L=3M:Q2P_DPC_KM52-60",
+      "Description": "All family types available in the document.",
+      "SelectedIndex": 4
+    },
+    {
+      "Id": "a805e62a561d55049a277001cbb7e812",
+      "Name": "3. CHIEU DAI DOT L / BUOC RAI (m) [DPC: 5.0m, Ton: 4.0m]",
+      "Type": "string",
+      "Type2": "string",
+      "Value": "3",
+      "Description": "Creates a string"
+    },
+    {
+      "Id": "ac4ca063d64d533b883af88d33591785",
+      "Name": "4. CHIEU CAO DOT H (m) [DPC: 0.9m, Ton: 0.7m]",
+      "Type": "string",
+      "Type2": "string",
+      "Value": "0.9",
+      "Description": "Creates a string"
+    },
+    {
+      "Id": "4f4c77c10354501ca5cf30cefabce36f",
+      "Name": "5. BE RONG DAY DOT W (m) [DPC: 0.6m]",
+      "Type": "string",
+      "Type2": "string",
+      "Value": "0.6",
+      "Description": "Creates a string"
+    },
+    {
+      "Id": "ded64d754485512588718f48ba380e18",
+      "Name": "6. KHE HO / DO LONG MONG NGAM (m) [0.0: khit, >0: ho]",
+      "Type": "string",
+      "Type2": "string",
+      "Value": "0.01",
+      "Description": "Creates a string"
+    },
+    {
+      "Id": "c4d5c4f0418753af885a601cffbf3f83",
+      "Name": "7. CAO DO Z OFFSET (m) [0.0: mat duong, +0.9m: tren DPC]",
+      "Type": "string",
+      "Type2": "string",
+      "Value": "0.0",
+      "Description": "Creates a string"
+    },
+    {
+      "Id": "5e61cfa5c30757aeb8a1eb72ed0dcca4",
+      "Name": "8. GOC XOAY BU (Do) [0.0: Song song tim tuyen; nhap 90, -90 neu can]",
+      "Type": "string",
+      "Type2": "string",
+      "Value": "0.0",
+      "Description": "Creates a string"
+    },
+    {
+      "Id": "075852bdbdcd55679afe7ec606766629",
+      "Name": "9. TEN LAYER CAD [Bo trong = Tu dong nhan theo Family]",
+      "Type": "string",
+      "Type2": "string",
+      "Value": "",
+      "Description": "Creates a string"
+    }
+  ],
+  "Outputs": [
+    {
+      "Id": "6fa0f24b41645a34878fdc549e417ed3",
+      "Name": "[KET QUA THUC THI] XEM SO LUONG & KICH THUOC DA RAI",
+      "Type": "string",
+      "InitialValue": "THANH CONG: Da rai 1994 doi tuong [DPC_L=3M] bam theo 3D Polyline (Layer: C-TOPO-FEAT)! (Tong L = 6003.2m, Toa do & cao do bam 100% theo duong dan CAD). Kich thuoc: L=3.0m, H=0.9m, W=0.6m, Khe ho=0.01m (Buoc rai=3.01m) | Cao do thuc dia Z ~ 12.45m (Z Offset=0.0m) | Tham so: [L=3.0m] | [LOI BIM]: Da gan ma [DPC-KM52-0001 -> DPC-KM52-1994], Goi thau XL01 | Km52+000 - Km60+000, BTXM M300 (C25/30) - TCVN 12681:2019, Lien danh XL01 | Cho nghiem thu",
+      "Description": "Visualizes a node's output"
+    }
+  ],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Nodes.DSModelElementSelection, DSRevitNodesUI",
+      "NodeType": "ExtensionNode",
+      "InstanceId": [
+        "ed9b89d9-2e50-42bb-8648-f1dcfc86224e-0019689f"
+      ],
+      "Id": "d63459c41df3546da4fef5fe7d0ca50e",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "484cf55b7cb750cfb26905a6e06dc3b1",
+          "Name": "Element",
+          "Description": "Selected element",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Select a model element from the document."
+    },
+    {
+      "ConcreteType": "DSRevitNodesUI.FamilyTypes, DSRevitNodesUI",
+      "SelectedIndex": 4,
+      "SelectedString": "DPC_L=3M:Q2P_DPC_KM52-60",
+      "Id": "31633794d70553e297cb8f6d5c389387",
+      "NodeType": "ExtensionNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "8dbb118fdeb4536386ba5c1549c23daf",
+          "Name": "Family Type",
+          "Description": "Selected Family Type",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "All family types available in the document."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.StringInput, CoreNodeModels",
+      "Id": "a805e62a561d55049a277001cbb7e812",
+      "NodeType": "StringInputNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "d99b51fdc9f257e8bc41ad8c678de9b7",
+          "Name": "",
+          "Description": "String",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Creates a string",
+      "InputValue": "3"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.StringInput, CoreNodeModels",
+      "Id": "ac4ca063d64d533b883af88d33591785",
+      "NodeType": "StringInputNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "e9a4d0b2db8258378b3d0e6e567cede3",
+          "Name": "",
+          "Description": "String",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Creates a string",
+      "InputValue": "0.9"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.StringInput, CoreNodeModels",
+      "Id": "4f4c77c10354501ca5cf30cefabce36f",
+      "NodeType": "StringInputNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "7da79e3a3a3053f8b77de0441597061b",
+          "Name": "",
+          "Description": "String",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Creates a string",
+      "InputValue": "0.6"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.StringInput, CoreNodeModels",
+      "Id": "ded64d754485512588718f48ba380e18",
+      "NodeType": "StringInputNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "b542fee81ed0513ca193db19e1718f02",
+          "Name": "",
+          "Description": "String",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Creates a string",
+      "InputValue": "0.01"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.StringInput, CoreNodeModels",
+      "Id": "c4d5c4f0418753af885a601cffbf3f83",
+      "NodeType": "StringInputNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "d64effb9fb6256ef856dce4b2e2241eb",
+          "Name": "",
+          "Description": "String",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Creates a string",
+      "InputValue": "0.0"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.StringInput, CoreNodeModels",
+      "Id": "5e61cfa5c30757aeb8a1eb72ed0dcca4",
+      "NodeType": "StringInputNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "aca70b48c0e457849011974272d1d9de",
+          "Name": "",
+          "Description": "String",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Creates a string",
+      "InputValue": "0.0"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.StringInput, CoreNodeModels",
+      "Id": "075852bdbdcd55679afe7ec606766629",
+      "NodeType": "StringInputNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "6213cec4cfc4578084476dea9c4fe9ea",
+          "Name": "",
+          "Description": "String",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Creates a string",
+      "InputValue": ""
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "Code": "# -*- coding: utf-8 -*-\r\n\"\"\"\r\n================================================================================\r\nSCRIPT: Import_ATGT_To_Revit.py\r\nMUC DICH: Tu dong rai cac doi tuong ATGT trong Autodesk Revit 2025:\r\n          1. Ho tro 100% tren doi tuong 3D POLYLINE (CAD ImportInstance,\r\n             DirectShape, ModelCurve, CurveElement, Dynamo PolyCurve).\r\n          2. TOA DO VA CAO DO 3D CHUAN XAC: Su dung GetInstanceGeometry() de lay\r\n             dung 100% toa do Revit World va cao do tráº¯c Ä‘á»‹a Z thuc te doc tuyen.\r\n          3. DONG BO CAO DO CHO FAMILY: Tu dong gan cao do Z thuc te cho tung dot\r\n             Family qua INSTANCE_ELEVATION_PARAM, Offset, hoac CurveBased Line 3D.\r\n          4. TU DONG DIEN DAY CAO DO: Neu 3D Polyline co cac dinh dau/cuoi bi\r\n             Z=0 do CAD 2D/3D ket hop, tu dong noi suy/dien day theo cao do thuc dia.\r\n          5. TU DONG CAN CHINH GOC XOAY CHIEU DAI: Khac phuc triet de loi\r\n             Family bi xoay ngang 90 do dam vuong goc voi tim tuyen.\r\n          6. THUAT TOAN NOI CHUOI O(N) SPATIAL HASH: Noi hang nghin doan line CAD\r\n             thanh 1 chuoi 3D Polyline lien tuc trong vai mili-giay.\r\n          7. Ho tro ca Point-Based Family va Curve-Based (Line-Based) Family.\r\n          8. DA XOA HOAN TOAN BUOC 10 (CSV) - Chi tap trung 100% vao doi tuong pick chon.\r\n================================================================================\r\n\"\"\"\r\n\r\nimport sys\r\nimport os\r\nimport math\r\n\r\n# Hang so chuyen doi don vi Revit API (Internal units: Feet)\r\nMETERS_TO_FEET = 3.28083989501312336\r\n\r\n# Kiem tra moi truong Dynamo vs Standalone Revit Python\r\nIS_DYNAMO = False\r\ntry:\r\n    import clr\r\n    clr.AddReference('RevitAPI')\r\n    clr.AddReference('RevitAPIUI')\r\n    clr.AddReference('RevitServices')\r\n    from Autodesk.Revit.DB import *\r\n    from Autodesk.Revit.DB.Structure import StructuralType\r\n    from RevitServices.Persistence import DocumentManager\r\n    from RevitServices.Transactions import TransactionManager\r\n    doc = DocumentManager.Instance.CurrentDBDocument\r\n    IS_DYNAMO = True\r\nexcept Exception:\r\n    try:\r\n        from Autodesk.Revit.DB import *\r\n        from Autodesk.Revit.DB.Structure import StructuralType\r\n    except Exception:\r\n        pass\r\n\r\ndef write_debug_log(msg):\r\n    \"\"\"Ghi log chan doan de kiem tra tien trinh thuc thi cua tool\"\"\"\r\n    try:\r\n        log_dir = r\"H:\\My Drive\\1.Work\\ATGT\\Tool ATGT\\ErrorReports\"\r\n        if not os.path.exists(log_dir):\r\n            os.makedirs(log_dir)\r\n        log_file = os.path.join(log_dir, \"debug_atgt_run.log\")\r\n        with open(log_file, \"a\", encoding=\"utf-8\") as f:\r\n            f.write(msg + \"\\n\")\r\n    except Exception:\r\n        pass\r\n\r\ndef clean_path_elevations(points):\r\n    \"\"\"\r\n    Kiem tra va chuan hoa cao do Z cho cac duong 3D Polyline:\r\n    Neu da so cac dinh co cao do thuc dia (|Z| > 0.05 feet ~ 1.5cm), nhung mot so dinh\r\n    dau/cuoi bi loi Z = 0.0 (do ban ve CAD ket hop 2D-3D hoac bat diem mat bang),\r\n    ham se tu dong dien day/noi suy cao do Z tu cac dinh lien ke de tranh hien tuong\r\n    Family bi cam thang xuong mat phang 0.0.\r\n    \"\"\"\r\n    if not points or len(points) < 2:\r\n        return points\r\n\r\n    valid_z_indices = [i for i, p in enumerate(points) if abs(p.Z) > 0.05]\r\n\r\n    # Neu toan bo deu la Z=0 (duong 2D) hoac toan bo deu co Z hop le (3D hoan hao), giu nguyen\r\n    if len(valid_z_indices) == 0 or len(valid_z_indices) == len(points):\r\n        return points\r\n\r\n    # Neu co it nhat 3 diem hoac >= 10% so diem co Z hop le, coi day la 3D polyline can duoc bao toan cao do\r\n    if len(valid_z_indices) >= 3 or (float(len(valid_z_indices)) / float(len(points))) >= 0.1:\r\n        first_valid_i = valid_z_indices[0]\r\n        last_valid_i = valid_z_indices[-1]\r\n\r\n        new_pts = list(points)\r\n\r\n        # 1. Dien day cac diem o dau (truoc diem hop le dau tien) bang cao do diem hop le dau tien\r\n        for i in range(first_valid_i):\r\n            new_pts[i] = XYZ(new_pts[i].X, new_pts[i].Y, points[first_valid_i].Z)\r\n\r\n        # 2. Dien day cac diem o cuoi (sau diem hop le cuoi cung) bang cao do diem hop le cuoi cung\r\n        for i in range(last_valid_i + 1, len(points)):\r\n            new_pts[i] = XYZ(new_pts[i].X, new_pts[i].Y, points[last_valid_i].Z)\r\n\r\n        # 3. Noi suy tuyen tinh cac diem Z=0 nam giua cac diem hop le\r\n        for k in range(len(valid_z_indices) - 1):\r\n            i_start = valid_z_indices[k]\r\n            i_end = valid_z_indices[k + 1]\r\n            if i_end - i_start > 1:\r\n                z_start = points[i_start].Z\r\n                z_end = points[i_end].Z\r\n                total_span = float(i_end - i_start)\r\n                for mid_i in range(i_start + 1, i_end):\r\n                    t = float(mid_i - i_start) / total_span\r\n                    interp_z = z_start + t * (z_end - z_start)\r\n                    new_pts[mid_i] = XYZ(new_pts[mid_i].X, new_pts[mid_i].Y, interp_z)\r\n\r\n        return new_pts\r\n\r\n    return points\r\n\r\ndef unloop_closed_path(points, max_island_width_feet=15.0):\r\n    \"\"\"\r\n    Neu mot duong 3D polyline la vong khep kin di va ve (round-trip loop)\r\n    chay quanh dao dai phan cach (nua di va nua ve song song nguoc chieu nhau cach nhau < 4.5m):\r\n    Chi giu lai nua dau (nua di) de tranh rai 2 hang de len nhau hoac bi quay dau xe!\r\n    \"\"\"\r\n    if not points or len(points) < 4:\r\n        return points\r\n\r\n    p_start = points[0]\r\n    p_end = points[-1]\r\n    if p_start.DistanceTo(p_end) < max_island_width_feet:\r\n        total_d = sum(points[k].DistanceTo(points[k+1]) for k in range(len(points)-1))\r\n        if total_d < 1.0:\r\n            return points\r\n        half_d = total_d / 2.0\r\n        cum = 0.0\r\n        mid_idx = len(points) // 2\r\n        for k in range(len(points)-1):\r\n            cum += points[k].DistanceTo(points[k+1])\r\n            if cum >= half_d:\r\n                mid_idx = k\r\n                break\r\n\r\n        pt_quarter = points[mid_idx // 2]\r\n        pt_three_quarter = points[min(len(points) - 1, mid_idx + (len(points) - mid_idx) // 2)]\r\n        if pt_quarter.DistanceTo(pt_three_quarter) < max_island_width_feet:\r\n            return points[:mid_idx + 1]\r\n\r\n    return points\r\n\r\nclass PolylinePath3D:\r\n    \"\"\"Lop bieu dien duong dan 3D Polyline lien tuc co the lay toa do va tiep tuyen theo khoang cach s\"\"\"\r\n    def __init__(self, points, layer_name=\"\"):\r\n        self.points = []\r\n        self.layer_name = layer_name\r\n\r\n        # Chuan hoa cao do 3D thuc dia doc theo tuyen\r\n        pts_cleaned = clean_path_elevations(points)\r\n        pts_unlooped = unloop_closed_path(pts_cleaned)\r\n\r\n        for p in pts_unlooped:\r\n            if len(self.points) == 0 or self.points[-1].DistanceTo(p) > 1e-4:\r\n                self.points.append(p)\r\n\r\n        self.cum_lens = [0.0]\r\n        for i in range(len(self.points) - 1):\r\n            d = self.points[i].DistanceTo(self.points[i+1])\r\n            self.cum_lens.append(self.cum_lens[-1] + d)\r\n\r\n        self.total_length = self.cum_lens[-1] if len(self.cum_lens) > 0 else 0.0\r\n\r\n    def evaluate(self, dist):\r\n        \"\"\"Tra ve diem (XYZ) va vector tiep tuyen (XYZ) tai khoang cach dist doc theo 3D Polyline\"\"\"\r\n        if len(self.points) == 0:\r\n            return XYZ.Zero, XYZ.BasisX\r\n        if len(self.points) == 1:\r\n            return self.points[0], XYZ.BasisX\r\n        if dist <= 0.0:\r\n            p0 = self.points[0]\r\n            p1 = self.points[1]\r\n            return p0, XYZ(p1.X - p0.X, p1.Y - p0.Y, p1.Z - p0.Z)\r\n        if dist >= self.total_length:\r\n            p_end = self.points[-1]\r\n            p_prev = self.points[-2]\r\n            return p_end, XYZ(p_end.X - p_prev.X, p_end.Y - p_prev.Y, p_end.Z - p_prev.Z)\r\n\r\n        for i in range(len(self.cum_lens) - 1):\r\n            if self.cum_lens[i] <= dist <= self.cum_lens[i+1]:\r\n                seg_len = self.cum_lens[i+1] - self.cum_lens[i]\r\n                t = (dist - self.cum_lens[i]) / seg_len if seg_len > 1e-5 else 0.0\r\n                p1 = self.points[i]\r\n                p2 = self.points[i+1]\r\n                pt = XYZ(\r\n                    p1.X + t * (p2.X - p1.X),\r\n                    p1.Y + t * (p2.Y - p1.Y),\r\n                    p1.Z + t * (p2.Z - p1.Z)\r\n                )\r\n                tangent = XYZ(p2.X - p1.X, p2.Y - p1.Y, p2.Z - p1.Z)\r\n                return pt, tangent\r\n\r\n        return self.points[-1], XYZ.BasisX\r\n\r\n    def min_distance_to(self, pt):\r\n        \"\"\"Khoang cach ngan nhat tu diem pt den duong 3D polyline (tinh tren mat bang XY)\"\"\"\r\n        if not self.points:\r\n            return 1e9\r\n        if len(self.points) == 1:\r\n            p0 = self.points[0]\r\n            return math.sqrt((pt.X - p0.X)**2 + (pt.Y - p0.Y)**2)\r\n\r\n        min_d = 1e9\r\n        for i in range(len(self.points) - 1):\r\n            p1 = self.points[i]\r\n            p2 = self.points[i+1]\r\n            dx = p2.X - p1.X\r\n            dy = p2.Y - p1.Y\r\n            l2 = dx * dx + dy * dy\r\n            if l2 < 1e-6:\r\n                d = math.sqrt((pt.X - p1.X)**2 + (pt.Y - p1.Y)**2)\r\n            else:\r\n                t = max(0.0, min(1.0, ((pt.X - p1.X) * dx + (pt.Y - p1.Y) * dy) / l2))\r\n                proj_x = p1.X + t * dx\r\n                proj_y = p1.Y + t * dy\r\n                d = math.sqrt((pt.X - proj_x)**2 + (pt.Y - proj_y)**2)\r\n            if d < min_d:\r\n                min_d = d\r\n        return min_d\r\n\r\ndef get_symbol_family_and_type(sym):\r\n    f_name = \"\"\r\n    t_name = \"\"\r\n    try:\r\n        if hasattr(sym, \"Family\") and sym.Family:\r\n            f_name = sym.Family.Name\r\n    except Exception:\r\n        pass\r\n    try:\r\n        t_name = sym.Name\r\n    except Exception:\r\n        pass\r\n    return f_name, t_name\r\n\r\ndef stitch_connected_paths(paths, tol_feet=2.0):\r\n    \"\"\"\r\n    Noi nhanh O(N) cac doan duong Polyline/Curve roi rac co chung diem dau/cuoi thanh\r\n    cac duong 3D Polyline lien tuc dai nhat co the.\r\n    Su dung bang bam khong gian (spatial grid hash) de xu ly hang nghin doan line trong chop mat.\r\n    \"\"\"\r\n    if len(paths) <= 1:\r\n        return paths\r\n\r\n    def grid_key(pt):\r\n        gx = int(math.floor(pt.X / tol_feet))\r\n        gy = int(math.floor(pt.Y / tol_feet))\r\n        gz = int(math.floor(pt.Z / tol_feet))\r\n        return (gx, gy, gz)\r\n\r\n    # Nhom theo layer neu co\r\n    by_layer = {}\r\n    for p in paths:\r\n        lay = p.layer_name or \"\"\r\n        if lay not in by_layer:\r\n            by_layer[lay] = []\r\n        by_layer[lay].append(p)\r\n\r\n    all_stitched = []\r\n\r\n    for lay, group in by_layer.items():\r\n        segments = []\r\n        for p in group:\r\n            if len(p.points) >= 2:\r\n                segments.append(list(p.points))\r\n\r\n        if len(segments) <= 1:\r\n            for s in segments:\r\n                all_stitched.append(PolylinePath3D(s, lay))\r\n            continue\r\n\r\n        # Xay dung spatial hash index cho tat ca cac diem dau va cuoi\r\n        grid = {}\r\n        for s_idx, pts in enumerate(segments):\r\n            for is_head, pt in [(True, pts[0]), (False, pts[-1])]:\r\n                k = grid_key(pt)\r\n                if k not in grid:\r\n                    grid[k] = []\r\n                grid[k].append((s_idx, is_head))\r\n\r\n        visited = [False] * len(segments)\r\n\r\n        for start_idx in range(len(segments)):\r\n            if visited[start_idx]:\r\n                continue\r\n\r\n            visited[start_idx] = True\r\n            chain = list(segments[start_idx])\r\n\r\n            # Mo rong ve phia tail cua chain\r\n            growing = True\r\n            while growing:\r\n                growing = False\r\n                tail_pt = chain[-1]\r\n                gx, gy, gz = grid_key(tail_pt)\r\n                best_seg = None\r\n                best_dist = tol_feet\r\n                best_is_head = True\r\n\r\n                for dx in (-1, 0, 1):\r\n                    for dy in (-1, 0, 1):\r\n                        for dz in (-1, 0, 1):\r\n                            neighbor_k = (gx + dx, gy + dy, gz + dz)\r\n                            for cand_idx, cand_is_head in grid.get(neighbor_k, []):\r\n                                if not visited[cand_idx]:\r\n                                    cand_pt = segments[cand_idx][0] if cand_is_head else segments[cand_idx][-1]\r\n                                    d = tail_pt.DistanceTo(cand_pt)\r\n                                    if d < best_dist:\r\n                                        best_dist = d\r\n                                        best_seg = cand_idx\r\n                                        best_is_head = cand_is_head\r\n\r\n                if best_seg is not None:\r\n                    visited[best_seg] = True\r\n                    add_pts = segments[best_seg]\r\n                    if best_is_head:\r\n                        chain.extend(add_pts[1:])\r\n                    else:\r\n                        chain.extend(list(reversed(add_pts[:-1])))\r\n                    growing = True\r\n\r\n            # Mo rong ve phia head cua chain\r\n            growing = True\r\n            while growing:\r\n                growing = False\r\n                head_pt = chain[0]\r\n                gx, gy, gz = grid_key(head_pt)\r\n                best_seg = None\r\n                best_dist = tol_feet\r\n                best_is_head = True\r\n\r\n                for dx in (-1, 0, 1):\r\n                    for dy in (-1, 0, 1):\r\n                        for dz in (-1, 0, 1):\r\n                            neighbor_k = (gx + dx, gy + dy, gz + dz)\r\n                            for cand_idx, cand_is_head in grid.get(neighbor_k, []):\r\n                                if not visited[cand_idx]:\r\n                                    cand_pt = segments[cand_idx][0] if cand_is_head else segments[cand_idx][-1]\r\n                                    d = head_pt.DistanceTo(cand_pt)\r\n                                    if d < best_dist:\r\n                                        best_dist = d\r\n                                        best_seg = cand_idx\r\n                                        best_is_head = cand_is_head\r\n\r\n                if best_seg is not None:\r\n                    visited[best_seg] = True\r\n                    add_pts = segments[best_seg]\r\n                    if not best_is_head:\r\n                        chain = add_pts[:-1] + chain\r\n                    else:\r\n                        chain = list(reversed(add_pts[1:])) + chain\r\n                    growing = True\r\n\r\n            all_stitched.append(PolylinePath3D(chain, lay))\r\n\r\n    return all_stitched\r\n\r\ndef set_instance_elevation(inst, target_z_feet, level=None):\r\n    \"\"\"\r\n    Dong bo cao do Z thuc te tuyet doi cho doi tuong Revit:\r\n    - Neu doi tuong da o dung cao do target_z_feet (sai so < 3mm), KHONG can lam gi them (tranh loi gap doi cao do).\r\n    - Neu bi lech (do level hosting), uu tien vi chinh bang MoveElement hoac set parameter cao do.\r\n    \"\"\"\r\n    if inst is None:\r\n        return False\r\n\r\n    # 1. KIEM TRA TRUOC TIEN: Neu vi tri Location Point.Z da nam dung target_z_feet (sai so < 3mm)\r\n    # TUYET DOI KHONG SET THEM PARAMETER de tranh Revit cong don gap doi cao do!\r\n    try:\r\n        if hasattr(inst, \"Location\") and hasattr(inst.Location, \"Point\") and inst.Location.Point is not None:\r\n            cur_z = inst.Location.Point.Z\r\n            if abs(cur_z - target_z_feet) < 0.01:\r\n                return True\r\n    except Exception:\r\n        pass\r\n\r\n    level_elev = level.Elevation if level else 0.0\r\n    offset_val = target_z_feet - level_elev\r\n\r\n    # 2. Uu tien di chuyen truc tiep theo truc Z bang MoveElement\r\n    try:\r\n        if hasattr(inst, \"Location\") and hasattr(inst.Location, \"Point\") and inst.Location.Point is not None:\r\n            cur_z = inst.Location.Point.Z\r\n            diff_z = target_z_feet - cur_z\r\n            ElementTransformUtils.MoveElement(inst.Document, inst.Id, XYZ(0, 0, diff_z))\r\n            new_z = inst.Location.Point.Z\r\n            if abs(new_z - target_z_feet) < 0.01:\r\n                return True\r\n    except Exception:\r\n        pass\r\n\r\n    # 3. Neu doi tuong bi khoa boi Level/Host, set BuiltInParameter cao do\r\n    param_list = [\r\n        BuiltInParameter.INSTANCE_ELEVATION_PARAM,\r\n        BuiltInParameter.INSTANCE_FREE_HOST_OFFSET_PARAM,\r\n        BuiltInParameter.SCHEDULE_BASE_LEVEL_OFFSET_PARAM,\r\n        BuiltInParameter.FLOOR_HEIGHTABOVELEVEL_PARAM,\r\n        BuiltInParameter.ROOF_LEVEL_OFFSET_PARAM\r\n    ]\r\n    for bip in param_list:\r\n        try:\r\n            p = inst.get_Parameter(bip)\r\n            if p and not p.IsReadOnly:\r\n                p.Set(offset_val)\r\n                break\r\n        except Exception:\r\n            pass\r\n\r\n    # 4. Lookup theo cac ten tham so pho bien\r\n    param_names = [\r\n        \"Elevation from Level\", \"Elevation\", \"Offset\", \"Z Offset\", \"Z_Offset\",\r\n        \"Host Offset\", \"Base Offset\", \"Offset from Host\", \"Default Elevation\", \"Cao do\"\r\n    ]\r\n    for p_name in param_names:\r\n        try:\r\n            p = inst.LookupParameter(p_name)\r\n            if p and not p.IsReadOnly and p.StorageType == StorageType.Double:\r\n                p.Set(offset_val)\r\n                break\r\n        except Exception:\r\n            pass\r\n\r\n    # 5. Kiem tra lan cuoi va tinh chinh neu con lech\r\n    try:\r\n        if hasattr(inst, \"Location\") and hasattr(inst.Location, \"Point\") and inst.Location.Point is not None:\r\n            cur_z_final = inst.Location.Point.Z\r\n            diff_final = target_z_feet - cur_z_final\r\n            if abs(diff_final) > 0.01:\r\n                ElementTransformUtils.MoveElement(inst.Document, inst.Id, XYZ(0, 0, diff_final))\r\n    except Exception:\r\n        pass\r\n\r\n    return True\r\n\r\ndef resolve_symbol(document, family_input, rfa_file=None):\r\n    \"\"\"Nhan dien FamilySymbol tu Input: co the la FamilyType object, FamilySymbol, hoac chuoi ten\"\"\"\r\n    if family_input is None:\r\n        return None\r\n\r\n    # 1. Dynamo FamilyType object\r\n    if hasattr(family_input, \"InternalElement\"):\r\n        sym = family_input.InternalElement\r\n        if not sym.IsActive:\r\n            sym.Activate()\r\n            document.Regenerate()\r\n        return sym\r\n\r\n    # 2. FamilySymbol truc tiep\r\n    if isinstance(family_input, FamilySymbol):\r\n        if not family_input.IsActive:\r\n            family_input.Activate()\r\n            document.Regenerate()\r\n        return family_input\r\n\r\n    # 3. Chuoi ky tu ten family\r\n    target = str(family_input).strip().lower()\r\n    collector = FilteredElementCollector(document).OfClass(FamilySymbol)\r\n    for sym in collector:\r\n        f_name, t_name = get_symbol_family_and_type(sym)\r\n        if target == f_name.lower() or target == t_name.lower() or target in f_name.lower():\r\n            if not sym.IsActive:\r\n                sym.Activate()\r\n                document.Regenerate()\r\n            return sym\r\n\r\n    # 4. Load tu file RFA neu chua co\r\n    if rfa_file and os.path.exists(rfa_file):\r\n        try:\r\n            document.LoadFamily(rfa_file)\r\n            document.Regenerate()\r\n            collector = FilteredElementCollector(document).OfClass(FamilySymbol)\r\n            for sym in collector:\r\n                f_name, t_name = get_symbol_family_and_type(sym)\r\n                if target == f_name.lower() or target == t_name.lower() or target in f_name.lower():\r\n                    if not sym.IsActive:\r\n                        sym.Activate()\r\n                        document.Regenerate()\r\n                    return sym\r\n        except Exception:\r\n            pass\r\n\r\n    return None\r\n\r\ndef extract_paths_from_element(elem, document):\r\n    \"\"\"\r\n    Trich xuat toan dien cac duong dan 3D Polyline, Curve, Spline, CAD Import\r\n    hoac Dynamo PolyCurve thanh danh sach doi tuong PolylinePath3D kem theo ten Layer CAD.\r\n    Uu tien tuyet doi GetInstanceGeometry() de lay dung 100% toa do Revit World hien thi tren man hinh!\r\n    \"\"\"\r\n    paths = []\r\n    if elem is None:\r\n        return paths\r\n\r\n    # Giai nen danh sach phang an toan cho PythonNET\r\n    raw_list = []\r\n    if isinstance(elem, (list, tuple)):\r\n        for x in elem:\r\n            if isinstance(x, (list, tuple)):\r\n                for y in x:\r\n                    if y is not None: raw_list.append(y)\r\n            elif x is not None:\r\n                raw_list.append(x)\r\n    else:\r\n        raw_list.append(elem)\r\n\r\n    for item in raw_list:\r\n        if item is None:\r\n            continue\r\n\r\n        revit_elem = item\r\n        if hasattr(item, \"InternalElement\") and item.InternalElement is not None:\r\n            revit_elem = item.InternalElement\r\n\r\n        # Neu la ElementId\r\n        if isinstance(revit_elem, ElementId):\r\n            try:\r\n                revit_elem = document.GetElement(revit_elem)\r\n            except Exception:\r\n                pass\r\n\r\n        # 1. Dynamo PolyCurve\r\n        if hasattr(item, \"Curves\"):\r\n            try:\r\n                sub_c = item.Curves() if callable(item.Curves) else item.Curves\r\n                pts = []\r\n                for sc in sub_c:\r\n                    p = sc.StartPoint\r\n                    pts.append(XYZ(p.X, p.Y, p.Z))\r\n                p_end = sub_c[-1].EndPoint\r\n                pts.append(XYZ(p_end.X, p_end.Y, p_end.Z))\r\n                if len(pts) >= 2:\r\n                    paths.append(PolylinePath3D(pts, \"DynamoPolyCurve\"))\r\n                continue\r\n            except Exception:\r\n                pass\r\n\r\n        # 1b. Dynamo Curve don le (Line, NurbsCurve...)\r\n        if hasattr(item, \"StartPoint\") and hasattr(item, \"EndPoint\"):\r\n            try:\r\n                p0 = item.StartPoint\r\n                p1 = item.EndPoint\r\n                pts = [XYZ(p0.X, p0.Y, p0.Z), XYZ(p1.X, p1.Y, p1.Z)]\r\n                paths.append(PolylinePath3D(pts, \"DynamoCurve\"))\r\n                continue\r\n            except Exception:\r\n                pass\r\n\r\n        # 2. Revit DB PolyLine truc tiep\r\n        is_poly = False\r\n        try:\r\n            if isinstance(revit_elem, PolyLine) or (hasattr(revit_elem, \"GetType\") and revit_elem.GetType().Name == \"PolyLine\"):\r\n                is_poly = True\r\n        except Exception:\r\n            pass\r\n\r\n        if is_poly:\r\n            try:\r\n                coords = revit_elem.GetCoordinates()\r\n                if coords:\r\n                    pts = [p for p in coords]\r\n                    if len(pts) >= 2:\r\n                        paths.append(PolylinePath3D(pts, \"RevitPolyLine\"))\r\n                continue\r\n            except Exception:\r\n                pass\r\n\r\n        # 3. Revit DB Curve\r\n        is_curve = False\r\n        try:\r\n            if isinstance(revit_elem, Curve):\r\n                is_curve = True\r\n        except Exception:\r\n            pass\r\n\r\n        if is_curve:\r\n            try:\r\n                tess = revit_elem.Tessellate()\r\n                if tess:\r\n                    pts = [p for p in tess]\r\n                    if len(pts) >= 2:\r\n                        paths.append(PolylinePath3D(pts, \"RevitCurve\"))\r\n                continue\r\n            except Exception:\r\n                pass\r\n\r\n        # 4. ModelCurve / DetailCurve / CurveElement\r\n        if hasattr(revit_elem, \"GeometryCurve\") and revit_elem.GeometryCurve:\r\n            try:\r\n                tess = revit_elem.GeometryCurve.Tessellate()\r\n                if tess:\r\n                    pts = [p for p in tess]\r\n                    if len(pts) >= 2:\r\n                        paths.append(PolylinePath3D(pts, \"ModelCurve\"))\r\n                continue\r\n            except Exception:\r\n                pass\r\n\r\n        # 5. LocationCurve\r\n        if hasattr(revit_elem, \"Location\") and hasattr(revit_elem.Location, \"Curve\") and revit_elem.Location.Curve:\r\n            try:\r\n                tess = revit_elem.Location.Curve.Tessellate()\r\n                if tess:\r\n                    pts = [p for p in tess]\r\n                    if len(pts) >= 2:\r\n                        paths.append(PolylinePath3D(pts, \"LocationCurve\"))\r\n                continue\r\n            except Exception:\r\n                pass\r\n\r\n        # 6. Trich xuat Geometry tu Element (ImportInstance CAD, DirectShape, Solids...)\r\n        if hasattr(revit_elem, \"get_Geometry\"):\r\n            try:\r\n                opt = Options()\r\n                opt.DetailLevel = ViewDetailLevel.Fine\r\n                opt.IncludeNonVisibleObjects = True\r\n\r\n                geom = revit_elem.get_Geometry(opt)\r\n                if not geom:\r\n                    opt_def = Options()\r\n                    geom = revit_elem.get_Geometry(opt_def)\r\n\r\n                if geom:\r\n                    def parse_geom(g_obj, cur_layer=\"\", transform=None):\r\n                        if g_obj is None: return\r\n\r\n                        # Lay ten Layer CAD neu co tu GraphicsStyle\r\n                        layer = cur_layer\r\n                        if hasattr(g_obj, \"GraphicsStyleId\") and g_obj.GraphicsStyleId != ElementId.InvalidElementId:\r\n                            try:\r\n                                gs = document.GetElement(g_obj.GraphicsStyleId)\r\n                                if gs and gs.GraphicsStyleCategory:\r\n                                    layer = gs.GraphicsStyleCategory.Name\r\n                            except Exception:\r\n                                pass\r\n\r\n                        # A. GeometryInstance (Khoi CAD link/import hoac block long)\r\n                        if isinstance(g_obj, GeometryInstance):\r\n                            # Uu tien 1: GetInstanceGeometry() de lay dung 100% toa do Revit World va cao do 3D thuc te\r\n                            inst_geom = None\r\n                            try:\r\n                                inst_geom = g_obj.GetInstanceGeometry()\r\n                            except Exception:\r\n                                pass\r\n\r\n                            count_before = len(paths)\r\n                            if inst_geom:\r\n                                for sub_g in inst_geom:\r\n                                    parse_geom(sub_g, layer, None)\r\n\r\n                            if len(paths) > count_before:\r\n                                return\r\n\r\n                            # Uu tien 2: Fallback sang GetSymbolGeometry() kem transform\r\n                            sym_geom = None\r\n                            try:\r\n                                sym_geom = g_obj.GetSymbolGeometry()\r\n                            except Exception:\r\n                                pass\r\n\r\n                            inst_tr = g_obj.Transform if hasattr(g_obj, \"Transform\") else None\r\n                            if transform is not None and inst_tr is not None:\r\n                                current_tr = transform.Multiply(inst_tr)\r\n                            elif inst_tr is not None:\r\n                                current_tr = inst_tr\r\n                            else:\r\n                                current_tr = transform\r\n\r\n                            if sym_geom:\r\n                                for sub_g in sym_geom:\r\n                                    parse_geom(sub_g, layer, current_tr)\r\n                                return\r\n\r\n                        # B. PolyLine trong CAD / Revit\r\n                        is_sub_poly = False\r\n                        try:\r\n                            if isinstance(g_obj, PolyLine) or (hasattr(g_obj, \"GetType\") and g_obj.GetType().Name == \"PolyLine\"):\r\n                                is_sub_poly = True\r\n                        except Exception:\r\n                            pass\r\n\r\n                        if is_sub_poly:\r\n                            try:\r\n                                coords = g_obj.GetCoordinates()\r\n                                if coords:\r\n                                    pts = []\r\n                                    for p in coords:\r\n                                        pts.append(transform.OfPoint(p) if transform else p)\r\n                                    if len(pts) >= 2:\r\n                                        paths.append(PolylinePath3D(pts, layer))\r\n                                return\r\n                            except Exception:\r\n                                pass\r\n\r\n                        # C. Curve (Line, Arc, NurbSpline, HermiteSpline) trong CAD / Revit\r\n                        is_sub_curve = False\r\n                        try:\r\n                            if isinstance(g_obj, Curve):\r\n                                is_sub_curve = True\r\n                        except Exception:\r\n                            pass\r\n\r\n                        if is_sub_curve:\r\n                            try:\r\n                                tess = g_obj.Tessellate()\r\n                                if tess:\r\n                                    pts = []\r\n                                    for p in tess:\r\n                                        pts.append(transform.OfPoint(p) if transform else p)\r\n                                    if len(pts) >= 2:\r\n                                        paths.append(PolylinePath3D(pts, layer))\r\n                                return\r\n                            except Exception:\r\n                                pass\r\n\r\n                        # D. Solid\r\n                        if isinstance(g_obj, Solid) and g_obj.Volume > 0:\r\n                            try:\r\n                                for edge in g_obj.Edges:\r\n                                    c = edge.AsCurve()\r\n                                    if c:\r\n                                        tess = c.Tessellate()\r\n                                        if tess:\r\n                                            pts = []\r\n                                            for p in tess:\r\n                                                pts.append(transform.OfPoint(p) if transform else p)\r\n                                            if len(pts) >= 2:\r\n                                                paths.append(PolylinePath3D(pts, layer))\r\n                                return\r\n                            except Exception:\r\n                                pass\r\n\r\n                        # E. Container GeometryElement\r\n                        if hasattr(g_obj, \"GetEnumerator\") and not isinstance(g_obj, (PolyLine, Curve, Solid)):\r\n                            try:\r\n                                for sub in g_obj:\r\n                                    parse_geom(sub, layer, transform)\r\n                                return\r\n                            except Exception:\r\n                                pass\r\n\r\n                    for g in geom:\r\n                        parse_geom(g, \"\", None)\r\n            except Exception:\r\n                pass\r\n\r\n    return paths\r\n\r\ndef remove_parallel_duplicate_paths(paths, min_separation_feet=12.0):\r\n    \"\"\"\r\n    Neu co 2 duong Polyline chay song song rat gan nhau (< 3.5m) nhu 2 mep trai-phai\r\n    cua cung mot dai phan cach, chi giu lai 1 duong duy nhat (duong dai nhat)\r\n    de tranh rai 2 hang de len nhau.\r\n    \"\"\"\r\n    if len(paths) <= 1:\r\n        return paths\r\n\r\n    sorted_paths = sorted(paths, key=lambda p: p.total_length, reverse=True)\r\n    filtered = []\r\n    for p in sorted_paths:\r\n        if len(p.points) < 2 or p.total_length < 1.0:\r\n            continue\r\n        is_dup = False\r\n        p_len = p.total_length\r\n        sample_fracs = [0.1, 0.3, 0.5, 0.7, 0.9]\r\n        sample_pts = [p.evaluate(f * p_len)[0] for f in sample_fracs]\r\n\r\n        for kept in filtered:\r\n            dists = [kept.min_distance_to(sp) for sp in sample_pts]\r\n            avg_d = sum(dists) / float(len(dists))\r\n            close_count = sum(1 for d in dists if d < min_separation_feet)\r\n            if avg_d < min_separation_feet and close_count >= 3:\r\n                is_dup = True\r\n                break\r\n\r\n        if not is_dup:\r\n            filtered.append(p)\r\n\r\n    return filtered if filtered else paths\r\n\r\ndef cleanup_existing_instances_along_paths(document, paths, fam_name, max_dist_feet=60.0):\n    \"\"\"\n    Quet va xoa 100% cac doi tuong ATGT cu da ton tai doc theo tuyen\n    de tranh hien tuong bi trung lap / chong doi tuong khi chay Dynamo nhieu lan.\n    \"\"\"\n    deleted_count = 0\n    try:\n        all_pts = []\n        for p in paths:\n            all_pts.extend(p.points)\n        if not all_pts:\n            return 0\n        min_x = min(pt.X for pt in all_pts) - max_dist_feet\n        max_x = max(pt.X for pt in all_pts) + max_dist_feet\n        min_y = min(pt.Y for pt in all_pts) - max_dist_feet\n        max_y = max(pt.Y for pt in all_pts) + max_dist_feet\n\n        # Quet tat ca FamilyInstance trong project\n        collector = FilteredElementCollector(document).OfClass(FamilyInstance).WhereElementIsNotElementType().ToElements()\n        to_delete = []\n        f_target = fam_name.lower().strip() if fam_name else \"\"\n\n        atgt_keywords = [\n            \"dpc\", \"dai phan cach\", \"ton\", \"song\", \"guard\", \"barrier\", \"hang rao\", \n            \"fence\", \"q2p\", \"km52\", \"luoi\", \"chong choi\", \"bien bao\", \"vach son\"\n        ]\n\n        for inst in collector:\n            try:\n                pt = None\n                try:\n                    loc = inst.Location\n                    if hasattr(loc, \"Point\") and loc.Point is not None:\n                        pt = loc.Point\n                    elif hasattr(loc, \"Curve\") and loc.Curve is not None:\n                        pt = loc.Curve.GetEndPoint(0)\n                except Exception:\n                    pass\n\n                if pt is None:\n                    try:\n                        bb = inst.get_BoundingBox(None)\n                        if bb is not None:\n                            pt = XYZ((bb.Min.X + bb.Max.X) * 0.5, (bb.Min.Y + bb.Max.Y) * 0.5, (bb.Min.Z + bb.Max.Z) * 0.5)\n                    except Exception:\n                        pass\n\n                if pt is None:\n                    continue\n\n                # Loc nhanh theo bounding box XY\n                if pt.X < min_x or pt.X > max_x or pt.Y < min_y or pt.Y > max_y:\n                    continue\n\n                # Kiem tra xem co phai doi tuong ATGT can don dep khong\n                s_fam_name = \"\"\n                s_type_name = \"\"\n                try:\n                    type_id = inst.GetTypeId()\n                    if type_id != ElementId.InvalidElementId:\n                        elem_type = document.GetElement(type_id)\n                        if elem_type:\n                            s_type_name = str(elem_type.Name).lower()\n                            if hasattr(elem_type, \"FamilyName\"):\n                                s_fam_name = str(elem_type.FamilyName).lower()\n                            elif hasattr(elem_type, \"Family\") and elem_type.Family:\n                                s_fam_name = str(elem_type.Family.Name).lower()\n                except Exception:\n                    pass\n\n                if not s_fam_name:\n                    try:\n                        sym = getattr(inst, \"Symbol\", None)\n                        if sym:\n                            s_type_name = str(sym.Name).lower()\n                            if sym.Family:\n                                s_fam_name = str(sym.Family.Name).lower()\n                    except Exception:\n                        pass\n\n                mark_str = \"\"\n                try:\n                    mark_p = inst.get_Parameter(BuiltInParameter.ALL_MODEL_MARK)\n                    if mark_p: mark_str = mark_p.AsString() or \"\"\n                except Exception:\n                    pass\n\n                comm_str = \"\"\n                try:\n                    comm_p = inst.get_Parameter(BuiltInParameter.ALL_MODEL_INSTANCE_COMMENTS)\n                    if comm_p: comm_str = comm_p.AsString() or \"\"\n                except Exception:\n                    pass\n\n                is_atgt = False\n                if f_target and (f_target in s_fam_name or s_fam_name in f_target or f_target in s_type_name or s_type_name in f_target):\n                    is_atgt = True\n                elif any(k in s_fam_name for k in atgt_keywords):\n                    is_atgt = True\n                elif any(k in s_type_name for k in atgt_keywords):\n                    is_atgt = True\n                elif mark_str and any(k in mark_str for k in [\"DPC-\", \"TS-\", \"HR-\", \"BB-\", \"VS-\"]):\n                    is_atgt = True\n                elif comm_str and \"[LOI BIM]\" in comm_str:\n                    is_atgt = True\n\n                if is_atgt:\n                    for p in paths:\n                        if p.min_distance_to(pt) <= max_dist_feet:\n                            to_delete.append(inst.Id)\n                            break\n            except Exception:\n                pass\n\n        if len(to_delete) > 0:\n            try:\n                from System.Collections.Generic import List\n                del_list = List[ElementId]()\n                for eid in set(to_delete):\n                    del_list.Add(eid)\n                del_res = document.Delete(del_list)\n                deleted_count = len(del_res)\n            except Exception:\n                for eid in set(to_delete):\n                    try:\n                        document.Delete(eid)\n                        deleted_count += 1\n                    except Exception:\n                        pass\n            try:\n                document.Regenerate()\n            except Exception:\n                pass\n            write_debug_log(\"Da don dep {0} doi tuong cu tren tuyen de tranh trung lap.\".format(deleted_count))\n    except Exception as ex_clean:\n        write_debug_log(\"Loi don dep: \" + str(ex_clean))\n\n    return deleted_count\r\ndef filter_relevant_paths(paths, fam_name, user_layer=\"\"):\r\n    \"\"\"\r\n    Loc cac duong Polyline phu hop voi loai Family duoc chon tu file CAD:\r\n    - Neu chi co 1 duong duy nhat: Su dung ngay lap tuc ma khong can loc.\r\n    - Neu co user_layer: Uu tien layer duoc chi dinh boi nguoi dung.\r\n    - Uu tien tuyet doi cac duong co cao do 3D thuc te (|Z| > 0.05 feet hoac Z bien thien doc tuyen).\r\n    - Tu dong loc theo keyword Family & CAD layer: DPC, TS, HR, C-TOPO-FEAT, TOPO, TIM, TUYEN...\r\n    - Chon chuoi tuyen dai nhat de rai.\r\n    \"\"\"\r\n    if len(paths) <= 1:\r\n        return paths\r\n\r\n    def clean_layer(l_str):\r\n        if not l_str: return \"\"\r\n        s = l_str.lower().strip()\r\n        if \":\" in s:\r\n            s = s.split(\":\")[-1].strip()\r\n        return s\r\n\r\n    # 1. Neu nguoi dung chi dinh ten Layer CAD cu the (Lá»†NH 9)\r\n    if user_layer and str(user_layer).strip():\r\n        u_layer_clean = clean_layer(str(user_layer))\r\n        matched = [p for p in paths if u_layer_clean in clean_layer(p.layer_name)]\r\n        if len(matched) > 0:\r\n            stitched = stitch_connected_paths(matched, tol_feet=2.0)\r\n            return remove_parallel_duplicate_paths(stitched, min_separation_feet=12.0)\r\n\r\n    # 2. Uu tien tuyet doi: Cac duong 3D Polyline co cao do thuc te (|Z| > 0.05 hoac Z bien thien doc tuyen)\r\n    paths_with_elevation = []\r\n    for p in paths:\r\n        if len(p.points) >= 2:\r\n            z_vals = [pt.Z for pt in p.points]\r\n            has_z = any(abs(z) > 0.05 for z in z_vals)\r\n            z_range = max(z_vals) - min(z_vals)\r\n            # Duong co cao do Z thuc te (>1.5cm) va tong chieu dai >= 1.0m\r\n            if (has_z or z_range > 0.02) and (p.total_length / METERS_TO_FEET) >= 1.0:\r\n                paths_with_elevation.append(p)\r\n\r\n    if len(paths_with_elevation) > 0:\r\n        stitched_3d = stitch_connected_paths(paths_with_elevation, tol_feet=2.0)\r\n        if len(stitched_3d) > 0:\r\n            stitched_3d = remove_parallel_duplicate_paths(stitched_3d, min_separation_feet=12.0)\r\n            stitched_3d.sort(key=lambda p: p.total_length, reverse=True)\r\n            return stitched_3d\r\n\r\n    # 3. Tu dong loc theo keyword Family va cac Layer CAD tieu bieu trong khao sat - thiet ke duong\r\n    fam_lower = fam_name.lower()\r\n    target_keywords = []\r\n    if \"dpc\" in fam_lower or \"dai\" in fam_lower or \"phan cach\" in fam_lower:\r\n        target_keywords = [\r\n            \"ranh giua\", \"0_ranh giua\", \"dpc\", \"dai phan cach\", \"median\", \r\n            \"vsi_marking_3.1a\", \"cntr\", \"c-road-cntr\", \"c-road\", \"tim\", \"tuyen\", \"3d\",\r\n            \"c-topo-feat\", \"topo\", \"feat\", \"feature\", \"civil\", \"survey\", \"polyline\"\r\n        ]\r\n    elif \"ts\" in fam_lower or \"ton\" in fam_lower or \"song\" in fam_lower or \"guard\" in fam_lower:\r\n        target_keywords = [\r\n            \"ts\", \"ton\", \"song\", \"guard\", \"ho lan\", \"c-road\", \r\n            \"c-topo-feat\", \"topo\", \"feat\", \"feature\", \"civil\", \"survey\", \"polyline\"\r\n        ]\r\n    elif \"hr\" in fam_lower or \"rao\" in fam_lower or \"fence\" in fam_lower:\r\n        target_keywords = [\r\n            \"hr\", \"rao\", \"fence\", \"b40\", \"thep gai\", \r\n            \"c-topo-feat\", \"topo\", \"feat\", \"feature\", \"civil\", \"survey\", \"polyline\"\r\n        ]\r\n    else:\r\n        target_keywords = [\r\n            \"c-topo-feat\", \"topo\", \"feat\", \"ranh giua\", \"dpc\", \"ts\", \"hr\", \"c-road\", \"tim\", \"tuyen\"\r\n        ]\r\n\r\n    layer_matched = []\r\n    for p in paths:\r\n        l_clean = clean_layer(p.layer_name)\r\n        if any(kw in l_clean for kw in target_keywords):\r\n            layer_matched.append(p)\r\n\r\n    if len(layer_matched) > 0:\r\n        stitched_candidates = stitch_connected_paths(layer_matched, tol_feet=2.0)\r\n        if len(stitched_candidates) > 0:\r\n            stitched_candidates = remove_parallel_duplicate_paths(stitched_candidates, min_separation_feet=12.0)\r\n            stitched_candidates.sort(key=lambda p: p.total_length, reverse=True)\r\n            return stitched_candidates\r\n\r\n    # 4. Neu khong tim thay layer phu hop, loc cac duong dai va lay chuoi dai nhat\r\n    all_stitched = stitch_connected_paths(paths, tol_feet=2.0)\r\n    if len(all_stitched) > 0:\r\n        all_stitched = remove_parallel_duplicate_paths(all_stitched, min_separation_feet=12.0)\r\n        all_stitched.sort(key=lambda p: p.total_length, reverse=True)\r\n        top_long = [p for p in all_stitched if (p.total_length / METERS_TO_FEET) >= 5.0]\r\n        if len(top_long) > 0:\r\n            return top_long\r\n        return all_stitched[:1]\r\n\r\n    return paths\r\n\r\ndef set_param_value(target_obj, param_candidates, val_meters):\r\n    \"\"\"Tim kiem va gan gia tri cho tham so trong Revit\"\"\"\r\n    if target_obj is None or val_meters is None:\r\n        return False\r\n\r\n    val_feet = float(val_meters) * METERS_TO_FEET\r\n    for p_name in param_candidates:\r\n        try:\r\n            param = target_obj.LookupParameter(p_name)\r\n            if param and not param.IsReadOnly:\r\n                if param.StorageType == StorageType.Double:\r\n                    param.Set(val_feet)\r\n                    return True\r\n                elif param.StorageType == StorageType.String:\r\n                    param.Set(str(val_meters))\r\n                    return True\r\n                elif param.StorageType == StorageType.Integer:\r\n                    param.Set(int(round(float(val_meters))))\r\n                    return True\r\n        except Exception:\r\n            pass\r\n\r\n    try:\r\n        norm_kw = [k.lower().replace(\"_\", \"\").replace(\" \", \"\").replace(\"-\", \"\") for k in param_candidates]\r\n        for p in target_obj.Parameters:\r\n            if p and not p.IsReadOnly and p.Definition:\r\n                p_norm = p.Definition.Name.lower().replace(\"_\", \"\").replace(\" \", \"\").replace(\"-\", \"\")\r\n                if p_norm in norm_kw:\r\n                    if p.StorageType == StorageType.Double:\r\n                        p.Set(val_feet)\r\n                        return True\r\n                    elif p.StorageType == StorageType.String:\r\n                        p.Set(str(val_meters))\r\n                        return True\r\n                    elif p.StorageType == StorageType.Integer:\r\n                        p.Set(int(round(float(val_meters))))\r\n                        return True\r\n    except Exception:\r\n        pass\r\n\r\n    return False\r\n\r\ndef apply_dimensions(inst, length_m, height_m, width_m):\r\n    \"\"\"Gan kich thuoc L, H, W cho doi tuong\"\"\"\r\n    applied = []\r\n    l_candidates = [\"Length\", \"Chiá»u dÃ i\", \"Chieu dai\", \"L\", \"L_dot\", \"L_Ä‘á»‘t\", \"Chiá»u dÃ i Ä‘á»‘t\", \r\n                    \"Chieu dai dot\", \"Segment Length\", \"Barrier Length\", \"DPC_Length\", \"L_dpc\"]\r\n    h_candidates = [\"Height\", \"Chiá»u cao\", \"Chieu cao\", \"H\", \"H_dot\", \"H_Ä‘á»‘t\", \"Chiá»u cao Ä‘á»‘t\", \r\n                    \"Chieu cao dot\", \"Segment Height\", \"Barrier Height\", \"DPC_Height\", \"H_dpc\"]\r\n    w_candidates = [\"Width\", \"Chiá»u rá»™ng\", \"Chieu rong\", \"Bá» rá»™ng\", \"Be rong\", \"B\", \"W\", \r\n                    \"Bá» rá»™ng Ä‘Ã¡y\", \"Be rong day\", \"Segment Width\", \"Barrier Width\", \"DPC_Width\", \"W_dot\"]\r\n\r\n    if length_m is not None and float(length_m) > 0:\r\n        if set_param_value(inst, l_candidates, length_m):\r\n            applied.append(\"L=\" + str(length_m) + \"m\")\r\n    if height_m is not None and float(height_m) > 0:\r\n        if set_param_value(inst, h_candidates, height_m):\r\n            applied.append(\"H=\" + str(height_m) + \"m\")\r\n    if width_m is not None and float(width_m) > 0:\r\n        if set_param_value(inst, w_candidates, width_m):\r\n            applied.append(\"W=\" + str(width_m) + \"m\")\r\n\r\n    sym = getattr(inst, \"Symbol\", None)\r\n    if sym:\r\n        if length_m is not None and float(length_m) > 0 and not any(x.startswith(\"L=\") for x in applied):\r\n            if set_param_value(sym, l_candidates, length_m):\r\n                applied.append(\"Type L=\" + str(length_m) + \"m\")\r\n        if height_m is not None and float(height_m) > 0 and not any(x.startswith(\"H=\") for x in applied):\r\n            if set_param_value(sym, h_candidates, height_m):\r\n                applied.append(\"Type H=\" + str(height_m) + \"m\")\r\n        if width_m is not None and float(width_m) > 0 and not any(x.startswith(\"W=\") for x in applied):\r\n            if set_param_value(sym, w_candidates, width_m):\r\n                applied.append(\"Type W=\" + str(width_m) + \"m\")\r\n\r\n    return applied\r\n\r\ndef apply_loi_info(inst, index, dist_m, fam_name, prefix_input=\"\", package_input=\"\", material_input=\"\", contractor_input=\"\"):\r\n    \"\"\"\r\n    Tu dong gan bo thong tin LOI (Level of Information) phi hinh hoc chuan BIM Ha tang Giao thong:\r\n    1. Ma dinh danh cau kien (Mark / BIM_Code): Danh so lien tuc tang dan theo ly trinh doc tuyen (0001, 0002...).\r\n    2. Thong tin Goi thau & Ly trinh (Package & Station).\r\n    3. Thong tin Vat lieu & Tieu chuan ky thuat (Material & Standards).\r\n    4. Thong tin Nha thau & Nghiem thu thi cong (Contractor & Acceptance).\r\n    5. Gan dong thoi vao cac Project/Shared Parameters (neu co) va Parameter co san cua Revit (Mark, Comments).\r\n    \"\"\"\r\n    if inst is None:\r\n        return \"\"\r\n\r\n    fam_lower = fam_name.lower() if fam_name else \"\"\r\n    auto_prefix = \"DPC-KM52-\"\r\n    auto_mat = \"BTXM M300 (C25/30) - TCVN 12681:2019\"\r\n    auto_item = \"Dai phan cach giua be tong xi mang\"\r\n\r\n    if \"ts\" in fam_lower or \"ton\" in fam_lower or \"song\" in fam_lower or \"guard\" in fam_lower:\r\n        auto_prefix = \"TS-KM52-\"\r\n        auto_mat = \"Thep ma kem nhung nong - 22 TCN 237-01\"\r\n        auto_item = \"Ho lan ton song ma kem\"\r\n    elif \"hr\" in fam_lower or \"rao\" in fam_lower or \"fence\" in fam_lower:\r\n        auto_prefix = \"HR-KM52-\"\r\n        auto_mat = \"Luoi thep ma kem boc nhua / Thep gai\"\r\n        auto_item = \"Hang rao bao ve duong cao toc\"\r\n    elif \"bien\" in fam_lower or \"sign\" in fam_lower:\r\n        auto_prefix = \"BB-KM52-\"\r\n        auto_mat = \"Mang phan quang 3M Series 3900/4000 - QCVN 41:2019\"\r\n        auto_item = \"Bien bao hieu giao thong duong bo\"\r\n    elif \"vach\" in fam_lower or \"son\" in fam_lower:\r\n        auto_prefix = \"VS-KM52-\"\r\n        auto_mat = \"Son deo nhiet phan quang - TCVN 8791:2011\"\r\n        auto_item = \"Vach son ke duong phan quang\"\r\n\r\n    prefix = prefix_input.strip() if prefix_input and prefix_input.strip() else auto_prefix\r\n    package_str = package_input.strip() if package_input and package_input.strip() else \"Goi thau XL01 | Km52+000 - Km60+000\"\r\n    material_str = material_input.strip() if material_input and material_input.strip() else auto_mat\r\n    contractor_str = contractor_input.strip() if contractor_input and contractor_input.strip() else \"Lien danh XL01 | Cho nghiem thu\"\r\n\r\n    # Ma cau kien danh so 4 chu so lien tuc: DPC-KM52-0001, DPC-KM52-0002...\r\n    mark_code = \"{0}{1:04d}\".format(prefix, index + 1)\r\n    chainage_approx = \"+{0:03d}m (s={1:.1f}m)\".format(int(dist_m % 1000), dist_m)\r\n\r\n    # A. Gan BuiltInParameter.ALL_MODEL_MARK (Mark - Chuan Revit)\r\n    try:\r\n        p_mark = inst.get_Parameter(BuiltInParameter.ALL_MODEL_MARK)\r\n        if p_mark and not p_mark.IsReadOnly:\r\n            p_mark.Set(mark_code)\r\n    except Exception:\r\n        pass\r\n\r\n    # B. Gan BuiltInParameter.ALL_MODEL_INSTANCE_COMMENTS (Comments - Bang tong hop LOI)\r\n    loi_summary = \"[LOI BIM] Ma: {0} | Hang muc: {1} | {2} | {3} | {4} | Vi tri: s={5:.1f}m\".format(\r\n        mark_code, auto_item, package_str, material_str, contractor_str, dist_m\r\n    )\r\n    try:\r\n        p_comm = inst.get_Parameter(BuiltInParameter.ALL_MODEL_INSTANCE_COMMENTS)\r\n        if p_comm and not p_comm.IsReadOnly:\r\n            p_comm.Set(loi_summary)\r\n    except Exception:\r\n        pass\r\n\r\n    # C. Quet va gan cac Project Parameters / Shared Parameters tuy chinh cua duan\r\n    mapping = [\r\n        ([\"Ma cau kien\", \"MÃ£ cáº¥u kiá»‡n\", \"Ma_Cau_Kien\", \"BIM_Code\", \"Code_Cau_Kien\", \"So hieu\", \"Element_Code\", \"Mark_Code\"], mark_code),\r\n        ([\"Goi thau\", \"GÃ³i tháº§u\", \"Goi_Thau\", \"Package\", \"Subproject\", \"Du an\", \"Project_Name\"], package_str),\r\n        ([\"Ly trinh\", \"LÃ½ trÃ¬nh\", \"Ly_Trinh\", \"Station\", \"Chainage\", \"Phan doan\", \"Station_Range\"], package_str + \" | \" + chainage_approx),\r\n        ([\"Hang muc\", \"Háº¡ng má»¥c\", \"Hang_Muc\", \"Item\", \"Category_Item\", \"Work_Item\"], auto_item),\r\n        ([\"Vat lieu\", \"Váº­t liá»‡u\", \"Vat_Lieu\", \"Material\", \"Mac be tong\", \"Lop phu\"], material_str),\r\n        ([\"Tieu chuan\", \"TiÃªu chuáº©n\", \"Tieu_Chuan\", \"Specification\", \"Standard\", \"Tieu chuan ky thuat\"], material_str),\r\n        ([\"Nha thau\", \"NhÃ  tháº§u\", \"Nha_Thau\", \"Contractor\", \"Don vi thi cong\", \"Nha_Thau_Thi_Cong\"], contractor_str),\r\n        ([\"Tinh trang\", \"TÃ¬nh tráº¡ng\", \"Tinh_Trang\", \"Status\", \"Nghiem thu\", \"Acceptance_Status\", \"Tinh trang nghiem thu\"], contractor_str),\r\n    ]\r\n\r\n    for candidates, val in mapping:\r\n        for c_name in candidates:\r\n            try:\r\n                p = inst.LookupParameter(c_name)\r\n                if p and not p.IsReadOnly and p.StorageType == StorageType.String:\r\n                    p.Set(str(val))\r\n                    break\r\n            except Exception:\r\n                pass\r\n\r\n    return mark_code\r\n\r\n\r\ndef distribute_along_paths(document, paths, symbol, length_m, height_m, width_m, gap_m, z_offset_m, rot_offset_deg=0.0,\n                           lateral_offset_m=0.0,\n                           loi_prefix=\"\", loi_package=\"\", loi_material=\"\", loi_contractor=\"\"):\n    \"\"\"\n    Rai Family doc theo danh sach duong dan 3D Polyline:\n    - THUAT TOAN DAY CUNG CHUAN (CHORD-BASED SEQUENTIAL PLACEMENT):\n      Cac dot tiep giap nhau 100% tai diem dau/cuoi (s_start -> s_end)\n      Khac phuc triet de loi chong doi tuong (khong can phan bo goc xoay sai lech)\n      Cac dot nam 100% dung tim polyline ca ve cao do Z va huong tuyen\n    - Ho tro DO LECH TIM MAT BANG (Lateral Offset): Cho phep nguoi dung offset sang trai (<0) hoac phai (>0)\n    - Ho tro ca Curve-Based (Line-Based) Family va Point-Based Family\n    - Tu dong can chinh chieu dai Family chay song song voi tim tuyen\n    - Chuan xac 100% cao do 3D cua Polyline thuc dia\n    - Tu dong don dep doi tuong cu de tranh trung lap\n    \"\"\"\n    block_len_feet = float(length_m) * METERS_TO_FEET\n    gap_feet = float(gap_m) * METERS_TO_FEET\n    eff_spacing_feet = block_len_feet + gap_feet\n    if eff_spacing_feet <= 0.1:\n        eff_spacing_feet = 5.0 * METERS_TO_FEET\n\n    z_offset_feet = float(z_offset_m) * METERS_TO_FEET\n    lat_offset_feet = float(lateral_offset_m) * METERS_TO_FEET\n    user_rot_offset = (float(rot_offset_deg) * math.pi / 180.0) if rot_offset_deg is not None else 0.0\n    created_count = 0\n    errors = []\n    param_applied_summary = None\n    first_mark_code = \"\"\n    last_mark_code = \"\"\n\n    levels = FilteredElementCollector(document).OfClass(Level).ToElements()\n    default_level = levels[0] if len(levels) > 0 else None\n\n    # Kiem tra loai placement cua Family (CurveBased vs PointBased)\n    is_curve_based = False\n    try:\n        if hasattr(symbol, \"Family\") and symbol.Family:\n            is_curve_based = (symbol.Family.FamilyPlacementType == FamilyPlacementType.CurveBased)\n    except Exception:\n        pass\n\n    # Loc va noi cac duong dan\n    stitched_paths = stitch_connected_paths(paths)\n    valid_paths = [p for p in stitched_paths if (p.total_length / METERS_TO_FEET) >= 0.5]\n    if len(valid_paths) == 0 and len(stitched_paths) > 0:\n        valid_paths = stitched_paths\n\n    total_path_len_m = sum(p.total_length for p in valid_paths) / METERS_TO_FEET\n\n    write_debug_log(\"distribute_along_paths: valid_paths={0}, total_len_m={1:.2f}\".format(len(valid_paths), total_path_len_m))\n    if len(valid_paths) > 0:\n        p0 = valid_paths[0].points[0]\n        p_end = valid_paths[0].points[-1]\n        write_debug_log(\"  Path start: ({0:.2f}, {1:.2f}, {2:.2f}) -> end: ({3:.2f}, {4:.2f}, {5:.2f})\".format(\n            p0.X, p0.Y, p0.Z, p_end.X, p_end.Y, p_end.Z\n        ))\n\n    fam_name = \"\"\n    try:\n        if hasattr(symbol, \"Family\") and symbol.Family:\n            fam_name = symbol.Family.Name\n        elif hasattr(symbol, \"Name\"):\n            fam_name = symbol.Name\n    except Exception:\n        pass\n\n    # 0. Tu dong don dep cac doi tuong ATGT cu tren cung duong dan de tranh loi trung lap khi chay lai nhieu lan\n    cleaned_old_count = cleanup_existing_instances_along_paths(document, valid_paths, fam_name, max_dist_feet=60.0)\n\n    # Bo nho toa do tam cac dot da rai de chong trung lap / de len nhau 100%\n    placed_centers = []\n\n    for path in valid_paths:\n        try:\n            path_len = path.total_length\n            if path_len < 0.2:\n                continue\n\n            current_s = 0.0\n\n            # Vong lap rai theo doan day cung noi tiep (Chord-Based)\n            while current_s + (block_len_feet * 0.88) <= path_len:\n                s_start = current_s\n                s_end = min(path_len, s_start + block_len_feet)\n\n                # 1. Lay toa do 3D diem dau va diem cuoi cua dot tren duong 3D Polyline\n                p_start_eval, _ = path.evaluate(s_start)\n                p_end_eval, _   = path.evaluate(s_end)\n\n                p1 = XYZ(p_start_eval.X, p_start_eval.Y, p_start_eval.Z + z_offset_feet)\n                p2 = XYZ(p_end_eval.X,   p_end_eval.Y,   p_end_eval.Z   + z_offset_feet)\n\n                # Vector day cung 3D\n                chord_dx = p2.X - p1.X\n                chord_dy = p2.Y - p1.Y\n                chord_dz = p2.Z - p1.Z\n                chord_len_2d = math.sqrt(chord_dx * chord_dx + chord_dy * chord_dy)\n\n                if chord_len_2d < 1e-4:\n                    current_s += eff_spacing_feet\n                    continue\n\n                # 2. Tinh do lech tim mat bang (Lateral Offset) vuong goc voi huong day cung\n                # Phap tuyen mat bang: Chieu duong = Lech sang PHAI, Chieu am = Lech sang TRAI\n                offset_dx = 0.0\n                offset_dy = 0.0\n                if abs(lat_offset_feet) > 1e-5:\n                    offset_dx = ( chord_dy / chord_len_2d) * lat_offset_feet\n                    offset_dy = (-chord_dx / chord_len_2d) * lat_offset_feet\n\n                p1_off = XYZ(p1.X + offset_dx, p1.Y + offset_dy, p1.Z)\n                p2_off = XYZ(p2.X + offset_dx, p2.Y + offset_dy, p2.Z)\n\n                if is_curve_based:\n                    # ==========================================================\n                    # TRUONG HOP A: Family la CurveBased (Line-Based Family)\n                    # ==========================================================\n                    if p1_off.DistanceTo(p2_off) < 0.05:\n                        current_s += eff_spacing_feet\n                        continue\n\n                    curve_mid = XYZ((p1_off.X + p2_off.X) * 0.5, (p1_off.Y + p2_off.Y) * 0.5, (p1_off.Z + p2_off.Z) * 0.5)\n                    is_clash = False\n                    for pc in placed_centers:\n                        if curve_mid.DistanceTo(pc) < (block_len_feet * 0.85):\n                            is_clash = True\n                            break\n                    if is_clash:\n                        current_s += eff_spacing_feet\n                        continue\n\n                    inst = None\n                    try:\n                        line_3d = Line.CreateBound(p1_off, p2_off)\n                        inst = document.Create.NewFamilyInstance(line_3d, symbol, default_level, StructuralType.NonStructural)\n                    except Exception:\n                        pass\n\n                    if inst is None and default_level:\n                        try:\n                            line_horiz = Line.CreateBound(\n                                XYZ(p1_off.X, p1_off.Y, default_level.Elevation),\n                                XYZ(p2_off.X, p2_off.Y, default_level.Elevation)\n                            )\n                            inst = document.Create.NewFamilyInstance(line_horiz, symbol, default_level, StructuralType.NonStructural)\n                            mid_z = (p1_off.Z + p2_off.Z) / 2.0\n                            set_instance_elevation(inst, mid_z, default_level)\n                        except Exception as ex_c:\n                            if len(errors) < 3:\n                                errors.append(\"Loi CurveBased: \" + str(ex_c))\n                            current_s += eff_spacing_feet\n                            continue\n\n                    if inst is not None:\n                        placed_centers.append(curve_mid)\n                        res_params = apply_dimensions(inst, length_m, height_m, width_m)\n                        if res_params and param_applied_summary is None:\n                            param_applied_summary = \", \".join(res_params)\n                        mk = apply_loi_info(inst, created_count, s_start / METERS_TO_FEET, fam_name, loi_prefix, loi_package, loi_material, loi_contractor)\n                        if not first_mark_code: first_mark_code = mk\n                        last_mark_code = mk\n                        created_count += 1\n\n                else:\n                    # ==========================================================\n                    # TRUONG HOP B: Family la Point-Based (Generic Model, DPC, TS...)\n                    # DAT TAI TRUNG DIEM DAY CUNG 3D (CHORD MIDPOINT)\n                    # KHOP KHIT 100% MOI NOI, KHONG HO, KHONG CHONG LAN\n                    # ==========================================================\n                    mid_pt = XYZ(\n                        (p1_off.X + p2_off.X) * 0.5,\n                        (p1_off.Y + p2_off.Y) * 0.5,\n                        (p1_off.Z + p2_off.Z) * 0.5\n                    )\n\n                    # Kiem tra chong trung bang khoang cach tam\n                    is_clash = False\n                    for pc in placed_centers:\n                        if mid_pt.DistanceTo(pc) < (block_len_feet * 0.85):\n                            is_clash = True\n                            break\n                    if is_clash:\n                        current_s += eff_spacing_feet\n                        continue\n\n                    # Goc xoay mat bang (Yaw) CHUAN XAC theo huong day cung noi tu p1 sang p2\n                    chord_yaw = math.atan2(chord_dy, chord_dx)\n                    final_yaw_rot = chord_yaw + user_rot_offset\n\n                    # Goc doc doc (Pitch)\n                    pitch_angle = math.atan2(chord_dz, chord_len_2d)\n\n                    # Khoi tao FamilyInstance\n                    inst = None\n                    try:\n                        inst = document.Create.NewFamilyInstance(mid_pt, symbol, StructuralType.NonStructural)\n                    except Exception:\n                        pass\n\n                    if inst is None and default_level:\n                        try:\n                            inst = document.Create.NewFamilyInstance(mid_pt, symbol, default_level, StructuralType.NonStructural)\n                        except Exception:\n                            pass\n\n                    if inst is None and default_level:\n                        try:\n                            inst = document.Create.NewFamilyInstance(mid_pt, symbol, default_level, StructuralType.Beam)\n                        except Exception as ex_create:\n                            if len(errors) < 3:\n                                errors.append(\"Loi tao instance: \" + str(ex_create))\n                            current_s += eff_spacing_feet\n                            continue\n\n                    if inst is None:\n                        current_s += eff_spacing_feet\n                        continue\n\n                    placed_centers.append(mid_pt)\n\n                    # Dong bo cao do Z 3D\n                    set_instance_elevation(inst, mid_pt.Z, default_level)\n\n                    # Xoay mat bang (Yaw) song song theo dung huong doan day cung\n                    if abs(final_yaw_rot) > 1e-5:\n                        try:\n                            center_pt = inst.Location.Point\n                            axis_yaw = Line.CreateBound(center_pt, XYZ(center_pt.X, center_pt.Y, center_pt.Z + 10.0))\n                            ElementTransformUtils.RotateElement(document, inst.Id, axis_yaw, final_yaw_rot)\n                        except Exception:\n                            pass\n\n                    # Xoay doc doc (Pitch) neu can\n                    if abs(pitch_angle) > 1e-6:\n                        try:\n                            center_pt = inst.Location.Point\n                            v_pitch_x = math.sin(chord_yaw)\n                            v_pitch_y = -math.cos(chord_yaw)\n                            axis_pitch_end = XYZ(\n                                center_pt.X + 10.0 * v_pitch_x,\n                                center_pt.Y + 10.0 * v_pitch_y,\n                                center_pt.Z\n                            )\n                            axis_pitch = Line.CreateBound(center_pt, axis_pitch_end)\n                            ElementTransformUtils.RotateElement(document, inst.Id, axis_pitch, pitch_angle)\n                        except Exception as ex_pitch:\n                            write_debug_log(\"Khong the xoay pitch: \" + str(ex_pitch))\n\n                    # Gan tham so kich thuoc L, H, W\n                    res_params = apply_dimensions(inst, length_m, height_m, width_m)\n                    if res_params and param_applied_summary is None:\n                        param_applied_summary = \", \".join(res_params)\n\n                    # Gan thong tin LOI BIM\n                    mk = apply_loi_info(inst, created_count, s_start / METERS_TO_FEET, fam_name, loi_prefix, loi_package, loi_material, loi_contractor)\n                    if not first_mark_code: first_mark_code = mk\n                    last_mark_code = mk\n\n                    if created_count == 0:\n                        write_debug_log(\"  First instance placed at: ({0:.2f}, {1:.2f}, {2:.2f}), chord_yaw={3:.2f} deg, final_yaw={4:.2f} deg\".format(\n                            inst.Location.Point.X, inst.Location.Point.Y, inst.Location.Point.Z,\n                            chord_yaw * 180.0 / math.pi, final_yaw_rot * 180.0 / math.pi\n                        ))\n\n                    created_count += 1\n\n                # BUOC NHAY CHUAN XAC: Diem dau dot sau = Diem cuoi dot truoc + khe ho (gap)\n                current_s = s_end + gap_feet\n\n        except Exception as ex:\n            if len(errors) < 3:\n                errors.append(str(ex))\n\n    loi_range = \"{0} -> {1}\".format(first_mark_code, last_mark_code) if first_mark_code else \"\"\n    return created_count, total_path_len_m, param_applied_summary, loi_range, errors, cleaned_old_count\n\n# ------------------------------------------------------------------------------\n# ENTRY POINT DYNAMO\n# ------------------------------------------------------------------------------\nif IS_DYNAMO:\n    # IN[0]: Doi tuong duoc chon (3D Polyline, Curve, ImportInstance CAD, Model Line)\n    selected_elem = IN[0] if len(IN) > 0 else None\n\n    # IN[1]: Family Type\n    fam_input = IN[1] if len(IN) > 1 and IN[1] else \"DPC_L=5M\"\n\n    # IN[2] -> IN[6]\n    length_val     = float(IN[2]) if len(IN) > 2 and IN[2] else 5.0\n    height_val     = float(IN[3]) if len(IN) > 3 and IN[3] else 0.9\n    width_val      = float(IN[4]) if len(IN) > 4 and IN[4] else 0.6\n    gap_val        = float(IN[5]) if len(IN) > 5 and IN[5] else 0.0\n    z_offset_val   = float(IN[6]) if len(IN) > 6 and IN[6] else 0.0\n\n    rot_offset_val = 0.0\n    lateral_offset_val = 0.0\n\n    # IN[7]: Goc xoay bu (Do) - Ho tro cu phap mo rong nhu \"0.0; offset=0.25\"\n    if len(IN) > 7 and IN[7] is not None and str(IN[7]).strip() != \"\":\n        raw_rot_str = str(IN[7]).strip()\n        if \";\" in raw_rot_str or \"offset\" in raw_rot_str.lower() or \",\" in raw_rot_str:\n            parts = raw_rot_str.replace(\";\", \",\").split(\",\")\n            for part in parts:\n                p_trim = part.strip()\n                if \"offset\" in p_trim.lower() or \"lech\" in p_trim.lower():\n                    try:\n                        lateral_offset_val = float(p_trim.split(\"=\")[-1].strip())\n                    except Exception:\n                        pass\n                else:\n                    try:\n                        rot_offset_val = float(p_trim)\n                    except Exception:\n                        pass\n        else:\n            try:\n                rot_offset_val = float(raw_rot_str)\n            except Exception:\n                pass\n\n    cad_layer_val  = str(IN[8]).strip() if len(IN) > 8 and IN[8] else \"\"\n\n    # IN[9]: Khoang lech tim mat bang (m) HOAC Tien to LOI neu la chuoi text\n    loi_prefix     = \"\"\n    if len(IN) > 9 and IN[9] is not None and str(IN[9]).strip() != \"\":\n        val_str_9 = str(IN[9]).strip()\n        try:\n            lateral_offset_val = float(val_str_9)\n        except ValueError:\n            loi_prefix = val_str_9\n\n    # IN[10] -> IN[13]: Thong tin LOI BIM\n    loi_package    = str(IN[10]).strip() if len(IN) > 10 and IN[10] is not None and str(IN[10]).strip() != \"\" else \"Goi thau XL01 | Km52+000 - Km60+000\"\n    loi_material   = str(IN[11]).strip() if len(IN) > 11 and IN[11] is not None and str(IN[11]).strip() != \"\" else \"BTXM M300 (C25/30) - TCVN 12681:2019\"\n    loi_contractor = str(IN[12]).strip() if len(IN) > 12 and IN[12] is not None and str(IN[12]).strip() != \"\" else \"Lien danh XL01 | Cho nghiem thu\"\n\n    # Ghi log chan doan\n    write_debug_log(\"=== EXECUTION (CHORD-BASED NO-OVERLAP) ===\")\n    write_debug_log(\"selected_elem: \" + str(selected_elem))\n    write_debug_log(\"fam_input: \" + str(fam_input))\n    write_debug_log(\"params: L={0}, H={1}, W={2}, Gap={3}, Z_off={4}, Rot={5}, Lat_off={6}\".format(\n        length_val, height_val, width_val, gap_val, z_offset_val, rot_offset_val, lateral_offset_val\n    ))\n\n    effective_spacing = length_val + gap_val\n\n    # Tu dong phat hien duong dan Family RFA mac dinh neu chua load vao project\n    default_rfa = \"\"\n    candidate_rfa_paths = [\n        r\"H:\\My Drive\\1.Work\\ATGT\\Tool ATGT\\Data\\01_DPC\\Family\\DPC_L=5M.rfa\",\n        r\"G:\\My Drive\\1.Work\\ATGT\\Tool ATGT\\Data\\01_DPC\\Family\\DPC_L=5M.rfa\",\n        r\"H:\\My Drive\\1.Work\\ATGT\\Tool ATGT\\Data\\01_DPC\\Family\\DPC_L=3M.rfa\",\n        r\"G:\\My Drive\\1.Work\\ATGT\\Tool ATGT\\Data\\01_DPC\\Family\\DPC_L=3M.rfa\",\n    ]\n    for r_path in candidate_rfa_paths:\n        if r_path and os.path.exists(r_path):\n            default_rfa = r_path\n            break\n\n    TransactionManager.Instance.EnsureInTransaction(doc)\n    symbol = resolve_symbol(doc, fam_input, default_rfa)\n\n    if not symbol:\n        TransactionManager.Instance.TransactionTaskDone()\n        OUT = \"ERROR: Khong tim thay FamilyType duoc chon: \" + str(fam_input) + \". Vui long kiem tra dropdown Family Types!\"\n    else:\n        fam_name = symbol.Family.Name if symbol.Family else symbol.Name\n\n        dim_desc = \"Kich thuoc: L={0}m, H={1}m, W={2}m, Khe ho={3}m (Buoc rai={4}m)\".format(\n            length_val, height_val, width_val, gap_val, effective_spacing\n        )\n\n        if selected_elem is not None:\n            raw_paths = extract_paths_from_element(selected_elem, doc)\n            write_debug_log(\"raw_paths count: \" + str(len(raw_paths)))\n            \n            # Loc dung layer va chuoi duong tim dai nhat cua tuyen co cao do 3D\n            paths = filter_relevant_paths(raw_paths, fam_name, cad_layer_val)\n            write_debug_log(\"filtered paths count: \" + str(len(paths)))\n\n            if len(paths) > 0:\n                count, total_len_m, p_summary, loi_range, errs, cleaned_cnt = distribute_along_paths(\n                    doc, paths, symbol, length_val, height_val, width_val, gap_val, z_offset_val, rot_offset_val,\n                    lateral_offset_val,\n                    loi_prefix, loi_package, loi_material, loi_contractor\n                )\n                TransactionManager.Instance.TransactionTaskDone()\n                if count > 0:\n                    param_msg = (\" | Tham so: [\" + p_summary + \"]\") if p_summary else \"\"\n                    layer_info = (\" (Layer: \" + paths[0].layer_name + \")\") if (paths and paths[0].layer_name) else \"\"\n                    clean_msg = (\" | Da tu dong xoa {0} doi tuong cu trung lap doc tuyen\".format(cleaned_cnt)) if cleaned_cnt > 0 else \"\"\n                    lat_info = (\" | Lech tim: {0:+.2f}m\".format(lateral_offset_val)) if abs(lateral_offset_val) > 1e-4 else \" | Chuan 100% tim polyline\"\n                    \n                    # Thong tin cao do 3D kiem chung\n                    z_sample_m = (paths[0].points[0].Z / METERS_TO_FEET) if len(paths[0].points) > 0 else 0.0\n                    elev_info = \" | Cao do Z ~ {0:.2f}m (Z Offset={1}m)\".format(z_sample_m, z_offset_val)\n                    \n                    loi_info = \" | [LOI BIM]: Da gan ma [{0}], {1}, {2}, {3}\".format(loi_range, loi_package, loi_material, loi_contractor) if loi_range else \"\"\n                    OUT = \"THANH CONG: Da rai {0} doi tuong [{1}] bam theo 3D Polyline theo day cung noi tiep (KHONG CHONG LAN){2}! (Tong L = {3:.1f}m){4}{5}{6}{7}{8}{9}\".format(\n                        count, fam_name, layer_info, total_len_m, dim_desc, lat_info, elev_info, param_msg, loi_info, clean_msg\n                    )\n                else:\n                    OUT = \"ERROR: Khong rai duoc tren 3D Polyline da chon. \" + (\"; \".join(errs) if errs else \"Vui long kiem tra lai doi tuong.\")\n            else:\n                TransactionManager.Instance.TransactionTaskDone()\n                elem_name_str = getattr(selected_elem, \"Name\", str(selected_elem))\n                OUT = \"ERROR: Khong tim thay duong Polyline/Curve hop le trong doi tuong da chon [{0}] (Tim thay {1} duong tho). Vui long kiem tra Layer CAD hoac chon duong Model Line!\".format(\n                    elem_name_str, len(raw_paths)\n                )\n        else:\n            TransactionManager.Instance.TransactionTaskDone()\n            OUT = \"HUONG DAN: Vui long click 'Select' o BUOC 1 de chon duong 3D Polyline / CAD Import / Model Line tren man hinh Revit!\"",
+      "Engine": "CPython3",
+      "VariableInputPorts": true,
+      "Id": "6bc101106e6457bea8cbca209ac2e39c",
+      "NodeType": "PythonScriptNode",
+      "Inputs": [
+        {
+          "Id": "a4a2192aee125fbb8ba899f17f2d0175",
+          "Name": "IN[0]",
+          "Description": "Element duoc chon (Lenh Select)",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "3d08ed39d4c050af9fabb3ecf0fab80f",
+          "Name": "IN[1]",
+          "Description": "Family Type",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "15dc94d06fa25746b4e58f5f4f3fed72",
+          "Name": "IN[2]",
+          "Description": "Chieu dai L (m)",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "409345354e955053866b7aa48f1dcb9e",
+          "Name": "IN[3]",
+          "Description": "Chieu cao H (m)",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "63332138b8e65f43b7c3157e50fe553d",
+          "Name": "IN[4]",
+          "Description": "Be rong W (m)",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "e6249eb856c550c38b3a44c575fedefc",
+          "Name": "IN[5]",
+          "Description": "Khe ho (m)",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "a8f03240c40157cfac377cc7afce9ede",
+          "Name": "IN[6]",
+          "Description": "Z Offset (m)",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "4ad4b78adb1d50288e45b8ad5bd8f639",
+          "Name": "IN[7]",
+          "Description": "Goc xoay bu (Do)",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "d4029a281845500385ac0805d2ecd6e7",
+          "Name": "IN[8]",
+          "Description": "Layer CAD",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "b1a2c3d4e5f60718293a4b5c6d7e8f90",
+          "Name": "IN[9]",
+          "Description": "Khoang lech tim mat bang (m)",
+          "Level": 2,
+          "KeepListStructure": false,
+          "UsingDefaultValue": false,
+          "UseLevels": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "d87b8174f42e5b5d881a47ad1d72f1e7",
+          "Name": "OUT",
+          "Description": "Ket qua",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded Python script."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "WatchWidth": 420.0,
+      "WatchHeight": 38.0,
+      "Id": "6fa0f24b41645a34878fdc549e417ed3",
+      "NodeType": "ExtensionNode",
+      "Inputs": [
+        {
+          "Id": "9f11715a901e529da6b2d469cdcd5098",
+          "Name": "",
+          "Description": "Node to evaluate.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "96494db670d05f508eb200f62537a8d1",
+          "Name": "count",
+          "Description": "Watch contents.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualizes a node's output"
+    },
+    {
+      "Id": "b8c4d2e1a5f670899876543210abcdef",
+      "ConcreteType": "CoreNodeModels.Input.StringInput, CoreNodeModels",
+      "InputValue": "0.0",
+      "NodeType": "StringInputNode",
+      "Inputs": [],
+      "Replication": "Disabled",
+      "Outputs": [
+        {
+          "Id": "c9d8e7f6a5b432100123456789fedcba",
+          "Name": "",
+          "Description": "String",
+          "Level": 2,
+          "KeepListStructure": false,
+          "UsingDefaultValue": false,
+          "UseLevels": false
+        }
+      ],
+      "Description": "Creates a string"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "484cf55b7cb750cfb26905a6e06dc3b1",
+      "End": "a4a2192aee125fbb8ba899f17f2d0175",
+      "Id": "a58739dc9e4e5087981fc0edf6e76f38",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "8dbb118fdeb4536386ba5c1549c23daf",
+      "End": "3d08ed39d4c050af9fabb3ecf0fab80f",
+      "Id": "f8a449d59eb953dfa0c0d76742ac970a",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "d99b51fdc9f257e8bc41ad8c678de9b7",
+      "End": "15dc94d06fa25746b4e58f5f4f3fed72",
+      "Id": "5c41dfc54c9e5939b6f6de29c9c4e715",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "e9a4d0b2db8258378b3d0e6e567cede3",
+      "End": "409345354e955053866b7aa48f1dcb9e",
+      "Id": "7a7f99108fa85b3695d97fe29991e9ca",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "7da79e3a3a3053f8b77de0441597061b",
+      "End": "63332138b8e65f43b7c3157e50fe553d",
+      "Id": "fe4dcc7b56675a5280e701968ba30d38",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "b542fee81ed0513ca193db19e1718f02",
+      "End": "e6249eb856c550c38b3a44c575fedefc",
+      "Id": "839a1cf980535f6ea5bc1b20781f03f5",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "d64effb9fb6256ef856dce4b2e2241eb",
+      "End": "a8f03240c40157cfac377cc7afce9ede",
+      "Id": "ea53310ac2ea53c8a9293248f8b6e28c",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "aca70b48c0e457849011974272d1d9de",
+      "End": "4ad4b78adb1d50288e45b8ad5bd8f639",
+      "Id": "da56b028125b5c38b6f8af2a6ecb34b4",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "6213cec4cfc4578084476dea9c4fe9ea",
+      "End": "d4029a281845500385ac0805d2ecd6e7",
+      "Id": "3af920c393695a309ef7b6aa06d574ee",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "d87b8174f42e5b5d881a47ad1d72f1e7",
+      "End": "9f11715a901e529da6b2d469cdcd5098",
+      "Id": "692fb7df26bc5f8da4adffb03cfb7e96",
+      "IsHidden": "False"
+    },
+    {
+      "IsHidden": "False",
+      "End": "b1a2c3d4e5f60718293a4b5c6d7e8f90",
+      "Id": "b0bfb587934a43da80fa3f44728005cd",
+      "Start": "c9d8e7f6a5b432100123456789fedcba"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [],
+  "EnableLegacyPolyCurveBehavior": true,
+  "Thumbnail": "",
+  "GraphDocumentationURL": null,
+  "ExtensionWorkspaceData": [
+    {
+      "ExtensionGuid": "28992e1d-abb9-417f-8b1b-05e053bee670",
+      "Name": "Properties",
+      "Version": "3.3",
+      "Data": {}
+    },
+    {
+      "ExtensionGuid": "DFBD9CC0-DB40-457A-939E-8C8555555A9D",
+      "Name": "Generative Design",
+      "Version": "8.2",
+      "Data": {}
+    }
+  ],
+  "Author": "ATGT Automation",
+  "Linting": {
+    "activeLinter": "None",
+    "activeLinterId": "7b75fb44-43fd-4631-a878-29f4d5d8399a",
+    "warningCount": 0,
+    "errorCount": 0
+  },
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "3.3.0.6316",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "_Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "ConnectorPins": [],
+    "NodeViews": [
+      {
+        "Id": "d63459c41df3546da4fef5fe7d0ca50e",
+        "Name": "1. CHON TIM TUYEN / MO HINH (Click Select)",
+        "IsSetAsInput": true,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": false,
+        "X": 80.0,
+        "Y": 80.0
+      },
+      {
+        "Id": "31633794d70553e297cb8f6d5c389387",
+        "Name": "2. CHON KIEU FAMILY (DPC / Ton Song / Luoi / Rao)",
+        "IsSetAsInput": true,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": false,
+        "X": 80.0,
+        "Y": 220.0
+      },
+      {
+        "Id": "a805e62a561d55049a277001cbb7e812",
+        "Name": "3. CHIEU DAI DOT L / BUOC RAI (m) [DPC: 5.0m, Ton: 4.0m]",
+        "IsSetAsInput": true,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": false,
+        "X": 80.0,
+        "Y": 360.0
+      },
+      {
+        "Id": "ac4ca063d64d533b883af88d33591785",
+        "Name": "4. CHIEU CAO DOT H (m) [DPC: 0.9m, Ton: 0.7m]",
+        "IsSetAsInput": true,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": false,
+        "X": 80.0,
+        "Y": 500.0
+      },
+      {
+        "Id": "4f4c77c10354501ca5cf30cefabce36f",
+        "Name": "5. BE RONG DAY DOT W (m) [DPC: 0.6m]",
+        "IsSetAsInput": true,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": false,
+        "X": 80.0,
+        "Y": 640.0
+      },
+      {
+        "Id": "ded64d754485512588718f48ba380e18",
+        "Name": "6. KHE HO / DO LONG MONG NGAM (m) [0.0: khit, >0: ho]",
+        "IsSetAsInput": true,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": false,
+        "X": 80.0,
+        "Y": 780.0
+      },
+      {
+        "Id": "c4d5c4f0418753af885a601cffbf3f83",
+        "Name": "7. CAO DO Z OFFSET (m) [0.0: mat duong, +0.9m: tren DPC]",
+        "IsSetAsInput": true,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": false,
+        "X": 80.0,
+        "Y": 920.0
+      },
+      {
+        "Id": "5e61cfa5c30757aeb8a1eb72ed0dcca4",
+        "Name": "8. GOC XOAY BU (Do) [0.0: Song song tim tuyen; nhap 90, -90 neu can]",
+        "IsSetAsInput": true,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": false,
+        "X": 80.0,
+        "Y": 1060.0
+      },
+      {
+        "Id": "075852bdbdcd55679afe7ec606766629",
+        "Name": "9. TEN LAYER CAD [Bo trong = Tu dong nhan theo Family]",
+        "IsSetAsInput": true,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": false,
+        "X": 80.0,
+        "Y": 1200.0
+      },
+      {
+        "Id": "6bc101106e6457bea8cbca209ac2e39c",
+        "Name": "[XU LY DYNAMO] TU DONG DAT, XOAY & GAN KICH THUOC",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 680.0,
+        "Y": 540.0
+      },
+      {
+        "Id": "6fa0f24b41645a34878fdc549e417ed3",
+        "Name": "[KET QUA THUC THI] XEM SO LUONG & KICH THUOC DA RAI",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": true,
+        "Excluded": false,
+        "ShowGeometry": false,
+        "X": 1180.0,
+        "Y": 540.0
+      },
+      {
+        "X": 80.0,
+        "Y": 1340.0,
+        "IsSetAsInput": true,
+        "Id": "b8c4d2e1a5f670899876543210abcdef",
+        "Name": "10. KHOANG LECH TIM MAT BANG (m) [0.0: Dung tim; >0: Sang phai, <0: Sang trai]",
+        "Excluded": false,
+        "IsSetAsOutput": false,
+        "ShowGeometry": true
+      }
+    ],
+    "Annotations": [
+      {
+        "Id": "219821567cc65528bfc8a3bb325655bd",
+        "Title": "=== BANG LENH NHAP LIEU DYNAMO PLAYER (KICH THUOC & DOI TUONG) ===",
+        "DescriptionText": null,
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "d63459c41df3546da4fef5fe7d0ca50e",
+          "31633794d70553e297cb8f6d5c389387",
+          "a805e62a561d55049a277001cbb7e812",
+          "ac4ca063d64d533b883af88d33591785",
+          "4f4c77c10354501ca5cf30cefabce36f",
+          "ded64d754485512588718f48ba380e18",
+          "c4d5c4f0418753af885a601cffbf3f83",
+          "5e61cfa5c30757aeb8a1eb72ed0dcca4",
+          "075852bdbdcd55679afe7ec606766629",
+          "b8c4d2e1a5f670899876543210abcdef"
+        ],
+        "HasNestedGroups": false,
+        "Left": 70.0,
+        "Top": -80.0,
+        "Width": 621.0,
+        "Height": 1564.0,
+        "FontSize": 36.0,
+        "GroupStyleId": "00000000-0000-0000-0000-000000000000",
+        "InitialTop": 80.0,
+        "InitialHeight": 1265.0,
+        "TextblockHeight": 150.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "eaf9c01d7aff5533a87e9e90265fa9ee",
+        "Title": "=== LENH THUC THI TU DONG: DAT, XOAY & GAN KICH THUOC MO HINH ===",
+        "DescriptionText": null,
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "6bc101106e6457bea8cbca209ac2e39c",
+          "6fa0f24b41645a34878fdc549e417ed3"
+        ],
+        "HasNestedGroups": false,
+        "Left": 670.0,
+        "Top": 424.0,
+        "Width": 1042.0,
+        "Height": 523.0,
+        "FontSize": 36.0,
+        "GroupStyleId": "00000000-0000-0000-0000-000000000000",
+        "InitialTop": 540.0,
+        "InitialHeight": 145.0,
+        "TextblockHeight": 106.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "20437a355a1155f78389f1f59cbcd2b6",
+        "Title": "=== HUONG DAN SU DUNG CONG CU RAI ATGT (DPC / TON SONG / LUOI / RAO) ===\n\n1. LENH SELECT: Click nut 'Select' o muc [1] -> Click chon duong tim tuyen tren Revit (3D Polyline, Model Line LI, hoac CAD).\n2. CHON FAMILY: Chon kieu Family o muc [2] (DPC_L=5M, TS-ZZ-GUA, Luoi chong choi...).\n3. KICH THUOC: Nhap Chieu dai L, Chieu cao H, Be rong W va Khe ho mong ngam -> Tool tu dong tinh buoc rai va gan tham so Revit.\n4. GOC XOAY: Mac dinh 0.0 do (song song doc theo tim tuyen). Neu can quay 90 do thi nhap 90 hoac -90.\n5. THUC THI: Bam nut 'Run' (hoac nut Play trong Dynamo Player) de hoan thanh!",
+        "DescriptionText": null,
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [],
+        "HasNestedGroups": false,
+        "Left": 80.0,
+        "Top": -180.0,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "GroupStyleId": "00000000-0000-0000-0000-000000000000",
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      }
+    ],
+    "X": 234.98044275802164,
+    "Y": -14.716592713326349,
+    "Zoom": 0.60296841566401016
+  }
+}
