@@ -85,6 +85,96 @@ public class TinSurface {
         return surfaces;
     }
 
+    public static TinSurface LoadFromIfc(string ifcPath) {
+        TinSurface ts = new TinSurface();
+        ts.Name = Path.GetFileNameWithoutExtension(ifcPath);
+        string text = File.ReadAllText(ifcPath);
+        var ci = CultureInfo.InvariantCulture;
+
+        // 1. Check IFC4 IFCCARTESIANPOINTLIST3D + IFCTRIANGULATEDFACESET
+        var ptMatch = System.Text.RegularExpressions.Regex.Match(text, @"IFCCARTESIANPOINTLIST3D\(\((.+?)\)\);", System.Text.RegularExpressions.RegexOptions.Singleline);
+        if (ptMatch.Success) {
+            var coordMatches = System.Text.RegularExpressions.Regex.Matches(ptMatch.Groups[1].Value, @"\(([-0-9.,E+]+)\)");
+            int id = 1;
+            foreach (System.Text.RegularExpressions.Match m in coordMatches) {
+                string[] parts = m.Groups[1].Value.Split(',');
+                double x = double.Parse(parts[0], ci);
+                double y = double.Parse(parts[1], ci);
+                double z = double.Parse(parts[2], ci);
+                ts.Points[id] = new Point3D(x, y, z);
+                ts.IndexPoint(id, x, y);
+                id++;
+            }
+
+            var fsMatch = System.Text.RegularExpressions.Regex.Match(text, @"IFCTRIANGULATEDFACESET\([^,]+,[^,]+,[^,]+,\((.+?)\)", System.Text.RegularExpressions.RegexOptions.Singleline);
+            if (fsMatch.Success) {
+                var triMatches = System.Text.RegularExpressions.Regex.Matches(fsMatch.Groups[1].Value, @"\(([0-9,]+)\)");
+                int triIdx = 0;
+                foreach (System.Text.RegularExpressions.Match m in triMatches) {
+                    string[] parts = m.Groups[1].Value.Split(',');
+                    int p1 = int.Parse(parts[0]);
+                    int p2 = int.Parse(parts[1]);
+                    int p3 = int.Parse(parts[2]);
+                    ts.AddTriangle(p1, p2, p3, ref triIdx);
+                }
+            }
+            return ts;
+        }
+
+        // 2. Fallback: IFC2X3 IFCCARTESIANPOINT + IFCPOLYLOOP
+        int fallbackTriIdx = 0;
+        foreach (string line in File.ReadLines(ifcPath)) {
+            if (line.Length < 10 || line[0] != '#') continue;
+            int eq = line.IndexOf('=');
+            if (eq < 0) continue;
+            int id = int.Parse(line.Substring(1, eq - 1));
+            if (line.IndexOf("IFCCARTESIANPOINT((", eq) == eq + 1) {
+                int s = eq + 20;
+                int e = line.IndexOf("))", s);
+                string[] parts = line.Substring(s, e - s).Split(',');
+                if (parts.Length == 3) {
+                    double x = double.Parse(parts[0], ci);
+                    double y = double.Parse(parts[1], ci);
+                    double z = double.Parse(parts[2], ci);
+                    ts.Points[id] = new Point3D(x, y, z);
+                    ts.IndexPoint(id, x, y);
+                }
+            } else if (line.IndexOf("IFCPOLYLOOP((", eq) == eq + 1) {
+                int s = eq + 14;
+                int e = line.IndexOf("))", s);
+                string[] parts = line.Substring(s, e - s).Split(',');
+                if (parts.Length >= 3) {
+                    int p1 = int.Parse(parts[0].TrimStart('#'));
+                    int p2 = int.Parse(parts[1].TrimStart('#'));
+                    int p3 = int.Parse(parts[2].TrimStart('#'));
+                    ts.AddTriangle(p1, p2, p3, ref fallbackTriIdx);
+                }
+            }
+        }
+        return ts;
+    }
+
+    private void AddTriangle(int p1, int p2, int p3, ref int triIdx) {
+        if (!Points.ContainsKey(p1) || !Points.ContainsKey(p2) || !Points.ContainsKey(p3)) return;
+        Point3D pt1 = Points[p1], pt2 = Points[p2], pt3 = Points[p3];
+        Triangle tri = new Triangle { P1 = p1, P2 = p2, P3 = p3 };
+        tri.MinX = Math.Min(pt1.X, Math.Min(pt2.X, pt3.X));
+        tri.MaxX = Math.Max(pt1.X, Math.Max(pt2.X, pt3.X));
+        tri.MinY = Math.Min(pt1.Y, Math.Min(pt2.Y, pt3.Y));
+        tri.MaxY = Math.Max(pt1.Y, Math.Max(pt2.Y, pt3.Y));
+
+        double v1x = pt2.X - pt1.X, v1y = pt2.Y - pt1.Y, v1z = pt2.Z - pt1.Z;
+        double v2x = pt3.X - pt1.X, v2y = pt3.Y - pt1.Y, v2z = pt3.Z - pt1.Z;
+        tri.A = v1y * v2z - v1z * v2y;
+        tri.B = v1z * v2x - v1x * v2z;
+        tri.C = v1x * v2y - v1y * v2x;
+        tri.D = -(tri.A * pt1.X + tri.B * pt1.Y + tri.C * pt1.Z);
+        if (Math.Abs(tri.C) < 1e-9) return;
+
+        Triangles.Add(tri);
+        IndexTriangle(tri, triIdx++);
+    }
+
     private void IndexPoint(int id, double x, double y) {
         int gx = (int)Math.Floor(x / cellSize);
         int gy = (int)Math.Floor(y / cellSize);
