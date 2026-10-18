@@ -7,7 +7,7 @@ param(
 )
 
 $ErrorActionPreference = "Stop"
-Add-Type -TypeDefinition (Get-Content "$PSScriptRoot\TinSurface.cs" -Raw)
+Add-Type -TypeDefinition (Get-Content "$PSScriptRoot\TinSurface.cs" -Raw) -ReferencedAssemblies "System.Xml"
 
 Write-Host "Loading IFC TIN surface: $IfcPath ..."
 $tin = [TinSurface]::LoadFromIfc($IfcPath)
