@@ -20,7 +20,7 @@ Write-Host "==========================================================" -Foregro
 Write-Host ">>> BUOC 1: NAP THU VIEN TIN SURFACE VA BE MAT LANDXML <<<" -ForegroundColor Cyan
 Write-Host "==========================================================" -ForegroundColor Cyan
 
-$tinCsPath = "H:\My Drive\1.Work\ATGT\Tool ATGT\TinSurface.cs"
+$tinCsPath = Join-Path $PSScriptRoot "TinSurface.cs"
 Add-Type -Path $tinCsPath -ReferencedAssemblies "System.Xml"
 
 $sw = [System.Diagnostics.Stopwatch]::StartNew()

@@ -21,17 +21,17 @@
 
 ## 📦 Danh Mục Bộ Công Cụ Trong Repository
 
-| STT | Tên File Dynamo (`.dyn`) | Script Python lõi (`.py`) | Chức năng chính |
+| STT | Tên File Dynamo (`product/*.dyn`) | Script Python lõi (`src/*.py`) | Chức năng chính |
 | :-: | :--- | :--- | :--- |
-| **1** | `[LENH ATGT] RAI DAI PHAN CACH - TON SONG.dyn` | `Import_ATGT_To_Revit.py` | Rải **Dải phân cách (DPC)**, **Lưới chống chói** bám theo 3D Polyline với tùy chọn lệch tim & khe co giãn. |
-| **2** | `[LENH ATGT] RAI TON SONG HO LAN.dyn` | `Rai_Ton_Song_Revit.py` | Rải **Tôn lượn sóng hộ lan** (`TS-ZZ-GUA`), tự động xoay mặt tôn hướng vào tim đường & bám dốc dọc 3D. |
-| **3** | `[LENH ATGT] RAI HANG RAO.dyn` | `Rai_Hang_Rao_Revit.py` | Rải **Hàng rào bảo vệ hành lang ATGT** (thép gai, lưới B40) theo ranh giải phóng mặt bằng. |
-| **4** | `[LENH ATGT] RAI HANG RAO - TUY CHON FAMILY.dyn` | `Rai_Hang_Rao_Tuy_Chon_Family_Revit.py` | Rải **bất kỳ Family nào trong dự án** qua menu thả (Dropdown), hỗ trợ cả Family dạng Điểm (Point-Based) và Dầm (Line/Beam-Based). |
-| **5** | `[LENH ATGT] GAN LOI - THONG TIN BIM.dyn` | `Gan_LOI_ATGT_Revit.py` | Quét chọn hoặc tự động lọc toàn bộ cấu kiện ATGT để đánh mã theo lý trình và gắn bộ tham số **BIM LOI**. |
+| **1** | `product/[LENH ATGT] RAI DAI PHAN CACH - TON SONG.dyn` | `src/Import_ATGT_To_Revit.py` | Rải **Dải phân cách (DPC)**, **Lưới chống chói** bám theo 3D Polyline với tùy chọn lệch tim & khe co giãn. |
+| **2** | `product/[LENH ATGT] RAI TON SONG HO LAN.dyn` | `src/Rai_Ton_Song_Revit.py` | Rải **Tôn lượn sóng hộ lan** (`TS-ZZ-GUA`), tự động xoay mặt tôn hướng vào tim đường & bám dốc dọc 3D. |
+| **3** | `product/[LENH ATGT] RAI HANG RAO.dyn` | `src/Rai_Hang_Rao_Revit.py` | Rải **Hàng rào bảo vệ hành lang ATGT** (thép gai, lưới B40) theo ranh giải phóng mặt bằng. |
+| **4** | `product/[LENH ATGT] RAI HANG RAO - TUY CHON FAMILY.dyn` | `src/Rai_Hang_Rao_Tuy_Chon_Family_Revit.py` | Rải **bất kỳ Family nào trong dự án** qua menu thả (Dropdown), hỗ trợ cả Family dạng Điểm (Point-Based) và Dầm (Line/Beam-Based). |
+| **5** | `product/[LENH ATGT] GAN LOI - THONG TIN BIM.dyn` | `src/Gan_LOI_ATGT_Revit.py` | Quét chọn hoặc tự động lọc toàn bộ cấu kiện ATGT để đánh mã theo lý trình và gắn bộ tham số **BIM LOI**. |
 
-> **Công cụ phụ trợ xử lý dữ liệu 3D ngoài Revit:**
-> - `export_cad.lsp` + `export_atgt_3d_data.ps1`: Trích xuất Block/Polyline từ AutoCAD và nội suy cao độ từ bề mặt TIN LandXML (`TinSurface.cs`) ra file CSV 3D.
-> - `Match_Ifc_Surface_Elevation.ps1`: Nội suy và khớp cao độ cấu kiện Revit theo bề mặt địa hình/mặt đường từ file `.ifc`.
+> **Công cụ phụ trợ xử lý dữ liệu 3D ngoài Revit (`src/`):**
+> - `src/export_cad.lsp` + `src/export_atgt_3d_data.ps1`: Trích xuất Block/Polyline từ AutoCAD và nội suy cao độ từ bề mặt TIN LandXML (`src/TinSurface.cs`) ra file CSV 3D.
+> - `src/Match_Ifc_Surface_Elevation.ps1`: Nội suy và khớp cao độ cấu kiện Revit theo bề mặt địa hình/mặt đường từ file `.ifc`.
 
 ---
 
@@ -47,7 +47,7 @@ git clone https://github.com/Iris126-VNE/Tool-ATGT.git
 1. Mở **Autodesk Revit** (khuyến nghị Revit 2024 / 2025) và mở file dự án `.rvt`.
 2. Đảm bảo các Family ATGT cần rải (Dải phân cách, Tôn sóng, Hàng rào, Biển báo...) đã được load vào dự án.
 3. Trên thanh Ribbon, vào tab **Manage** ➔ chọn **Dynamo Player**.
-4. Bấm vào nút **Add Folder (Thêm thư mục)** trên Dynamo Player và trỏ đường dẫn tới thư mục `Tool-ATGT` vừa tải về.
+4. Bấm vào nút **Add Folder (Thêm thư mục)** trên Dynamo Player và trỏ đường dẫn tới thư mục **`Tool-ATGT/product`** vừa tải về.
 
 ### Bước 3: Chạy công cụ
 1. Bấm vào tên lệnh `[LENH ATGT] ...` cần sử dụng trong danh sách của Dynamo Player.
@@ -162,19 +162,19 @@ Công cụ giúp chuẩn hóa dữ liệu phi hình học (LOI) cho toàn bộ c
 
 ## 🛠️ Công Cụ Phụ Trợ Xử Lý Bề Mặt 3D (CAD / LandXML / IFC)
 
-Ngoài các script chạy trực tiếp trong Dynamo Player, repository còn cung cấp bộ công cụ xử lý tọa độ & bề mặt địa hình 3D bằng PowerShell + C# (`TinSurface.cs`):
+Ngoài các script chạy trực tiếp trong Dynamo Player, thư mục `src/` còn cung cấp bộ công cụ xử lý tọa độ & bề mặt địa hình 3D bằng PowerShell + C# (`src/TinSurface.cs`):
 
-1. **Nội suy dữ liệu CAD 2D lên bề mặt 3D LandXML (`export_atgt_3d_data.ps1`)**:
-   - Sử dụng `export_cad.lsp` trong AutoCAD để xuất danh sách Block (Biển báo) và Polyline (DPC, Tôn sóng, Hàng rào, Vạch sơn) ra file `cad_extracted_data.tsv`.
+1. **Nội suy dữ liệu CAD 2D lên bề mặt 3D LandXML (`src/export_atgt_3d_data.ps1`)**:
+   - Sử dụng `src/export_cad.lsp` trong AutoCAD để xuất danh sách Block (Biển báo) và Polyline (DPC, Tôn sóng, Hàng rào, Vạch sơn) ra file `cad_extracted_data.tsv`.
    - Chạy lệnh PowerShell để nội suy cao độ $Z$ từ bề mặt `.xml` (LandXML) và xuất ra bộ file CSV 3D trong thư mục `output_3d/`:
      ```powershell
-     .\export_atgt_3d_data.ps1 -CadTsvPath ".\cad_extracted_data.tsv" -XmlPath ".\Data\XML\TOP CAC CAU.xml" -OutputDir ".\output_3d"
+     .\src\export_atgt_3d_data.ps1 -CadTsvPath ".\cad_extracted_data.tsv" -XmlPath ".\Data\XML\TOP CAC CAU.xml" -OutputDir ".\output_3d"
      ```
 
-2. **Khớp cao độ cấu kiện theo bề mặt IFC (`Match_Ifc_Surface_Elevation.ps1`)**:
+2. **Khớp cao độ cấu kiện theo bề mặt IFC (`src/Match_Ifc_Surface_Elevation.ps1`)**:
    - Đọc lưới tam giác TIN trực tiếp từ file mặt đường `.ifc` và tính toán độ lệch cao độ `Elevation from Level` cho danh sách cấu kiện:
      ```powershell
-     .\Match_Ifc_Surface_Elevation.ps1 -IfcPath ".\Data\Input\Top tuyến chính.ifc" -ElementsJsonPath ".\elements.json" -OutputJsonPath ".\elevation_updates.json"
+     .\src\Match_Ifc_Surface_Elevation.ps1 -IfcPath ".\Data\Input\Top tuyến chính.ifc" -ElementsJsonPath ".\elements.json" -OutputJsonPath ".\elevation_updates.json"
      ```
 
 ---
@@ -183,22 +183,28 @@ Ngoài các script chạy trực tiếp trong Dynamo Player, repository còn cun
 
 ```text
 Tool-ATGT/
-├── [LENH ATGT] RAI DAI PHAN CACH - TON SONG.dyn     # Dynamo: Rải Dải phân cách & Lưới chống chói
-├── [LENH ATGT] RAI TON SONG HO LAN.dyn              # Dynamo: Rải Tôn lượn sóng hộ lan
-├── [LENH ATGT] RAI HANG RAO.dyn                     # Dynamo: Rải Hàng rào bảo vệ ATGT
-├── [LENH ATGT] RAI HANG RAO - TUY CHON FAMILY.dyn   # Dynamo: Rải cấu kiện với Dropdown chọn Family bất kỳ
-├── [LENH ATGT] GAN LOI - THONG TIN BIM.dyn          # Dynamo: Gán thông tin BIM LOI hàng loạt
-├── Import_ATGT_To_Revit.py                          # Python Engine: Rải DPC & chuẩn hóa 3D Polyline
-├── Rai_Ton_Song_Revit.py                            # Python Engine: Rải Tôn sóng hộ lan 3D
-├── Rai_Hang_Rao_Revit.py                            # Python Engine: Rải Hàng rào bảo vệ 3D
-├── Rai_Hang_Rao_Tuy_Chon_Family_Revit.py            # Python Engine: Rải Family tùy chọn đa năng
-├── Gan_LOI_ATGT_Revit.py                            # Python Engine: Gán Shared Parameters & LOI BIM
-├── TinSurface.cs                                    # Thư viện C# xử lý lưới tam giác TIN (LandXML & IFC)
-├── export_atgt_3d_data.ps1                          # Script nội suy cao độ CAD + LandXML sang 3D CSV
-├── Match_Ifc_Surface_Elevation.ps1                  # Script khớp cao độ cấu kiện lên mặt đường IFC
-├── export_cad.lsp                                   # AutoLISP trích xuất dữ liệu bình đồ ATGT từ AutoCAD
-├── HUONG_DAN_SU_DUNG.md                             # Tài liệu chi tiết thuật toán & thông số chuyên sâu
-└── README.md                                        # Tài liệu hướng dẫn sử dụng tổng quan
+├── product/                                             # 📦 THƯ MỤC SẢN PHẨM (Trỏ Dynamo Player vào đây)
+│   ├── [LENH ATGT] RAI DAI PHAN CACH - TON SONG.dyn     # Dynamo: Rải Dải phân cách & Lưới chống chói
+│   ├── [LENH ATGT] RAI TON SONG HO LAN.dyn              # Dynamo: Rải Tôn lượn sóng hộ lan
+│   ├── [LENH ATGT] RAI HANG RAO.dyn                     # Dynamo: Rải Hàng rào bảo vệ ATGT
+│   ├── [LENH ATGT] RAI HANG RAO - TUY CHON FAMILY.dyn   # Dynamo: Rải cấu kiện với Dropdown chọn Family bất kỳ
+│   ├── [LENH ATGT] GAN LOI - THONG TIN BIM.dyn          # Dynamo: Gán thông tin BIM LOI hàng loạt
+│   ├── ATGT_Revit2025_Automation.dyn                    # Dynamo: Tổng hợp tự động hóa Revit 2025
+│   └── HUONG_DAN_SU_DUNG.md                             # Tài liệu chi tiết thuật toán & thông số chuyên sâu
+├── src/                                                 # 💻 MÃ NGUỒN LÕI (Python, C#, PowerShell, AutoLISP)
+│   ├── Import_ATGT_To_Revit.py                          # Python Engine: Rải DPC & chuẩn hóa 3D Polyline
+│   ├── Rai_Ton_Song_Revit.py                            # Python Engine: Rải Tôn sóng hộ lan 3D
+│   ├── Rai_Hang_Rao_Revit.py                            # Python Engine: Rải Hàng rào bảo vệ 3D
+│   ├── Rai_Hang_Rao_Tuy_Chon_Family_Revit.py            # Python Engine: Rải Family tùy chọn đa năng
+│   ├── Gan_LOI_ATGT_Revit.py                            # Python Engine: Gán Shared Parameters & LOI BIM
+│   ├── TinSurface.cs                                    # Thư viện C# xử lý lưới tam giác TIN (LandXML & IFC)
+│   ├── export_atgt_3d_data.ps1                          # Script nội suy cao độ CAD + LandXML sang 3D CSV
+│   ├── Match_Ifc_Surface_Elevation.ps1                  # Script khớp cao độ cấu kiện lên mặt đường IFC
+│   └── export_cad.lsp                                   # AutoLISP trích xuất dữ liệu bình đồ ATGT từ AutoCAD
+├── testing/                                             # 🧪 KIỂM THỬ & CHẨN ĐOÁN DỮ LIỆU CAD
+│   ├── *.lsp                                            # Các script AutoLISP kiểm tra toạ độ, bounding box, polyline
+│   └── *.scr                                            # Các script chạy batch kiểm thử trên AutoCAD
+└── README.md                                            # 📖 Tài liệu hướng dẫn sử dụng tổng quan
 ```
 
 ---
